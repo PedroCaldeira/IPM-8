@@ -1,0 +1,391 @@
+	.navBar{
+  width: 100%;
+  background-color: #00A2E8;  /*#1D485A*/
+  text-align: left;
+  margin: auto;
+  font-size: 80px;
+  color: white;
+  line-height: 100px;
+  margin-bottom: 5px;
+}
+
+.navBar a {text-decoration: none; }
+
+.navButton{
+  float:right;
+  vertical-align: middle;
+  font-size: 50px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+
+#arrow{
+  margin:auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.col-xs-3{
+  width:200px;
+}
+
+.btn-info{
+  background-color: #00A2E8;
+  border: 0px;
+}
+.btn-info:active{
+  border:0px solid black !important;
+}
+
+#shoppingcart{
+  position: absolute;
+  right:50px;
+  top: 50px;
+  height: 107px;
+}
+
+#filterbtn{
+  position: absolute;
+  right:150px;
+  top: 50px;
+  height: 107px;
+  font-size: 40px;
+  border:1px solid rgb(0, 162, 232);
+}
+#Tabs{
+  width: 210px;
+  height: 675px;
+  background-color: white;
+  float: left;
+
+}
+.Tab{
+  margin-top: 5px;
+  width: 200px;
+  height: 160px;
+  background-color: white;
+  border: 2px solid black;
+  margin:0px;
+  font-size: 40px;
+}
+.Tab img{
+  width:100px;
+  height:100px;
+  display:block;
+  margin:auto ;
+}
+#Bubida{
+  width: 100%;
+  height:100%;
+  background-color: white;
+  float:right;
+
+}
+
+#Refeicoes{
+  width: 1390px;
+  height:675px;
+  background-color: white;
+  float:right;
+  display: none;
+}
+
+#Snacks{
+  width: 1390px;
+  height:675px;
+  background-color: white;
+  float:right;
+  display: none;
+}
+
+#Menus{
+  width: 1390px;
+  height:675px;
+  background-color: white;
+  float:right;
+  display: none;
+}
+
+.Listagem{
+  text-align: left;
+  margin-left: 200px;
+  padding: 5px;
+  width:86%;
+  height: 670px;
+  border-collapse: separate !important;
+  border-spacing: 70px 20px !important;
+  text-align: center;
+  font-size: 30px;
+  table-layout: fixed;
+  position: relative;
+  background-color: rgba(255,255,255,1);
+  border-radius: 10px;
+  text-align: left;
+  overflow-y:auto;
+  overflow-x:visible;
+
+
+}
+.Listagem li{
+  text-align: center;
+  width:250px;
+  height: 194px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  opacity: 1 !important;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 1.5%;
+  font-size: 23px;
+
+
+
+}
+
+.Listagem li:active{
+  background-color:#00A2E8;
+  color: #ffffff
+}
+
+.Listagem img{
+
+   width:100px;
+   height:100px;
+   display:block;
+   margin:auto;
+   margin-top: 10%
+}
+
+#Ticket{
+  display: none;
+  float:right;
+  width: 400px;
+  height: 670px;
+  font-size: 36px;
+  background-color: white;
+  z-index: 10;
+  position: absolute;
+  top: 157px;
+  right: 22px;
+  border-radius: 10px;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+#Filtro{
+  display: none;
+  float:right;
+  width: 400px;
+  height: 670px;
+  font-size: 14px;
+  background-color: white;
+  z-index: 10;
+  position: absolute;
+  top: 157px;
+  right: 22px;
+  border-radius: 10px;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+form label{
+  color: gray;
+  font-size: 24px;
+  width: 250px;
+  border:0px solid black;
+  text-align: left;
+}
+
+#filterSubmit{
+  float:right;
+  margin:20px;
+  padding: 10px;
+  height:50px;
+  width:auto;
+  font-size: 30px;
+}
+
+#filterform{
+  padding-left: 15px;
+}
+
+.checkbox{
+
+  width: 350px;
+  padding-left: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid black;
+
+
+}
+
+.largerCheckbox{
+  position: absolute;
+  top: 15px;
+  right: 300px;
+  width: 25px;
+  height:25px;
+}
+#TicketProducts{
+  display:fixed;
+  height:550px;
+  overflow-y:auto;
+  overflow-x:visible;
+}
+.TicketIcon{
+  width: 100%;
+  height: 90px;
+  background-color:  #4db8ff;
+  border: 2px solid black;
+  display:none;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.input-group{
+  top: 10px;
+  width: 130px;
+  display: inline-table;
+  float: right;
+  margin-right: 15px;
+}
+
+#BotaoCheckout{
+  position:absolute;
+  background-color: #7BC941;
+  display: block;
+  margin: 25px;
+  width: 343px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0C540E;
+  font-weight: 900;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 30px;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(48, 119, 52, 0), 0 0 0 8px rgb(45, 177, 60), 0 0 0 11px #19711A, 0 0 0 13px #333, 0px 2px 2px 16px #eee;
+  position: absolute;
+  bottom: 0px;
+  pointer-events: none;
+  opacity: 0.3;
+
+}
+
+#applyfilter{
+  display: none;
+     margin-left: 210px;
+     margin-top: 20px;
+    border: 1px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.button {
+  display: inline-block;
+  zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+  *display: inline;
+  vertical-align: baseline;
+  margin: 0 2px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {
+  text-decoration: none;
+}
+.button:active {
+  position: relative;
+  top: 1px;
+}
+
+.bigrounded {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+.medium {
+  font-size: 12px;
+  padding: .4em 1.5em .42em;
+}
+.small {
+  font-size: 11px;
+  padding: .2em 1em .275em;
+}
+
+
+.blue {
+  color: #d9eef7 !important;
+  border: solid 1px #0076a3;
+  background: #0095cd;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+  background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+}
+.blue:hover {
+  background: #007ead;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+  background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+}
+.blue:active {
+  color: #80bed6;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+  background: -moz-linear-gradient(top,  #0078a5,  #00adee);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+}
+::-webkit-scrollbar {width: 6px; height: 4px; background: #ffffff; }
+::-webkit-scrollbar-thumb { background-color: #000000; -webkit-border-radius: 1ex; }
+
+.TicketPrice{
+  text-align: right;
+  margin-top: 20px;
+}
+
+.Euro{
+  text-align: right;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
+.listFilter{
+  display: none;
+}
+#DrinkFilter{
+  display: inline-block;
+}
+
+.LiPrice{
+  position:absolute;
+  margin-left: 80px;
+  z-index: 1
+}
+
+.redcross{
+  width:30px;
+  height:30px;
+  margin-right: 10px;
+}
+
+.EcraConfirmacao{
+  height: 400px !important;
+
+}

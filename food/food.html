@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <Title>BarISTa - Pedir</Title>
+    <link rel="stylesheet" type="text/css" href="../jquery.tzCheckbox/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../jquery.tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-vertical-tabs-1.2.1/bootstrap.vertical-tabs.css">
+    <link rel="stylesheet" href="../akquinet-jquery-toastmessage-plugin-6f5d7bf/src/main/resources/css/jquery.toastmessage.css">
+    <link rel="stylesheet" href="./FoodCSS/checkout.css">
+    <link rel="stylesheet" href="./FoodCSS/personalizacao.css">
+    <link rel="stylesheet" href="./FoodCSS/MainWindow.css">
+    <link rel="stylesheet" href="../Main_screen/MainScreen.css">
+    <link rel="stylesheet" href="../GlobalCSS/Global.css">
+        <script type="text/javascript" src="../GlobalJavascript/Date.js" ></script>
+    <style type="text/css"> </style>
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+    <div class="ecra" id="menuPrincipal">
+
+      <div id="cabecalhoPrincipal">
+        <span id = "Name" > XYAO MING </span>
+        <span id = "Time"  > Date </span>
+        <script type="text/javascript">window.onload = getTime();</script>
+        <span id = "Cenas"> </span>
+      </div> 
+
+      <h1 id="InitTitle" style="color: white">Bem-Vindo ao BarISTa </h1>
+
+      <div class="InitIcon" style="background-color:  #00A2E8">
+        <a onclick="hide(menuPrincipal); show(Pedir)"><img src="../GlobalImages/food.png"></a>
+      </div>
+      
+      <div class="InitIcon" style="background-color: #ff9933">
+        <img src="../GlobalImages/pepe.png" />
+      </div>
+      
+      <div class="InitIcon" style="background-color: #e60000">
+        <img src="../GlobalImages/pepe.png" />
+      </div>
+      
+      </div>
+    
+
+
+
+
+    <div class="ecra" id="Pedir">
+
+        <div class="MenusWindow" id="JanelaPersonalizacao" >
+      			<div class= "PersonalizacaoBackground" id= "PersonalizacaoBackgroundBebida">
+      				<img class="backarrow" src="../GlobalImages/backarrow.png" onclick="hide(JanelaPersonalizacao);disableblur(cabecalho);disableblur(meio);disableblur(rodape); unselect('Ingredient');">
+      				<span class="PersonalizacaoTitle">Escolha os Ingredientes</span></br>
+      				<span class="NrEscolhido">Ja escolheu <strong><span id="NrIngredientes">0/4</span></strong> Ingredientes</span>
+              <span class="DoneButton" id="DonePerso" onclick="hide(JanelaPersonalizacao);disableblur(cabecalho,meio,rodape);addCustom(DrinkList, 'Bebida Personalizada',8);unselect('Ingredient'); adicionarPedido('Bebida Personalizada')"style="pointer-events:none;opacity:0.3;color:black;">Criar</span>
+      				<div id="ContentPersonalizacao">
+
+      					<ul id="DrinkList">
+                  <li><input id="IngDrink1" type="checkbox" name="Ingredient" value="Cenas" />
+      							<label for="IngDrink1" ><img  src="./FoodImages/cocacola.png"  /><br>Coca-cola</label></li>
+      						<li><input id="IngDrink2"type="checkbox" name="Ingredient" value="CocaCola" />
+      							<label for="IngDrink2" ><img  src="./FoodImages/sprite.png"  /><br>Sprite</label></li>
+      						<li><input id="IngDrink3" type="checkbox" name="Ingredient" value="7Up" />
+      							<label for="IngDrink3" ><img  src="./FoodImages/guarana.png"  /><br>Guarana</label></li>
+      						<li><input id="IngDrink4" type="checkbox" name="Ingredient" value="Outras_cenas" />
+      							<label for="IngDrink4" ><img  src="./FoodImages/fantalaranja.png"  /><br>Fanta Laranja</label></li>
+      						<li><input id="IngDrink5" type="checkbox" name="Ingredient" value="7Up" />
+      							<label for="IngDrink5" ><img  src="./FoodImages/vodka.png"  /><br>Vodka</label></li>
+      						<li><input id="IngDrink6" type="checkbox" name="Ingredient" value="7Up" />
+      							<label for="IngDrink6" ><img  src="./FoodImages/gin.png"  /><br>Gin</label></li>
+      						<li><input id="IngDrink7" type="checkbox" name="Ingredient" value="7Up" />
+      							<label for="IngDrink7" ><img  src="./FoodImages/whiskey.png"  /><br>Whiskey</label></li>
+      						<li><input id="IngDrink8" type="checkbox" name="Ingredient" value="7Up" />
+      							<label for="IngDrink8" ><img  src="./FoodImages/absinto.png"  /><br>Absinto</label></li>
+      					</ul>
+      				</div>
+      			</div>
+      		</div>
+
+          <div class="MenusWindow" id="JanelaPersonalizacaoPizza" >
+        			<div class= "PersonalizacaoBackground" id= "PersonalizacaoBackgroundPizza">
+        				<img class="backarrow" src="../GlobalImages/backarrow.png" onclick="hide(JanelaPersonalizacaoPizza);disableblur(cabecalho);disableblur(meio);disableblur(rodape); unselect('PizzaIngredient');">
+        				<span class="PersonalizacaoTitle">Escolha os Ingredientes</span></br>
+        				<span class="NrEscolhido">Ja escolheu <strong><span id="NrIngredientesPizza">0/6</span></strong> Ingredientes</span>
+                <span class="DoneButton" id="DonePersoPizza" onclick="hide(JanelaPersonalizacaoPizza);disableblur(cabecalho,meio,rodape);addCustom(PizzaList,'Pizza Personalizada',9);unselect('PizzaIngredient'); adicionarPedido('Pizza Personalizada')"style="pointer-events:none;opacity:0.3;color:black;">Criar</span>
+        				<div id="ContentPersonalizacaoPizza">
+
+        					<ul id="PizzaList">
+                    <li><input id="IngDrinkPizza1" type="checkbox" name="PizzaIngredient" value="Tomate" />
+        							<label for="IngDrinkPizza1" ><img  src="./FoodImages/tomate.png"  /><br>Tomate</label></li>
+        						<li><input id="IngDrinkPizza2"type="checkbox" name="PizzaIngredient" value="Queijo" />
+        							<label for="IngDrinkPizza2" ><img  src="./FoodImages/queijo.png"  /><br>Queijo</label></li>
+        						<li><input id="IngDrinkPizza3" type="checkbox" name="PizzaIngredient" value="Cogumelos" />
+        							<label for="IngDrinkPizza3" ><img  src="./FoodImages/cogumelos.png"  /><br>Cogumelos</label></li>
+        						<li><input id="IngDrinkPizza4" type="checkbox" name="PizzaIngredient" value="Camarão" />
+        							<label for="IngDrinkPizza4" ><img  src="./FoodImages/camarao.png"  /><br>Camarão</label></li>
+        						<li><input id="IngDrinkPizza5" type="checkbox" name="PizzaIngredient" value="Ananás" />
+        							<label for="IngDrinkPizza5" ><img  src="./FoodImages/ananas.png"  /><br>Ananás</label></li>
+        						<li><input id="IngDrinkPizza6" type="checkbox" name="PizzaIngredient" value="Azeitonas" />
+        							<label for="IngDrinkPizza6" ><img  src="./FoodImages/azeitonas.png"  /><br>Azeitonas</label></li>
+        						<li><input id="IngDrinkPizza7" type="checkbox" name="PizzaIngredient" value="Pepperoni" />
+        							<label for="IngDrinkPizza7" ><img  src="./FoodImages/pepperoni.png"  /><br>Pepperoni</label></li>
+        						<li><input id="IngDrinkPizza8" type="checkbox" name="PizzaIngredient" value="Fiambre" />
+        							<label for="IngDrinkPizza8" ><img  src="./FoodImages/fiambre.png"  /><br>Fiambre</label></li>
+        					</ul>
+        				</div>
+        			</div>
+        		</div>
+
+
+
+
+
+        <div class  = "EcraPagamento" id="EcraPagamento1">
+            <div class= "EcraPagamentoBack" >
+              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPagamento1); disableblur(cabecalho,meio,rodape);"/>
+              <span class="PagamentoTitle">Escolha o pagamento</span>
+            </div>
+
+            <figure id="Dinheiro" onclick=" toggleVisible(EcraPagamento1,EcraPagamento2)">
+                <img id = "CashIcon" src="./FoodImages/Cash-icon.png" />
+                <figcaption> Dinheiro</figcaption>
+
+            </figure>
+              <figure id ="Cartao"  onclick="toggleVisible(EcraPagamento1,EcraPagamento3)">
+                <img id = "CardIcon" src="./FoodImages/Credit-Card-icon.png"/>
+                <figcaption>Cartao Multibanco</figcaption>
+            </figure>
+           </div>
+
+           <div class = "EcraPagamento" id="EcraPagamento2">
+              <div class= "EcraPagamentoBack" >
+                <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPagamento1,EcraPagamento2)"/>
+                <span class="PagamentoTitle">Introduza o Dinheiro</span>
+              </div>
+             <img style="height:600px"src="./FoodImages/insertcoins.png"/>
+             <div id="DoneButton" onclick="toggleVisible(EcraPagamento2,EcraPagamento4)">Avancar</div>
+            </div>
+
+             <div class = "EcraPagamento" id="EcraPagamento3">
+              <div class= "EcraPagamentoBack" >
+
+              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPagamento1,EcraPagamento3)"/>
+              <span class="PagamentoTitle">Introduza o cartao</span>
+              </div>
+              <img src="../GlobalImages/insertcard.png"/>
+                <div id="DoneButton" onclick="toggleVisible(EcraPagamento3,EcraPagamento4)">Avancar</div>
+             </div>
+
+
+            <div class = "EcraPagamento" id="EcraPagamento4">
+              <div class= "EcraPagamentoBack" >
+                <span>Concluido</span>
+             </div>
+             <img id="Checkbox" style="margin-top:50px;"src="./FoodImages/checkbox-icon.png"/>
+             <p style="margin-left:30px; margin-right:30px;">  O seu pedido foi finalizado com sucesso e será entregue dentro de aproximadamente 20 minutos. </br>Obrigado pela sua paciência. </p>
+              <div id="DoneButton2" onclick="toggleVisible(EcraPagamento4); disableblur(cabecalho,meio,rodape); cleanTicket()">OK</div>
+            </div>
+
+
+            <div class = "EcraPagamento EcraConfirmacao" id="ConfirmarApagar">
+              <div class= "EcraPagamentoBack" >
+                <span>Apagar?</span>
+             </div>
+             
+             <p style="margin-left:30px; margin-right:30px; margin-top: 50px">  Tem a certeza que pretende apagar todo o pedido? </p>
+             
+             <div id="DoneButton2" onclick="toggleVisible(ConfirmarApagar); disableblur(cabecalho,meio,rodape); cleanTicket()">Sim</div>
+             <div id="DoneButton3" onclick="toggleVisible(ConfirmarApagar); disableblur(cabecalho,meio,rodape);">Nao</div>
+              
+              
+            </div>
+
+
+
+
+
+        <div id="cabecalho">
+          <span id = "Name" > XYAO MING </span>
+          <span id = "Time" > Date </span>
+
+
+          <a style="background-color: #FF2525; color: white;border-radius:10px; text-decoration:none" onclick="hide(Pedir);show(menuPrincipal)"id = "Cenas">Sair</a>
+
+        </div>
+        <div id="meio">
+
+          <div class="navBar">
+            <span id = "Title" style="display: inline-block; padding-left: 35px"> Fazer Pedido </span>
+            <button type="button" class="btn btn-info" id="filterbtn" onclick="hide(Ticket); toggleVisible(Filtro); toggleTab(filterbtn); deactivateTab(shoppingcart); ">Filtro <img id="arrow1" src="./FoodImages/down.png" width="20" height="20"/></button>
+
+
+            <button type="button" class="btn btn-info" id="shoppingcart" onclick="hide(Filtro); toggleVisible(Ticket); toggleTab(shoppingcart); deactivateTab(filterbtn); "><img id="paperticket" src="./FoodImages/paperticket.png" width="50px" height="50px" /> <img id="arrow" src="./FoodImages/down.png" width="20" height="20"/></button>
+
+          </div>
+          <div id="Filtro" align="left">
+            <form >
+              <ul class="listFilter" id="DrinkFilter">
+                <li ><label for="ch_c_alcool">Com alcool</label><input  type="checkbox" id="ch_c_alcool" name="ch_c_alcool" data-on="On" data-off="Off" data-class="calcool"  /></li>
+                  <li ><label for="ch_s_alcool">Sem alcool </label><input type="checkbox" id="ch_s_alcool" name="ch_s_alcool" data-on="On" data-off="Off" data-class="salcool"  /></li>
+                  <li ><label for="ch_c_gas">Com gas </label><input type="checkbox" id="ch_c_gas" name="ch_c_gas" data-on="On" data-off="Off" data-class="cgas"   /></li>
+                  <li ><label for="ch_s_gas">Sem gas </label><input type="checkbox" id="ch_s_gas" name="ch_s_gas" data-on="On" data-off="Off" data-class="sgas"  /></li>
+
+                </ul>
+              <ul class="listFilter" id="FoodFilter">
+                  <li ><label for="ch_pizza">Pizza</label><input  type="checkbox" id="ch_pizza" name="ch_pizza" data-on="On" data-off="Off" data-class="pizza"  /></li>
+                  <li ><label for="ch_hamburguer">Hamburguer</label><input type="checkbox" id="ch_hamburguer" name="ch_hamburguer" data-on="On" data-off="Off" data-class="hamburguer"  /></li>
+                  <li ><label for="ch_pasta">Pasta</label><input type="checkbox" id="ch_pasta" name="ch_pasta" data-on="On" data-off="Off" data-class="pasta"  /></li>
+
+              </ul>
+              <ul class="listFilter" id="SnackFilter">
+                  <li ><label for="ch_salgado">Salgado</label><input  type="checkbox" id="ch_salgado" name="ch_salgado" data-on="On" data-off="Off" data-class="salgado"  /></li>
+                  <li ><label for="ch_doce">Doce</label><input type="checkbox" id="ch_doce" name="ch_doce" data-on="On" data-off="Off" data-class="doce"  /></li>
+
+
+              </ul>
+              <ul class="listFilter" id="MenuFilter" >
+                  <span style="color:gray; font-size:36px; margin-left: 120px;">Sem Filtros</span>
+
+              </ul>
+            </form>
+          </div>
+
+          <div id="Ticket">
+  	  <div class= "TicketProducts"id="TicketProducts">
+
+      <button class="btn-danger" id="applyfilter" onclick="enableblur(cabecalho,meio,rodape); show(ConfirmarApagar)"> Apagar Pedido</button>
+  	    </div>
+
+  	    <a id="BotaoCheckout" href="#" onclick="toggleVisible(EcraPagamento1,Ticket); deactivateTab(shoppingcart); enableblur(cabecalho,meio,rodape);">
+              <span >Checkout</span> <p style="font-size: 20px; margin-bottom: 0px">Total:<span id="Total">0</span>€</p>
+  	    </a>
+
+  	  </div>
+
+      <div class="col-xs-3">
+          <ul class="nav nav-tabs tabs-left">
+            <li class="active" onclick="changeFilter(DrinkFilter)"><a href="#bebida" data-toggle="tab"  style=" color: #337ab7;">Bebida <img src="FoodImages/soft-drinks.png" style="width:100px;
+    height:100px; "/></a></li>
+            <li onclick="changeFilter(FoodFilter)"><a href="#refeicoes" data-toggle="tab" style=" color: #337ab7;" >Refeicoes <img src="FoodImages/KiwiBurger_Plate.png" style="width:auto;
+    height:100px;"/></a></li>
+            <li onclick="changeFilter(SnackFilter)"><a href="#snacks" data-toggle="tab" style=" color: #337ab7;">Snacks <img src="FoodImages/snack.png" style="width:150px;
+    height:100px;"/></a></li>
+            <li onclick="changeFilter(MenuFilter)"><a href="#menus" data-toggle="tab" style=" color: #337ab7;">Menus <img src="FoodImages/menu.png" style="width:auto;
+    height:100px;"/></a></li>
+          </ul>
+      </div>
+
+      <div>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="bebida">
+              <ul class="Listagem" style="text-align: left">
+
+                 <li class="calcool cgas" data-price="4" > <span class="LiPrice">4€</span><img  src="./FoodImages/vodka-cola.png"/><p>Vodka-Cola</p> </p></li>
+                  <li class="calcool cgas" data-price="1"> <span class="LiPrice">1€</span><img  src="./FoodImages/cerveja.png" /><p>Cerveja</p></li>
+                 <li class="calcool sgas"  data-price="1"> <span class="LiPrice">1€</span><img  src="./FoodImages/copo-sangria.png" /><p>Sangria-Copo</p></li>
+                 <li class="calcool sgas"  data-price="9"> <span class="LiPrice">9€</span><img  src="./FoodImages/jarro-sangria.png"  /><p>Sangria-Jarro</p></li>
+
+
+
+                <li class="salcool cgas" data-price="2"><span class="LiPrice">2€</span><img  src="./FoodImages/cocacola.png"/><p>Coca-cola</p></li>
+                  <li class="salcool cgas" data-price="2"><span class="LiPrice">2€</span><img  src="./FoodImages/sprite.png" /><p>Sprite</p></li>
+                 <li class="salcool cgas" data-price="2"><span class="LiPrice">2€</span><img  src="./FoodImages/fantalaranja.png" /><p>Fanta Laranja</p></li>
+                 <li class="salcool cgas" data-price="2"><span class="LiPrice">2€</span><img  src="./FoodImages/guarana.png" /><p>Guarana</p></li>
+
+
+                 <li class="calcool cgas" data-price="4"><span class="LiPrice">4€</span><img  src="./FoodImages/cubalivre.png"/><p>Cuba Livre</p></li>
+                  <li class="calcool sgas" data-price="6"><span class="LiPrice">6€</span><img  src="./FoodImages/bloodymary.png" /><p>Bloody Mary</p></li>
+                 <li class="calcool sgas" data-price="3"><span class="LiPrice">3€</span><img  src="./FoodImages/margarita.png" /><p>Margarita</p></li>
+                 <li class="salcool cgas" data-price="4"><span class="LiPrice">4€</span><img  src="./FoodImages/martini.png"/><p>Martini</p></li>
+                  <li class="salcool cgas" data-price="1"><span class="LiPrice">1€</span><img  src="./FoodImages/agua.png" /><p>Água</p></li>
+                 <li class="salcool cgas" data-price="4"><span class="LiPrice">4€</span><img  src="./FoodImages/mojito.png" /><p>Mojito</p></li>
+                 <li class="salcool cgas" data-price="6"><span class="LiPrice">6€</span><img  src="./FoodImages/gintonico.png" /><p>Gin-tónico</p></li>
+                 <li onclick="show(JanelaPersonalizacao);enableblur(cabecalho,meio,rodape); " data-price="8"><span class="LiPrice">8€</span><img  src="./FoodImages/plus.png" /><p>Criar Bebida</p></li>
+
+              </ul>
+            </div>
+            <div class="tab-pane" id="refeicoes">
+              <ul class="Listagem">
+
+              <li class="pizza" data-price="6"><span class="LiPrice">6€</span><img  src="./FoodImages/pizzamargarita.png"/><p>Pizza Margarita</p></li>
+               <li class="pizza" data-price="8"><span class="LiPrice">8€</span><img  src="./FoodImages/pizzahawaii.png"/><p>Pizza Hawaii</p></li>
+                <li class="pizza" data-price="7"><span class="LiPrice">7€</span><img  src="./FoodImages/pizzaprosciutto.png"/><p>Pizza Prosciutto</p></li>
+
+                <li class="pizza" data-price="8"><span class="LiPrice">8€</span><img  src="./FoodImages/pizzacogumelos.png" /><p>Pizza Cogumelos</p></li>
+               <li  class="hamburguer" data-price="4"><span class="LiPrice">4€</span><img  src="./FoodImages/hamburguer.png" /><p>Hamburguer Simples</p></li>
+                <li class="hamburguer" data-price="6"><span class="LiPrice">6€</span><img  src="./FoodImages/hamburguerchili.png" /><p>Hamburguer Chili</p></li>
+                <li class="hamburguer" data-price="6"><span class="LiPrice">6€</span><img  src="./FoodImages/bacon-cheeseburger.png" /><p>Hamburguer Bacon</p></li>
+                <li class="hamburguer" data-price="6"><span class="LiPrice">6€</span><img  src="./FoodImages/OnionBurguer.png" /><p>Hamburguer Cebola</p></li>
+               <li class="hamburguer" data-price="5"><span class="LiPrice">5€</span><img  src="./FoodImages/cheeseburger.png" /><p>CheeseBurger</p></li>
+               <li class="pasta" data-price="8"><span class="LiPrice">8€</span><img  src="./FoodImages/bolonhesa.png" /><p>Esparguete Bolonhesa</p></li>
+                <li class="pasta" data-price="8"><span class="LiPrice">8€</span><img  src="./FoodImages/esparguetepesto.png"/><p>Esparguete Pesto</p></li>
+                <li class="pasta" data-price="8"><span class="LiPrice">8€</span><img  src="./FoodImages/lasanha.png" /><p>Lasanha</p></li>
+                <li class="pasta" data-price="8"><span class="LiPrice">8€</span><img  src="./FoodImages/carbonara.png" /><p>Carbonara</p></li>
+
+               <li onclick="show(JanelaPersonalizacaoPizza);enableblur(cabecalho,meio,rodape); "><span class="LiPrice">9€</span><img  src="./FoodImages/plus.png" /><p>Criar Pizza</p></li>
+
+            </ul>
+            </div>
+            <div class="tab-pane" id="snacks"><ul class="Listagem">
+
+               <li class="salgado" data-price="1"><span class="LiPrice">1€</span><img  src="./FoodImages/tremocos.png"/><p>Tremocos</p></li>
+                <li class="salgado" data-price="1"><span class="LiPrice">1€</span><img  src="./FoodImages/amendoins.png" /><p>Amendoins</p></li>
+               <li class="salgado" data-price="1"><span class="LiPrice">1€</span><img  src="./FoodImages/batatasfritas.png" /><p>BatatasFritas</p></li>
+               <li class="salgado" data-price="2"><span class="LiPrice">2€</span><img  src="./FoodImages/snack.png" /><p>Nachos</p></li>
+
+
+
+              <li class="salgado" data-price="2"><span class="LiPrice">2€</span><img  src="./FoodImages/pretzels.png"/><p>Pretzels</p></li>
+              <li class="salgado" data-price="1"><span class="LiPrice">1€</span><img  src="./FoodImages/chamucagif.gif"/><p>Chamuca</p></li>
+                <li class="salgado" data-price="1"><span class="LiPrice">1€</span><img  src="./FoodImages/pistachios.png" /><p>Pistachios</p></li>
+
+                <li class="doce" data-price="2"><span class="LiPrice">2€</span><img  src="./FoodImages/geladochocolate.png" /><p>Gelado Chocolate</p></li>
+                <li class="doce" data-price="2"><span class="LiPrice">2€</span><img  src="./FoodImages/geladobaunilha.png" /><p>Gelado Baunilha</p></li>
+                <li class="doce" data-price="2"><span class="LiPrice">2€</span><img  src="./FoodImages/geladonata.png" /><p>Gelado Nata</p></li>
+                <li class="doce" data-price="2"><span class="LiPrice">2€</span><img  src="./FoodImages/geladocaramelo.png" /><p>Gelado Caramelo</p></li>
+            </ul>
+            </div>
+            <div class="tab-pane" id="menus">
+              <ul class="Listagem">
+
+               <li onclick='showMenu("JanelaMenu");enableblur(cabecalho,meio,rodape)' data-price="10"><span class="LiPrice" >10€</span><img style="width: 130px" src="./FoodImages/menupizza.png"/><p>Menu Pizza</p></li>
+                <li onclick='showMenu("JanelaMenu2");enableblur(cabecalho,meio,rodape)' data-price="8"><span class="LiPrice">8€</span><img style="width: 130px" src="./FoodImages/menu.png" /><p>Menu Hamburguer</p></li>
+               <li onclick='showMenu("JanelaMenu3");enableblur(cabecalho,meio,rodape)' data-price="8"><span class="LiPrice">8€</span><img style="width: 130px" src="./FoodImages/menupasta23.png" /><p>Menu Pasta</p></li>
+
+
+
+            </ul>
+            </div>
+          </div>
+      </div>
+      </div>
+
+      <div id="JanelaMenu" class="Menu">
+        <div id= "PersonalizacaoBackground">
+          <div id="TopPart" style="height: 80px">
+            <img class="backarrow" src="../GlobalImages/backarrow.png" onclick="hide(JanelaMenu);unselect('Food');unselect('Bebida');unselect('Acompanhamento');disableblur(cabecalho,meio,rodape);"/>
+            <span id="MenuTitle">Menu Pizza</span><span onclick="addCustom(MainDish,'Menu Pizza',4); unselect('Food');unselect('Bebida');unselect('Acompanhamento'); adicionarPedido('Menu Pizza');disableblur(cabecalho,meio,rodape);hide(JanelaMenu);" id="ChooseMenu" class="DoneButton" style=" pointer-events:none;opacity:0.3;color:black;">Escolher</span>
+          </div>
+          <div id="ContentMenu">
+          <div id="MainDish" ><div class="PlaceTitle"> Escolha a Pizza</div>
+            <ul class="IngredientList">
+              <li><input id="Ingrediente1" type="checkbox" name="Food" value="jQuery" />
+                <label for="Ingrediente1" ><img class="IngredienteImage" src="./FoodImages/pizzamargarita.png"  /><br>Margarita</label></li>
+              <li><input id="Ingrediente2"type="checkbox" name="Food" value="Coca-Cola" />
+                <label for="Ingrediente2" ><img class="FoodImage" src="./FoodImages/pizzahawaii.png"  /><br>Hawaii</label></li>
+              <li><input id="Ingrediente3" type="checkbox" name="Food" value="7Up" />
+                <label for="Ingrediente3" ><img class="FoodImage" src="./FoodImages/pizzaprosciutto.png"  /><br>Prosciutto</label></li>
+              <li><input id="Ingrediente4" type="checkbox" name="Food" value="7Up" />
+                <label for="Ingrediente4" ><img class="FoodImage" src="./FoodImages/pizzacogumelos.png"  /><br>Cogumelos</label></li>
+
+
+            </ul>
+          </div>
+   				<div id="DrinkMenu"><div class="PlaceTitle"> Escolha a Bebida</div>
+   					<ul class="IngredientList">
+   						<li><input id="Bebida1" type="checkbox" name="Bebida" value="jQuery" />
+   							<label for="Bebida1" ><img class="BebidaImage" src="./FoodImages/cocacola.png"  /><br>Coca-cola</label></li>
+   						<li><input id="Bebida2"type="checkbox" name="Bebida" value="Coca-Cola" />
+   							<label for="Bebida2" ><img class="BebidaImage" src="./FoodImages/sprite.png"  /><br>Sprite</label></li>
+   						<li><input id="Bebida3" type="checkbox" name="Bebida" value="7Up" />
+   							<label for="Bebida3" ><img class="BebidaImage" src="./FoodImages/guarana.png"  /><br>Guarana</label></li>
+   						<li><input id="Bebida4" type="checkbox" name="Bebida" value="7Up" />
+   							<label for="Bebida4" ><img class="BebidaImage" src="./FoodImages/fantalaranja.png"  /><br>Fanta Laranja</label></li>
+   						<li><input id="Bebida5" type="checkbox" name="Bebida" value="7Up" />
+   							<label for="Bebida5" ><img class="BebidaImage" src="./FoodImages/cerveja.png"  /><br>Cerveja</label></li>
+   						<li><input id="Bebida6" type="checkbox" name="Bebida" value="7Up" />
+   							<label for="Bebida6" ><img class="BebidaImage" src="./FoodImages/agua.png"  /><br>Água</label></li>
+   						<li><input id="Bebida7" type="checkbox" name="Bebida" value="7Up" />
+
+   					</ul>
+   				</div>
+   				<div id="AcompanhamentoMenu"><div class="PlaceTitle"> Escolha o Acompanhamento</div>
+   					<ul class="IngredientList">
+   						<li><input id="Acompanhamento1" type="checkbox" name="Acompanhamento" value="jQuery" />
+   							<label for="Acompanhamento1" ><img class="AcompanhamentoImage" src="./FoodImages/batatasfritas.png"  /><br>Batatas Fritas</label></li>
+   						<li><input id="Acompanhamento2"type="checkbox" name="Acompanhamento" value="Coca-Cola" />
+   							<label for="Acompanhamento2" ><img class="AcompanhamentoImage" src="./FoodImages/snack.png"  /><br>Nachos</label></li>
+   						<li><input id="Acompanhamento3" type="checkbox" name="Acompanhamento" value="7Up" />
+   							<label for="Acompanhamento3" ><img class="AcompanhamentoImage" src="./FoodImages/geladochocolate.png"  /><br>Gelado Chocolate</label></li>
+   						<li><input id="Acompanhamento4" type="checkbox" name="Acompanhamento" value="7Up" />
+   							<label for="Acompanhamento4" ><img class="AcompanhamentoImage" src="./FoodImages/geladobaunilha.png"  /><br>Gelado Baunilha</label></li>
+   						<li><input id="Acompanhamento5" type="checkbox" name="Acompanhamento" value="7Up" />
+   							<label for="Acompanhamento5" ><img class="AcompanhamentoImage" src="./FoodImages/geladonata.png"  /><br>Gelado Nata</label></li>
+   						<li><input id="Acompanhamento6" type="checkbox" name="Acompanhamento" value="7Up" />
+   							<label for="Acompanhamento6" ><img class="AcompanhamentoImage" src="./FoodImages/geladocaramelo.png"  /><br>Gelado Caramelo</label></li>
+   						<li><input id="Acompanhamento7" type="checkbox" name="Acompanhamento" value="7Up" />
+
+   					</ul>
+   					</div>
+
+
+   				</div>
+   			</div>
+   		</div>
+
+
+      <div id="JanelaMenu2" class="Menu" >
+        <div id= "PersonalizacaoBackground">
+          <div id="TopPart" style="height: 80px">
+            <img class="backarrow" src="../GlobalImages/backarrow.png" onclick="hide(JanelaMenu2);unselect('Food');unselect('Bebida');unselect('Acompanhamento');disableblur(cabecalho,meio,rodape);"/>
+            <span id="MenuTitle">Menu Hamburguer</span><span onclick="addCustom(MainDish,'Menu Hamburguer',4); unselect('Food');unselect('Bebida');unselect('Acompanhamento'); adicionarPedido('Menu Hamburguer');disableblur(cabecalho,meio,rodape);hide(JanelaMenu2);" id="ChooseMenu1" class="DoneButton" style=" pointer-events:none;opacity:0.3;color:black;top:24px; left:-200px">Escolher</span>
+          </div>
+          <div id="ContentMenu">
+          <div id="MainDish" ><div class="PlaceTitle"> Escolha o Hamburguer</div>
+            <ul class="IngredientList">
+              <li><input id="Ingrediente10" type="checkbox" name="Food" value="jQuery" />
+                <label for="Ingrediente10" ><img class="IngredienteImage" src="./FoodImages/hamburguer.png"  /><br>Simples</label></li>
+              <li><input id="Ingrediente20"type="checkbox" name="Food" value="Coca-Cola" />
+                <label for="Ingrediente20" ><img class="FoodImage" src="./FoodImages/hamburguerchili.png"  /><br>Chili</label></li>
+              <li><input id="Ingrediente30" type="checkbox" name="Food" value="7Up" />
+                <label for="Ingrediente30" ><img class="FoodImage" src="./FoodImages/cheeseburger.png"  /><br>Queijo</label></li>
+              <li><input id="Ingrediente40" type="checkbox" name="Food" value="7Up" />
+                <label for="Ingrediente40" ><img class="FoodImage" src="./FoodImages/OnionBurguer.png"  /><br>Cebola</label></li>
+              <li><input id="Ingrediente50" type="checkbox" name="Food" value="7Up" />
+                <label for="Ingrediente50" ><img class="FoodImage" src="./FoodImages/bacon-cheeseburger.png"  /><br>Bacon</label></li>
+
+
+            </ul>
+          </div>
+          <div id="DrinkMenu"><div class="PlaceTitle"> Escolha a Bebida</div>
+            <ul class="IngredientList">
+              <li><input id="Bebida10" type="checkbox" name="Bebida" value="jQuery" />
+                <label for="Bebida10" ><img class="BebidaImage" src="./FoodImages/cocacola.png"  /><br>Coca-cola</label></li>
+              <li><input id="Bebida20"type="checkbox" name="Bebida" value="Coca-Cola" />
+                <label for="Bebida20" ><img class="BebidaImage" src="./FoodImages/sprite.png"  /><br>Sprite</label></li>
+              <li><input id="Bebida30" type="checkbox" name="Bebida" value="7Up" />
+                <label for="Bebida30" ><img class="BebidaImage" src="./FoodImages/guarana.png"  /><br>Guarana</label></li>
+              <li><input id="Bebida40" type="checkbox" name="Bebida" value="7Up" />
+                <label for="Bebida40" ><img class="BebidaImage" src="./FoodImages/fantalaranja.png"  /><br>Fanta Laranja</label></li>
+              <li><input id="Bebida50" type="checkbox" name="Bebida" value="7Up" />
+                <label for="Bebida50" ><img class="BebidaImage" src="./FoodImages/cerveja.png"  /><br>Cerveja</label></li>
+              <li><input id="Bebida60" type="checkbox" name="Bebida" value="7Up" />
+                <label for="Bebida60" ><img class="BebidaImage" src="./FoodImages/agua.png"  /><br>Água</label></li>
+              <li><input id="Bebida70" type="checkbox" name="Bebida" value="7Up" />
+
+            </ul>
+          </div>
+          <div id="AcompanhamentoMenu"><div class="PlaceTitle"> Escolha o Acompanhamento</div>
+            <ul class="IngredientList">
+              <li><input id="Acompanhamento10" type="checkbox" name="Acompanhamento" value="jQuery" />
+                <label for="Acompanhamento10" ><img class="AcompanhamentoImage" src="./FoodImages/batatasfritas.png"  /><br>Batatas Fritas</label></li>
+              <li><input id="Acompanhamento20"type="checkbox" name="Acompanhamento" value="Coca-Cola" />
+                <label for="Acompanhamento20" ><img class="AcompanhamentoImage" src="./FoodImages/snack.png"  /><br>Nachos</label></li>
+              <li><input id="Acompanhamento30" type="checkbox" name="Acompanhamento" value="7Up" />
+                <label for="Acompanhamento30" ><img class="AcompanhamentoImage" src="./FoodImages/geladochocolate.png"  /><br>Gelado Chocolate</label></li>
+              <li><input id="Acompanhamento40" type="checkbox" name="Acompanhamento" value="7Up" />
+                <label for="Acompanhamento40" ><img class="AcompanhamentoImage" src="./FoodImages/geladobaunilha.png"  /><br>Gelado Baunilha</label></li>
+              <li><input id="Acompanhamento50" type="checkbox" name="Acompanhamento" value="7Up" />
+                <label for="Acompanhamento50" ><img class="AcompanhamentoImage" src="./FoodImages/geladonata.png"  /><br>Gelado Nata</label></li>
+              <li><input id="Acompanhamento60" type="checkbox" name="Acompanhamento" value="7Up" />
+                <label for="Acompanhamento60" ><img class="AcompanhamentoImage" src="./FoodImages/geladocaramelo.png"  /><br>Gelado Caramelo</label></li>
+              
+
+            </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div id="JanelaMenu3" class="Menu" >
+        <div id= "PersonalizacaoBackground">
+          <div id="TopPart" style="height: 80px">
+            <img class="backarrow" src="../GlobalImages/backarrow.png" onclick="hide(JanelaMenu3);unselect('Food');unselect('Bebida');unselect('Acompanhamento');disableblur(cabecalho,meio,rodape);"/>
+            <span id="MenuTitle">Menu Pasta</span><span onclick="addCustom(MainDish,'Menu Pasta',4); unselect('Food');unselect('Bebida');unselect('Acompanhamento'); adicionarPedido('Menu Pasta');disableblur(cabecalho,meio,rodape);hide(JanelaMenu3);" id="ChooseMenu2" class="DoneButton" style=" pointer-events:none;opacity:0.3;color:black;top:24px; left:-200px">Escolher</span>
+          </div>
+          <div id="ContentMenu">
+          <div id="MainDish" ><div class="PlaceTitle"> Escolha a Pasta</div>
+            <ul class="IngredientList">
+              <li><input id="Ingrediente11" type="checkbox" name="Food" value="jQuery" />
+                <label for="Ingrediente11" ><img class="IngredienteImage" src="./FoodImages/lasanha.png"  /><br>Lasanha</label></li>
+              <li><input id="Ingrediente21"type="checkbox" name="Food" value="Coca-Cola" />
+                <label for="Ingrediente21" ><img class="FoodImage" src="./FoodImages/esparguetepesto.png"  /><br>Esparguete Pesto</label></li>
+              <li><input id="Ingrediente31" type="checkbox" name="Food" value="7Up" />
+                <label for="Ingrediente31" ><img class="FoodImage" src="./FoodImages/bolonhesa.png"  /><br>Bolonhesa</label></li>
+              <li><input id="Ingrediente41" type="checkbox" name="Food" value="7Up" />
+                <label for="Ingrediente41" ><img class="FoodImage" src="./FoodImages/carbonara.png"  /><br>Carbonara</label></li>
+              
+
+            </ul>
+          </div>
+          <div id="DrinkMenu"><div class="PlaceTitle"> Escolha a Bebida</div>
+            <ul class="IngredientList">
+              <li><input id="Bebida11" type="checkbox" name="Bebida" value="jQuery" />
+                <label for="Bebida11" ><img class="BebidaImage" src="./FoodImages/cocacola.png"  /><br>Coca-cola</label></li>
+              <li><input id="Bebida21"type="checkbox" name="Bebida" value="Coca-Cola" />
+                <label for="Bebida21" ><img class="BebidaImage" src="./FoodImages/sprite.png"  /><br>Sprite</label></li>
+              <li><input id="Bebida31" type="checkbox" name="Bebida" value="7Up" />
+                <label for="Bebida31" ><img class="BebidaImage" src="./FoodImages/guarana.png"  /><br>Guarana</label></li>
+              <li><input id="Bebida41" type="checkbox" name="Bebida" value="7Up" />
+                <label for="Bebida41" ><img class="BebidaImage" src="./FoodImages/fantalaranja.png"  /><br>Fanta Laranja</label></li>
+              <li><input id="Bebida51" type="checkbox" name="Bebida" value="7Up" />
+                <label for="Bebida51" ><img class="BebidaImage" src="./FoodImages/cerveja.png"  /><br>Cerveja</label></li>
+              <li><input id="Bebida61" type="checkbox" name="Bebida" value="7Up" />
+                <label for="Bebida61" ><img class="BebidaImage" src="./FoodImages/agua.png"  /><br>Água</label></li>
+              <li><input id="Bebida71" type="checkbox" name="Bebida" value="7Up" />
+
+            </ul>
+          </div>
+          <div id="AcompanhamentoMenu"><div class="PlaceTitle"> Escolha o Acompanhamento</div>
+            <ul class="IngredientList">
+              <li><input id="Acompanhamento11" type="checkbox" name="Acompanhamento" value="jQuery" />
+                <label for="Acompanhamento11" ><img class="AcompanhamentoImage" src="./FoodImages/batatasfritas.png"  /><br>Batatas Fritas</label></li>
+              <li><input id="Acompanhamento21"type="checkbox" name="Acompanhamento" value="Coca-Cola" />
+                <label for="Acompanhamento21" ><img class="AcompanhamentoImage" src="./FoodImages/snack.png"  /><br>Nachos</label></li>
+              <li><input id="Acompanhamento31" type="checkbox" name="Acompanhamento" value="7Up" />
+                <label for="Acompanhamento31" ><img class="AcompanhamentoImage" src="./FoodImages/geladochocolate.png"  /><br>Gelado Chocolate</label></li>
+              <li><input id="Acompanhamento41" type="checkbox" name="Acompanhamento" value="7Up" />
+                <label for="Acompanhamento41" ><img class="AcompanhamentoImage" src="./FoodImages/geladobaunilha.png"  /><br>Gelado Baunilha</label></li>
+              <li><input id="Acompanhamento51" type="checkbox" name="Acompanhamento" value="7Up" />
+                <label for="Acompanhamento51" ><img class="AcompanhamentoImage" src="./FoodImages/geladonata.png"  /><br>Gelado Nata</label></li>
+              <li><input id="Acompanhamento61" type="checkbox" name="Acompanhamento" value="7Up" />
+                <label for="Acompanhamento61" ><img class="AcompanhamentoImage" src="./FoodImages/geladocaramelo.png"  /><br>Gelado Caramelo</label></li>
+              
+
+            </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+        <div id="rodape">
+          <div class="RodapeIcon" style="background-color:  #00A2E8" >
+            <img src="../GlobalImages/food.png" />
+          </div>
+          <div class="RodapeIcon" style="background-color: #ff9933">
+            <img src="../GlobalImages/pepe.png" />
+          </div>
+          <div class="RodapeIcon" style="background-color: #e60000" >
+            <img src="../GlobalImages/pepe.png" />
+          </div>
+        </div>
+  </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../GlobalJavascript/Date.js" ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../akquinet-jquery-toastmessage-plugin-6f5d7bf/src/main/javascript/jquery.toastmessage.js" ></script>
+    <script src="../jquery.tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.js"></script>
+    <script src="../jquery.tzCheckbox/js/script.js"></script>
+    <script type="text/javascript" src="../GlobalJavascript/visuals.js" ></script>
+    <script type="text/javascript" src="../GlobalJavascript/buttons.js" ></script>
+    <script type="text/javascript" src="../GlobalJavascript/proj-related.js" ></script>
+
+    <script type="text/javascript">
+      function adicionarPedido(id){
+        $().toastmessage('showToast', {
+            text     : id+' adicionado(a) ao Pedido',
+            type     : 'success',
+            position : 'middle-right',
+            stayTime : 1000
+        });
+      }
+    </script>
+    <script type="text/javascript">window.onload = getTime();</script>
+</body>
+</html>

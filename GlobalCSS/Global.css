@@ -1,0 +1,105 @@
+
+.ecra{
+  height: 915px;
+  width: 1600px;
+  border: 10px solid #000000;
+  margin: auto;
+  text-align: center;
+  position:relative;
+  background-image:url("../GlobalImages/Background.jpg");
+  background-size: 100% 100%;
+
+
+}
+
+#Pedir{
+  display:none;
+}
+#cabecalho{
+	height: 5.555%;
+	width: 100%;
+	text-align: left;
+	font-size:40px;
+	color: white;
+	position:relative;
+  background-color:black;
+  opacity: 0.8;
+
+
+}
+
+#cabecalhoPrincipal{
+  height: 5.555%;
+  width: 100%;
+  text-align: left;
+  font-size:40px;
+  color: white;
+  position:relative;
+  background-color:black;
+  opacity: 0.8;
+
+
+}
+
+#Name{
+  position: relative;
+  left: 20px;
+  float: left;
+  width:33.33333%;
+  text-align:left;
+
+}
+#Time{
+	float: left;
+  width:33.33333%;
+  text-align:center;
+}
+#Cenas{
+  position: relative;
+  right: 20px;
+  float: right;
+  width:6%;
+	text-align: right;
+  margin-bottom: 9px;
+  height: 100%;
+  padding-right: 15px;
+}
+
+#rodape{
+  height: 65px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left:0;
+
+
+}
+.RodapeIcon{
+  height:60px;
+  width:60px;
+  border-radius: 100%;
+  border: 3px solid #000000;
+  display: inline-block;
+  margin-right: 50px;
+  position: relative;
+
+
+}
+
+.RodapeIcon img {
+  margin: auto;
+  display: block;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+
+
+}
+
+.backarrow{
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  float: left;
+}

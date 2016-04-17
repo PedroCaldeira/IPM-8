@@ -1,0 +1,23 @@
+.InitIcon{
+  margin-top: 150px;
+  height:300px;
+  width:300px;
+  border-radius: 100%;
+  border: 3px solid #000000;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.InitIcon img {
+  margin: auto;
+  display: block;
+  vertical-align: middle;
+  width: 250px;
+  height: 250px;
+  margin-top: 25px;
+  border-radius: 100%;
+}
+#InitTitle{
+  font-size: 40px;
+
+}
