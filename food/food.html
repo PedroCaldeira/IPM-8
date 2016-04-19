@@ -33,8 +33,8 @@
         <a onclick="hide(menuPrincipal); show(Pedir)"><img src="../GlobalImages/food.png"></a>
       </div>
       
-      <div class="InitIcon" style="background-color: #ff9933">
-        <img src="../GlobalImages/pepe.png" />
+      <div class="InitIcon" style="background-color: #FB3742">
+        <a onclick="hide(menuPrincipal); show(Music)"><img src="../GlobalImages/Music-icon.png" style="margin-top:-10px;width:300px;height:300px"/></a>
       </div>
       
       <div class="InitIcon" style="background-color: #e60000">
@@ -179,7 +179,7 @@
 
         <div id="cabecalho">
           <span id = "Name" > XYAO MING </span>
-          <span id = "Time" > Date </span>
+          <span id = "TimeFood" > Date </span>
 
 
           <a style="background-color: #FF2525; color: white;border-radius:10px; text-decoration:none" onclick="hide(Pedir);show(menuPrincipal)"id = "Cenas">Sair</a>
@@ -529,14 +529,50 @@
           <div class="RodapeIcon" style="background-color:  #00A2E8" >
             <img src="../GlobalImages/food.png" />
           </div>
-          <div class="RodapeIcon" style="background-color: #ff9933">
-            <img src="../GlobalImages/pepe.png" />
+          <div class="RodapeIcon" style="background-color: #FB3742">
+            <a onclick="show(Music);hide(Pedir)"><img src="../GlobalImages/Music-icon.png" />
           </div>
           <div class="RodapeIcon" style="background-color: #e60000" >
             <img src="../GlobalImages/pepe.png" />
           </div>
         </div>
   </div>
+  <div class="ecra" id="Music">
+    <div id="cabecalho">
+          <span id = "Name" > XYAO MING </span>
+          <span id = "TimeFood" > Date </span>
+
+
+          <a style="background-color: #FF2525; color: white;border-radius:10px; text-decoration:none" onclick="hide(Pedir);show(menuPrincipal)"id = "Cenas">Sair</a>
+
+    </div>
+     <div class="navBar" style="background-color:#FF6666">
+            <span id = "Title" style="display: inline-block; padding-left: 35px">Escolher Música </span>
+           <!--   <button style="background-color:#FF6666"" type="button" class="btn btn-info" id="coverflowbtn" onclick="show(addsongbtn);hide(coverflowbtn)"><img src="./MusicImages/coverflowicon.png" width="80px" height="80px"/></button>
+            <button style="background-color:#FF6666"" type="button" class="btn btn-info" id="addsongbtn" onclick="show(coverflowbtn);hide(addsongbtn)"><img src="./MusicImages/addsong.png" width="80px" height="80px"/></button> -->
+
+
+            <button style="background-color:#FF6666"" type="button" class="btn btn-info" id="shoppingcart" onclick="toggleVisible(Q)"><img id="paperticket" src="./MusicImages/queue.png" width="50px" height="50px" /> <img id="arrow" src="./FoodImages/down.png" width="20" height="20"/></button>
+
+      </div>
+      <div id = "Q">
+        <div id="Qsongs">
+          </div>
+        </div>
+       <div id="botaomusica" style="background-color:#FFFFFF; height:50px; width:50px; margin-top:200px"> </div>
+    <div id="rodape">
+          <div class="RodapeIcon" style="background-color:  #00A2E8" >
+            <a onclick="hide(Music);show(Pedir);"><img src="../GlobalImages/food.png" />
+          </div>
+          <div class="RodapeIcon" style="background-color: #FB3742">
+            <img src="../GlobalImages/Music-icon.png" />
+          </div>
+          <div class="RodapeIcon" style="background-color: #e60000" >
+            <img src="../GlobalImages/pepe.png" />
+          </div>
+        </div>
+   </div>
+  
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

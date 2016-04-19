@@ -7,5 +7,8 @@ function getTime(){
     if (minutes<10)
       minutes="0"+minutes;
     document.getElementById("Time").textContent=hours+":"+minutes;
+    document.getElementById("TimeFood").textContent=hours+":"+minutes;
+    document.getElementById("TimeMusic").textContent=hours+":"+minutes;
+    document.getElementById("TimeProfile").textContent=hours+":"+minutes;
     t=setTimeout('getTime()',1000);  
   }

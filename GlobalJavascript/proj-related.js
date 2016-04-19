@@ -403,3 +403,41 @@ function deactivateButton(){
             document.getElementById(arguments[i]).style.backgroundColor="green";
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+function addToQueue2(identity, nome){
+
+	if ( $("#"+identity+"song").parent("#Qsongs").length == 1 ){
+    }	
+	else{
+        var div=$('<div class="Qsong" id="'+identity+'song" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span><div class="input-group" style="width: 130px;display: inline-table; "></div>')
+	}
+}
+function addToQueue(identity){
+
+	var id=identity.replace(" ","_")
+	addToQueue2(id, identity);
+}
+
+function removeFromQueue2(id){
+	
+    $("#"+id+"song").remove();
+    
+}
+
+function cleanQueue(){
+	var array= $("#Qsongs").find("div[class^=Qsong]")
+	for (var i = 0; i < array.length; i++){
+        array.remove();
+	}
+}

@@ -13,6 +13,12 @@
 }
 
 #Pedir{
+   background-image:url("../GlobalImages/Background.jpg");
+  display:none;
+}
+
+#Music{
+   background-image:url("../GlobalImages/musicbackground.png");
   display:none;
 }
 #cabecalho{
@@ -54,6 +60,22 @@
   width:33.33333%;
   text-align:center;
 }
+#TimeFood{
+	float: left;
+  width:33.33333%;
+  text-align:center;
+}
+#TimeMusic{
+	float: left;
+  width:33.33333%;
+  text-align:center;
+}
+#TimeProfile{
+	float: left;
+  width:33.33333%;
+  text-align:center;
+}
+
 #Cenas{
   position: relative;
   right: 20px;
