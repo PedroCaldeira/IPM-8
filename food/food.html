@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="./FoodCSS/MainWindow.css">
     <link rel="stylesheet" href="../Main_screen/MainScreen.css">
     <link rel="stylesheet" href="../GlobalCSS/Global.css">
+    <script language="JavaScript" type="text/javascript" src="../ContentFlow/contentflow.js"></script>
+    <link rel="stylesheet" href="../ContentFlow/contentflow.css">
+    <script tyle="text/javascript">
+        var cf = new ContentFlow('contentFlow', {reflectionColor: "#000000"});
+    </script>
+
+
+
+    
         <script type="text/javascript" src="../GlobalJavascript/Date.js" ></script>
     <style type="text/css"> </style>
     <meta charset="utf-8">
@@ -557,8 +566,18 @@
       </div>
       
 
+      <div id="contentFlow" class="ContentFlow">
+            <div class="loadIndicator"><div class="indicator"></div></div>
+            <div class="flow">
+                <img class="item" src="./FoodImages/cocacola.png" title="Your_Image_Title"/>
+                <img class="item" src="./FoodImages/chamucagif.gif" title="Your_Image_Title"/>
+                <img class="item" src="./FoodImages/tremocos.png" title="Your_Image_Title"/>
+
+                <!-- Add as many items as you like. -->
+            </div>
+            <div class="globalCaption"></div>
+        </div>
       
-      <div id="botaomusica" style="background-color:#FFFFFF; height:50px; width:50px; margin-top:200px"> </div>
       
       <div id="rodapeMusic">
         <div class="RodapeIcon" style="background-color:  #00A2E8" >
