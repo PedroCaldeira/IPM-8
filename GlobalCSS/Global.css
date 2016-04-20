@@ -8,17 +8,19 @@
   position:relative;
   background-image:url("../GlobalImages/Background.jpg");
   background-size: 100% 100%;
+  z-index: 0;
 
 
 }
 
 #Pedir{
+
   display:none;
 }
 
 #Music{
    background-image:url("../GlobalImages/musicbackground.png");
-  display:none;
+   margin-top:100px;
 }
 
 #cabecalho{
@@ -33,7 +35,9 @@
 
 
 }
-
+.coverflow{
+  margin-top:150px;
+}
 #cabecalhoPrincipal{
   height: 5.555%;
   width: 100%;
