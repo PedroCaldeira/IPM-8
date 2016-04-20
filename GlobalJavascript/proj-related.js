@@ -403,3 +403,24 @@ function deactivateButton(){
             document.getElementById(arguments[i]).style.backgroundColor="green";
     }
 }
+
+function addToQueue2(identity, nome){
+    var div=$('<div class="QueueIcon" id="'+identity+'queue" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span></div>')
+    $("#Qsongs").append(div);
+}
+
+function addToQueue(identity){
+
+	var id=identity.replace(" ","_")
+	addToTicket2(id, identity,price);
+}
+
+$(document).ready(function(e){
+    $('.search-panel .dropdown-menu').find('a').click(function(e) {
+        e.preventDefault();
+        var param = $(this).attr("href").replace("#","");
+        var concept = $(this).text();
+        $('.search-panel span#search_concept').text(concept);
+        $('.input-group #search_param').val(param);
+    });
+});

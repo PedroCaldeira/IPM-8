@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../GlobalCSS/Global.css">
     <script language="JavaScript" type="text/javascript" src="../ContentFlow/contentflow.js"></script>
     <link rel="stylesheet" href="../ContentFlow/contentflow.css">
+    <link rel="stylesheet" href="http://bootsnipp.com/snippets/featured/search-panel-with-filters">
     <script tyle="text/javascript">
         var cf = new ContentFlow('contentFlow', {reflectionColor: "#000000"});
     </script>
@@ -557,6 +558,31 @@
       
       <div class="navBar" style="background-color:#FF6666">
         <span id = "Title" style="display: inline-block; padding-left: 35px">Escolher Música </span>
+       <div class="input-group" style="    margin-right: 75px; top: -5px;">
+                        <div   class="input-group-btn search-panel">
+                            <button type="button" style="font-size:30px"class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span id="search_concept">Filter by</span> <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a href="#contains">Contains</a></li>
+                              <li><a href="#its_equal">It's equal</a></li>
+                              <li><a href="#greather_than">Greather than ></a></li>
+                              <li><a href="#less_than">Less than < </a></li>
+                              <li class="divider"></li>
+                              <li><a href="#all">Anything</a></li>
+                            </ul>
+                        </div>
+                        <input type="hidden" name="search_param" value="all" id="search_param">         
+                        <input type="text" class="form-control" name="x" placeholder="Search term..." style="
+                              font-size: 30px;
+                              width: 300px;
+                              margin-top: 21.8px;
+                              height: 56px;
+                          ">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"style="font-size:30px"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
         <button style="background-color:#FF6666" id="shoppingcartmusic" type="button" class="btn btn-info" onclick="toggleVisible(Q)"><img id="paperticketmusic" style="height: 70px; width: 70px" src="./MusicImages/queue.png" /> <img src="./FoodImages/down.png" style="height: 20px; width: 20px" /></button>
       </div>
       
@@ -579,12 +605,12 @@
                 <img class="item" src="./MusicImages/anamalhoa.jpg" title="Ana Malhoa - Comecar no A"/>
                 <img class="item" src="./MusicImages/anamalhoa.jpg" title="Ana Malhoa - Gimmi More"/>
                 <img class="item" src="./MusicImages/anamalhoa.jpg" title="Ana Malhoa - Brinca Comigo Pai"/>
-                <img class="item" src="./MusicImages/anamalhoa.jpg" title="Ana Malhoa - Angel"/
+                <img class="item" src="./MusicImages/anamalhoa.jpg" title="Ana Malhoa - Angel"/>
                 <img class="item" src="./MusicImages/jasonderulo.jpg" title="Jason Derulo - Watcha Say"/>
                 <img class="item" src="./MusicImages/jasonderulo.jpg" title="Jason Derulo - Ridin' Solo'"/>
                 <img class="item" src="./MusicImages/jasonderulo.jpg" title="Jason Derulo - In My Head"/>
                 <img class="item" src="./MusicImages/jasonderulo.jpg" title="Jason Derulo - The Sky's the Limit'"/>
-                <img class="item" src="./MusicImages/mcbinladen.jpg" title="MC Bin Laden - Ta Tranquilo Ta Favoravel"/>
+                <img onclick="addToQueue(tatranquilo)" class="item" src="./MusicImages/mcbinladen.jpg" title="MC Bin Laden - Ta Tranquilo Ta Favoravel"/>
                 <img class="item" src="./MusicImages/mcbinladen.jpg" title="MC Bin Laden - Bin Laden Nao Morreu"/>
                 <img class="item" src="./MusicImages/mcbinladen.jpg" title="MC Bin Laden - Tava Muito Louco"/>
                 <img class="item" src="./MusicImages/metallica.jpg" title="Metallica - Enter Sandman"/>
