@@ -6,9 +6,9 @@ function getTime(){
       hours="0"+hours;
     if (minutes<10)
       minutes="0"+minutes;
-    document.getElementById("Time").textContent=hours+":"+minutes;
-    document.getElementById("TimeFood").textContent=hours+":"+minutes;
-    document.getElementById("TimeMusic").textContent=hours+":"+minutes;
-    document.getElementById("TimeProfile").textContent=hours+":"+minutes;
+    array=document.getElementsByClassName("Time")
+    for (var i = array.length - 1; i >= 0; i--) {
+      array[i].textContent=hours+":"+minutes;
+    }
     t=setTimeout('getTime()',1000);  
   }

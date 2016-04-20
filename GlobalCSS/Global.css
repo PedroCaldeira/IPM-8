@@ -13,7 +13,6 @@
 }
 
 #Pedir{
-   background-image:url("../GlobalImages/Background.jpg");
   display:none;
 }
 
@@ -21,6 +20,7 @@
    background-image:url("../GlobalImages/musicbackground.png");
   display:none;
 }
+
 #cabecalho{
 	height: 5.555%;
 	width: 100%;
@@ -46,8 +46,20 @@
 
 
 }
+#cabecalhoMusica{
+  height: 5.555%;
+  width: 100%;
+  text-align: left;
+  font-size:40px;
+  color: white;
+  position:relative;
+  background-color:black;
+  opacity: 0.8;
 
-#Name{
+
+}
+
+.Name{
   position: relative;
   left: 20px;
   float: left;
@@ -55,32 +67,16 @@
   text-align:left;
 
 }
-#Time{
+.Time{
 	float: left;
   width:33.33333%;
   text-align:center;
 }
-#TimeFood{
-	float: left;
-  width:33.33333%;
-  text-align:center;
-}
-#TimeMusic{
-	float: left;
-  width:33.33333%;
-  text-align:center;
-}
-#TimeProfile{
-	float: left;
-  width:33.33333%;
-  text-align:center;
-}
-
 #Cenas{
   position: relative;
   right: 20px;
   float: right;
-  width:6%;
+  width:7%;
 	text-align: right;
   margin-bottom: 9px;
   height: 100%;
@@ -96,6 +92,16 @@
 
 
 }
+#rodapeMusic{
+  height: 65px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left:0;
+
+
+}
+
 .RodapeIcon{
   height:60px;
   width:60px;
