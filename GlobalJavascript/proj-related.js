@@ -428,14 +428,22 @@ function deactivateButton(){
 }
 
 function addToQueue2(identity, nome){
-    var div=$('<div class="QueueIcon" id="'+identity+'queue" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span></div>')
+    var div=$('<div class="QueueIcon" id="'+identity+'" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span></div>')
     $("#Qsongs").append(div);
 }
 
-function addToQueue(identity){
-
-	var id=identity.replace(" ","_")
-	addToQueue2(id, identity);
+function addToQueue(){
+    var identity=document.getElementById("photos-name").innerHTML;
+    var id=identity.replace(" ","_");
+    for(var i=0;i<20;i++)
+        id=id.replace(" ","_");
+    
+    console.log($("#"+id).parent("#Qsongs").length);
+    console.log(("#"+id));
+    if ( $("#"+id).parent("#Qsongs").length == 0 ){
+           
+        addToQueue2(id, identity);
+    }
 }
 
 
