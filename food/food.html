@@ -2,6 +2,21 @@
 <html>
   <head>
     <Title>BarISTa - Pedir</Title>
+    <script type="text/javascript" src="../GlobalJavascript/visuals.js" ></script>
+    <link rel="stylesheet" href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
+
+        <!-- Optional: Reflection -->
+    <script type="text/javascript" src="coverflow/reflection.js"></script>
+
+    <!-- interpolate, depends on jQ 1.8.0+ -->
+    <script src="coverflow/jquery.interpolate.min.js"></script>
+
+    <!-- Coverflow -->
+    <script src="coverflow/jquery.coverflow.js"></script>
+    <script src="coverflow/coverflow.js"></script>
+
     <link rel="stylesheet" type="text/css" href="../jquery.tzCheckbox/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="../jquery.tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -45,7 +60,7 @@
       </div>
       
       <div class="InitIcon" style="background-color: #FB3742">
-        <a onclick="hide(menuPrincipal); show(Music)"><img src="../GlobalImages/Music-icon.png" style="margin-top:-10px;width:300px;height:300px"/></a>
+        <a onclick="hide(menuPrincipal); show(Music);"><img src="../GlobalImages/Music-icon.png" style="margin-top:-10px;width:300px;height:300px"/></a>
       </div>
       
       <div class="InitIcon" style="background-color: #e60000">
@@ -592,6 +607,7 @@
       </div>
       
 
+<<<<<<< HEAD
       <div id="contentFlow" class="ContentFlow"style="margin-top:150px">
             <div class="loadIndicator"><div class="indicator"></div></div>
             <div class="flow">
@@ -624,7 +640,26 @@
             </div>
             <div class="globalCaption"></div>
         </div>
+=======
+>>>>>>> master
       
+      <div class="coverflow">
+        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/><label></div>
+        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
+        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
+        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
+        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
+        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
+        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
+        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
+        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
+        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
+        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
+       
+    </div>
+
+
+    
       
       <div id="rodapeMusic">
         <div class="RodapeIcon" style="background-color:  #00A2E8" >
@@ -646,11 +681,11 @@
     <script src="../coverflow-master/jquery.coverflow.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../GlobalJavascript/Date.js" ></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>-->
     <script type="text/javascript" src="../akquinet-jquery-toastmessage-plugin-6f5d7bf/src/main/javascript/jquery.toastmessage.js" ></script>
     <script src="../jquery.tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.js"></script>
     <script src="../jquery.tzCheckbox/js/script.js"></script>
-    <script type="text/javascript" src="../GlobalJavascript/visuals.js" ></script>
+
     <script type="text/javascript" src="../GlobalJavascript/buttons.js" ></script>
     <script type="text/javascript" src="../GlobalJavascript/proj-related.js" ></script>
 
@@ -663,6 +698,11 @@
             stayTime : 1000
         });
       }
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.coverflow').coverflow();
+        });
     </script>
     <script type="text/javascript">window.onload = getTime();</script>
 </body>

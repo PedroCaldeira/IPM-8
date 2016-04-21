@@ -317,7 +317,7 @@ $(document).ready(function () {
         else{
             document.getElementById("DonePersoPizza").style.pointerEvents="none";
             document.getElementById("DonePersoPizza").style.opacity=0.3;
-						document.getElementById("DonePersoPizza").style.backgroundColor="green";
+			document.getElementById("DonePersoPizza").style.backgroundColor="green";
         }
         if (cnt==maxAllowed){
             document.getElementById("NrIngredientesPizza").style.color="#D20000";
@@ -340,6 +340,10 @@ $(document).ready(function () {
     });
 });
 
+$(window).load(function(){
+    hide(Music);
+    document.getElementById("Music").style.marginTop="0px";
+})
 
 
 
