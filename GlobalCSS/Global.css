@@ -97,6 +97,15 @@
 
 
 }
+#searchResetButton{
+  height:50px;
+  width:50px;
+  position:relative;
+  left:170px;
+  top:-10px; 
+  pointer-events:none;
+  opacity:0.5;
+}
 #rodapeMusic{
   height: 65px;
   width: 100%;

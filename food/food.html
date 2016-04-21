@@ -572,7 +572,7 @@
       
       <div class="navBar" style="background-color:#298C2C">
         <span id = "Title" style="display: inline-block; padding-left: 35px">Escolher Música </span>
-        <img src="./FoodImages/redcross.png" style="height:50px;width:50px;position:relative;left:170px;top:-10px;"onclick="cancelSearch()"/>
+        <img id = "searchResetButton" src="./FoodImages/redcross.png" onclick="cancelSearch()"/>
        <div class="input-group" style="    margin-right: 75px; top: -5px;">
             
                         <div   class="input-group-btn search-panel">
@@ -595,7 +595,7 @@
                               height: 56px;
                           ">
                             <span class="input-group-btn">
-                            <button class="btn btn-default" onclick="searchCover()" type="button"style="font-size:30px"><span class="glyphicon glyphicon-search"></span></button>
+                            <button class="btn btn-default" onclick="searchCover();enableErase();" type="button"style="font-size:30px"><span class="glyphicon glyphicon-search"></span></button>
                         </span>
                     </div>
         <button style="background-color:#298C2C" id="shoppingcartmusic" type="button" class="btn btn-info" onclick="toggleVisible(Q);toggleTab(shoppingcartmusic)"><img id="paperticketmusic" style="height: 70px; width: 70px" src="./MusicImages/whitequeue.png" /> <img id="musicArrow" src="./FoodImages/down.png" style="height: 20px; width: 20px" /></button>
@@ -609,58 +609,58 @@
        
       <div id="musicList" style="display:none">
         <div data-album="levels" data-genre="house" data-artist="avicii" data-song="levels" class="cover"><img data-name="Avicii - Levels" src="./MusicImages/avicii.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Nada é proíbido" class="cover"><img data-name="Ana Malhoa - Nada é proíbido" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Já não sei o que sinto" class="cover"><img data-name="Ana Malhoa - Já não sei o que sinto" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Minha alma linda" class="cover"><img data-name="Ana Malhoa - Minha alma linda" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Tu és o fogo" class="cover"><img data-name="Ana Malhoa - Tu és o fogo" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Quente Desejo" class="cover"><img data-name="Ana Malhoa - Quente Desejo" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Contigo vou Vibrar" class="cover"><img data-name="Ana Malhoa - Contigo vou Vibrar" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Comecar no A" class="cover"><img data-name="Ana Malhoa - Comecar no A" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Gimmi More" class="cover"><img data-name="Ana Malhoa - Gimmi More" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Brinca comigo pai" class="cover"><img data-name="Ana Malhoa - Brinca comigo pai" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Angel" class="cover"><img data-name="Ana Malhoa - Angel" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="jason derulo" data-genre="pop" data-artist="jason derulo" data-song="Whatcha Say" class="cover"><img data-name="Jason Derulo - Whatcha Say" src="./MusicImages/jasonderulo.jpg"/></div>
-        <div data-album="jason derulo" data-genre="pop" data-artist="jason derulo" data-song="ridin solo" class="cover"><img data-name="Jason Derulo - Ridin Solo" src="./MusicImages/jasonderulo.jpg"/></div>
-        <div data-album="jason derulo" data-genre="pop" data-artist="jason derulo" data-song="In my Head" class="cover"><img data-name="Jason Derulo - In my Head" src="./MusicImages/jasonderulo.jpg"/></div>
-        <div data-album="jason derulo" data-genre="pop" data-artist="jason derulo" data-song="The Skys the limit" class="cover"><img data-name="Jason Derulo - The Skys the limit" src="./MusicImages/jasonderulo.jpg"/></div>
-        <div data-album="ta tranquilo" data-genre="funk" data-artist="mc bin laden" data-song="ta tranquilo" class="cover"><img data-name="MC Bin Laden - Ta Tranquilo " src="./MusicImages/mcbinladen.jpg"/></div>
-        <div data-album="ta tranquilo" data-genre="funk" data-artist="mc bin laden" data-song="bin laden nao morreu"  class="cover"><img data-name="MC Bin Laden - Bin Laden nao Morreu" src="./MusicImages/mcbinladen.jpg"/></div>
-        <div data-album="ta tranquilo" data-genre="funk" data-artist="mc bin laden" data-song="tava muito Louco" class="cover"><img data-name="MC Bin Laden - Tava muito Louco" src="./MusicImages/mcbinladen.jpg"/></div>
-        <div data-album="black album" data-genre="metal" data-artist="metallica" data-song="Enter Sandman" class="cover"><img data-name="Metallica - Enter Sandman" src="./MusicImages/metallica.jpg"/></div>
-        <div data-album="black album" data-genre="metal" data-artist="metallica" data-song="Nothing Else Matters" class="cover"><img data-name="Metallica - Nothing Else Matters" src="./MusicImages/metallica.jpg"/></div>
-        <div data-album="black album" data-genre="metal" data-artist="metallica" data-song="King Nothing" class="cover"><img data-name="Metallica - King Nothing" src="./MusicImages/metallica.jpg"/></div>
-        <div data-album="dark side of the moon" data-genre="rock" data-artist="pink floyd" data-song="Money" class="cover"><img data-name="Pink Floyd - Money" src="./MusicImages/pinkfloyd.jpg"/></div>
-        <div data-album="dark side of the moon" data-genre="rock" data-artist="pink floyd" data-song="Brain Damage" class="cover"><img data-name="Pink Floyd - Brain Damage" src="./MusicImages/pinkfloyd.jpg"/></div>
-        <div data-album="dark side of the moon" data-genre="rock" data-artist="pink floyd" data-song="Eclipse" class="cover"><img data-name="Pink Floyd - Eclipse" src="./MusicImages/pinkfloyd.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="nada_e_proíbido" class="cover"><img data-name="Ana Malhoa - Nada é proíbido" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="ja_nao_sei_o_que_sinto" class="cover"><img data-name="Ana Malhoa - Já não sei o que sinto" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="minha_alma_linda" class="cover"><img data-name="Ana Malhoa - Minha alma linda" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="tu_es_o_fogo" class="cover"><img data-name="Ana Malhoa - Tu és o fogo" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="quente_desejo" class="cover"><img data-name="Ana Malhoa - Quente Desejo" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="contigo_vou_vibrar" class="cover"><img data-name="Ana Malhoa - Contigo vou Vibrar" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="comecar_no_a" class="cover"><img data-name="Ana Malhoa - Comecar no A" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="gimmi_more" class="cover"><img data-name="Ana Malhoa - Gimmi More" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="brinca_comigo_pai" class="cover"><img data-name="Ana Malhoa - Brinca comigo pai" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="angel" class="cover"><img data-name="Ana Malhoa - Angel" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="jason_derulo" data-genre="pop" data-artist="jason_derulo" data-song="whatcha_say" class="cover"><img data-name="Jason Derulo - Whatcha Say" src="./MusicImages/jasonderulo.jpg"/></div>
+        <div data-album="jason_derulo" data-genre="pop" data-artist="jason_derulo" data-song="ridin_solo" class="cover"><img data-name="Jason Derulo - Ridin Solo" src="./MusicImages/jasonderulo.jpg"/></div>
+        <div data-album="jason_derulo" data-genre="pop" data-artist="jason_derulo" data-song="in_my_head" class="cover"><img data-name="Jason Derulo - In my Head" src="./MusicImages/jasonderulo.jpg"/></div>
+        <div data-album="jason_derulo" data-genre="pop" data-artist="jason_derulo" data-song="the_skys_the_limit" class="cover"><img data-name="Jason Derulo - The Skys the limit" src="./MusicImages/jasonderulo.jpg"/></div>
+        <div data-album="ta_tranquilo" data-genre="funk" data-artist="mc_bin_laden" data-song="ta_tranquilo" class="cover"><img data-name="MC Bin Laden - Ta Tranquilo " src="./MusicImages/mcbinladen.jpg"/></div>
+        <div data-album="ta_tranquilo" data-genre="funk" data-artist="mc_bin_laden" data-song="bin_laden_nao_morreu"  class="cover"><img data-name="MC Bin Laden - Bin Laden nao Morreu" src="./MusicImages/mcbinladen.jpg"/></div>
+        <div data-album="ta_tranquilo" data-genre="funk" data-artist="mc_bin_laden" data-song="tava_muito_Louco" class="cover"><img data-name="MC Bin Laden - Tava muito Louco" src="./MusicImages/mcbinladen.jpg"/></div>
+        <div data-album="black_album" data-genre="metal" data-artist="metallica" data-song="enter_sandman" class="cover"><img data-name="Metallica - Enter Sandman" src="./MusicImages/metallica.jpg"/></div>
+        <div data-album="black_album" data-genre="metal" data-artist="metallica" data-song="nothing_else_matters" class="cover"><img data-name="Metallica - Nothing Else Matters" src="./MusicImages/metallica.jpg"/></div>
+        <div data-album="black_album" data-genre="metal" data-artist="metallica" data-song="king_nothing" class="cover"><img data-name="Metallica - King Nothing" src="./MusicImages/metallica.jpg"/></div>
+        <div data-album="dark_side_of_the_moon" data-genre="rock" data-artist="pink floyd" data-song="money" class="cover"><img data-name="Pink Floyd - Money" src="./MusicImages/pinkfloyd.jpg"/></div>
+        <div data-album="dark_side_of_the_moon" data-genre="rock" data-artist="pink floyd" data-song="brain_damage" class="cover"><img data-name="Pink Floyd - Brain Damage" src="./MusicImages/pinkfloyd.jpg"/></div>
+        <div data-album="dark_side_of_the_moon" data-genre="rock" data-artist="pink floyd" data-song="eclipse" class="cover"><img data-name="Pink Floyd - Eclipse" src="./MusicImages/pinkfloyd.jpg"/></div>
        </div> 
        
       
       
       <div id="lecover" class="coverflow">
         <div data-album="levels" data-genre="house" data-artist="avicii" data-song="Levels" class="cover"><img data-name="Avicii - Levels" src="./MusicImages/avicii.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Nada é proíbido" class="cover"><img data-name="Ana Malhoa - Nada é proíbido" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Já não sei o que sinto" class="cover"><img data-name="Ana Malhoa - Já não sei o que sinto" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Minha alma linda" class="cover"><img data-name="Ana Malhoa - Minha alma linda" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Tu és o fogo" class="cover"><img data-name="Ana Malhoa - Tu és o fogo" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Quente Desejo" class="cover"><img data-name="Ana Malhoa - Quente Desejo" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Contigo vou Vibrar" class="cover"><img data-name="Ana Malhoa - Contigo vou Vibrar" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Comecar no A" class="cover"><img data-name="Ana Malhoa - Comecar no A" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Gimmi More" class="cover"><img data-name="Ana Malhoa - Gimmi More" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Brinca comigo pai" class="cover"><img data-name="Ana Malhoa - Brinca comigo pai" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="exotica" data-genre="pimba" data-artist="ana malhoa" data-song="Angel" class="cover"><img data-name="Ana Malhoa - Angel" src="./MusicImages/anamalhoa.jpg"/></div>
-        <div data-album="jason derulo" data-genre="pop" data-artist="jason derulo" data-song="Whatcha Say" class="cover"><img data-name="Jason Derulo - Whatcha Say" src="./MusicImages/jasonderulo.jpg"/></div>
-        <div data-album="jason derulo" data-genre="pop" data-artist="jason derulo" data-song="Ridin Solo" class="cover"><img data-name="Jason Derulo - Ridin Solo" src="./MusicImages/jasonderulo.jpg"/></div>
-        <div data-album="jason derulo" data-genre="pop" data-artist="jason derulo" data-song="In my Head" class="cover"><img data-name="Jason Derulo - In my Head" src="./MusicImages/jasonderulo.jpg"/></div>
-        <div data-album="jason derulo" data-genre="pop" data-artist="jason derulo" data-song="The Skys the limit" class="cover"><img data-name="Jason Derulo - The Skys the limit" src="./MusicImages/jasonderulo.jpg"/></div>
-        <div data-album="ta tranquilo" data-genre="funk" data-artist="mc bin laden" data-song="Ta Tranquilo" class="cover"><img data-name="MC Bin Laden - Ta Tranquilo " src="./MusicImages/mcbinladen.jpg"/></div>
-        <div data-album="ta tranquilo" data-genre="funk" data-artist="mc bin laden" data-song="Bin Laden nao Morreu"  class="cover"><img data-name="MC Bin Laden - Bin Laden nao Morreu" src="./MusicImages/mcbinladen.jpg"/></div>
-        <div data-album="ta tranquilo" data-genre="funk" data-artist="mc bin laden" data-song="Tava muito Louco" class="cover"><img data-name="MC Bin Laden - Tava muito Louco" src="./MusicImages/mcbinladen.jpg"/></div>
-        <div data-album="black album" data-genre="metal" data-artist="metallica" data-song="Enter Sandman" class="cover"><img data-name="Metallica - Enter Sandman" src="./MusicImages/metallica.jpg"/></div>
-        <div data-album="black album" data-genre="metal" data-artist="metallica" data-song="Nothing Else Matters" class="cover"><img data-name="Metallica - Nothing Else Matters" src="./MusicImages/metallica.jpg"/></div>
-        <div data-album="black album" data-genre="metal" data-artist="metallica" data-song="King Nothing" class="cover"><img data-name="Metallica - King Nothing" src="./MusicImages/metallica.jpg"/></div>
-        <div data-album="dark side of the moon" data-genre="rock" data-artist="pink floyd" data-song="Money" class="cover"><img data-name="Pink Floyd - Money" src="./MusicImages/pinkfloyd.jpg"/></div>
-        <div data-album="dark side of the moon" data-genre="rock" data-artist="pink floyd" data-song="Brain Damage" class="cover"><img data-name="Pink Floyd - Brain Damage" src="./MusicImages/pinkfloyd.jpg"/></div>
-        <div data-album="dark side of the moon" data-genre="rock" data-artist="pink floyd" data-song="Eclipse" class="cover"><img data-name="Pink Floyd - Eclipse" src="./MusicImages/pinkfloyd.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="Nada é proíbido" class="cover"><img data-name="Ana Malhoa - Nada é proíbido" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="Já não sei o que sinto" class="cover"><img data-name="Ana Malhoa - Já não sei o que sinto" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="Minha alma linda" class="cover"><img data-name="Ana Malhoa - Minha alma linda" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="Tu és o fogo" class="cover"><img data-name="Ana Malhoa - Tu és o fogo" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="Quente Desejo" class="cover"><img data-name="Ana Malhoa - Quente Desejo" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="Contigo vou Vibrar" class="cover"><img data-name="Ana Malhoa - Contigo vou Vibrar" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="Comecar no A" class="cover"><img data-name="Ana Malhoa - Comecar no A" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="Gimmi More" class="cover"><img data-name="Ana Malhoa - Gimmi More" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="Brinca comigo pai" class="cover"><img data-name="Ana Malhoa - Brinca comigo pai" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="Angel" class="cover"><img data-name="Ana Malhoa - Angel" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div data-album="jason_derulo" data-genre="pop" data-artist="jason_derulo" data-song="Whatcha Say" class="cover"><img data-name="Jason Derulo - Whatcha Say" src="./MusicImages/jasonderulo.jpg"/></div>
+        <div data-album="jason_derulo" data-genre="pop" data-artist="jason_derulo" data-song="Ridin Solo" class="cover"><img data-name="Jason Derulo - Ridin Solo" src="./MusicImages/jasonderulo.jpg"/></div>
+        <div data-album="jason_derulo" data-genre="pop" data-artist="jason_derulo" data-song="In my Head" class="cover"><img data-name="Jason Derulo - In my Head" src="./MusicImages/jasonderulo.jpg"/></div>
+        <div data-album="jason_derulo" data-genre="pop" data-artist="jason_derulo" data-song="The Skys the limit" class="cover"><img data-name="Jason Derulo - The Skys the limit" src="./MusicImages/jasonderulo.jpg"/></div>
+        <div data-album="ta_tranquilo" data-genre="funk" data-artist="mc_bin_laden" data-song="Ta Tranquilo" class="cover"><img data-name="MC Bin Laden - Ta Tranquilo " src="./MusicImages/mcbinladen.jpg"/></div>
+        <div data-album="ta_tranquilo" data-genre="funk" data-artist="mc_bin_laden" data-song="Bin Laden nao Morreu"  class="cover"><img data-name="MC Bin Laden - Bin Laden nao Morreu" src="./MusicImages/mcbinladen.jpg"/></div>
+        <div data-album="ta_tranquilo" data-genre="funk" data-artist="mc_bin_laden" data-song="Tava muito Louco" class="cover"><img data-name="MC Bin Laden - Tava muito Louco" src="./MusicImages/mcbinladen.jpg"/></div>
+        <div data-album="black_album" data-genre="metal" data-artist="metallica" data-song="Enter Sandman" class="cover"><img data-name="Metallica - Enter Sandman" src="./MusicImages/metallica.jpg"/></div>
+        <div data-album="black_album" data-genre="metal" data-artist="metallica" data-song="Nothing Else Matters" class="cover"><img data-name="Metallica - Nothing Else Matters" src="./MusicImages/metallica.jpg"/></div>
+        <div data-album="black_album" data-genre="metal" data-artist="metallica" data-song="King Nothing" class="cover"><img data-name="Metallica - King Nothing" src="./MusicImages/metallica.jpg"/></div>
+        <div data-album="dark_side_of_the_moon" data-genre="rock" data-artist="pink floyd" data-song="Money" class="cover"><img data-name="Pink Floyd - Money" src="./MusicImages/pinkfloyd.jpg"/></div>
+        <div data-album="dark_side_of_the_moon" data-genre="rock" data-artist="pink floyd" data-song="Brain Damage" class="cover"><img data-name="Pink Floyd - Brain Damage" src="./MusicImages/pinkfloyd.jpg"/></div>
+        <div data-album="dark_side_of_the_moon" data-genre="rock" data-artist="pink floyd" data-song="Eclipse" class="cover"><img data-name="Pink Floyd - Eclipse" src="./MusicImages/pinkfloyd.jpg"/></div>
 
 
 
@@ -740,7 +740,7 @@
           outerCss:   { opacity: .1 },
           change:      function(event, cover) {
             var img = $(cover).children().andSelf().filter('img').last();
-            $('#photos-name').text(img.data('name') || 'unknown');
+            $('#photos-name').text(img.data('name') || '');
           }});
         });
     </script>

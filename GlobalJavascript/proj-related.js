@@ -477,8 +477,8 @@ $(document).ready(function(e){
 function searchCover(){
     var term = document.getElementById("search_concept").innerHTML.toLowerCase();
     var input = document.getElementById("searchBox").value.toLowerCase();
-    console.log(term);
-    console.log(input);
+    for(var i=0;i<20;i++)
+        input=input.replace(" ","_");
     $(".coverflow").empty();
      
     if (input==""){
@@ -504,12 +504,19 @@ function searchCover(){
         return;
     }
     var result= $("#musicList").find("div[data-"+term+"^="+input+"]");
-    console.log(result)
     
     
     for (var i=0; i<result.length; i++)
         $("#lecover").append(result[i].cloneNode(true))
     $("#lecover").coverflow("index",0) 
+    if (result.length==0){
+        document.getElementById("addMusic").disabled=true;
+        document.getElementById("addMusic").style.opacity=0.6;
+    }
+    else{
+        document.getElementById("addMusic").disabled=false;
+        document.getElementById("addMusic").style.opacity=1;
+     }
     $("#lecover").coverflow("refresh");
 }
 
@@ -527,4 +534,16 @@ function cancelSearch(){
     $("#lecover").coverflow("refresh");
     var term = document.getElementById("searchBox").value="";
     $(".coverflow").coverflow("index",10);
+    document.getElementById("searchResetButton").style.pointerEvents="none";
+    document.getElementById("searchResetButton").style.opacity=0.5;
+    
+}
+function enableErase(){
+    var input = document.getElementById("searchBox").value.toLowerCase();
+    console.log(input);
+    if (input!=""){
+        console.log("ayaaaaa")
+        document.getElementById("searchResetButton").style.pointerEvents="auto";
+        document.getElementById("searchResetButton").style.opacity=1;
+    }
 }
