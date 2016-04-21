@@ -6,7 +6,7 @@
   margin: auto;
   text-align: center;
   position:relative;
-  background-image:url("../GlobalImages/Background.jpg");
+  background-image:url("../GlobalImages/Main_Background.jpg");
   background-size: 100% 100%;
   z-index: 0;
 
@@ -14,12 +14,12 @@
 }
 
 #Pedir{
-
+  background-image:url("../GlobalImages/Background.jpg");
   display:none;
 }
 
 #Music{
-   background-image:url("../GlobalImages/musicbackground.png");
+   background-image:url("../GlobalImages/Music_Background.jpg");
    margin-top:100px;
 }
 
@@ -93,6 +93,7 @@
   position: absolute;
   bottom: 0;
   left:0;
+  margin-left:20px;
 
 
 }
@@ -101,7 +102,7 @@
   width: 100%;
   position: absolute;
   bottom: 0;
-  left:0;
+  margin-left:20px;
 
 
 }

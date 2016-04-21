@@ -92,7 +92,7 @@ function deactivateTab(id){
     }
     else if (id.id=="shoppingcartmusic"){
         changeImage(musicArrow, "./FoodImages/down.png", "./FoodImages/down.png");
-        id.style.backgroundColor='rgb(255, 102, 102)';
+        id.style.backgroundColor='rgb(41, 140, 44)';
         changeImage(paperticketmusic, "./MusicImages/whitequeue.png", "./MusicImages/whitequeue.png");
 
 
@@ -428,7 +428,12 @@ function deactivateButton(){
 }
 
 function addToQueue2(identity, nome){
-    var div=$('<div class="QueueIcon" id="'+identity+'" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span></div>')
+    if($("#Qsongs").children("div").length==0)
+        var div=$('<div class="QueueIcon" id="'+identity+'" style="display:inline-block ; text-align: left !important; margin-left:10px"><span style=" position: relative; left: 10px">'+nome+'</span><br><span style="float:left">4:20</span><span style="font-weight: 800;float:right;right:20px;position:relative;color: green;z-index:10000">  NOW PLAYING</span></div><hr>')
+    else if($("#Qsongs").children("div").length==1)
+        var div=$('<div class="QueueIcon" id="'+identity+'" style="display:inline-block ; text-align: left !important; margin-left:10px"><span style=" position: relative; left: 10px">'+nome+'</span><br><span style="font-weight: 800;float:right;right:20px;position:relative;color: #03A9F4;">UP NEXT</span></div><hr>')
+    else 
+        var div=$('<div class="QueueIcon" id="'+identity+'" style="display:inline-block ; text-align: left !important; margin-left:10px"><span style=" position: relative; left: 10px">'+nome+'</span></div><hr>')
     $("#Qsongs").append(div);
 }
 
@@ -438,12 +443,13 @@ function addToQueue(){
     for(var i=0;i<20;i++)
         id=id.replace(" ","_");
     
-    console.log($("#"+id).parent("#Qsongs").length);
-    console.log(("#"+id));
     if ( $("#"+id).parent("#Qsongs").length == 0 ){
            
         addToQueue2(id, identity);
+        adicionarMusica();
     }
+    else
+        NaoadicionarMusica()
 }
 
 
@@ -466,3 +472,59 @@ $(document).ready(function(e){
         $('.input-group #search_param').val(param);
     });
 });
+
+
+function searchCover(){
+    var term = document.getElementById("search_concept").innerHTML.toLowerCase();
+    var input = document.getElementById("searchBox").value.toLowerCase();
+    console.log(term);
+    console.log(input);
+    $(".coverflow").empty();
+     
+    if (input==""){
+        var result= $("#musicList").find("div");
+        for (var i=0; i<result.length;i++)
+            $("#lecover").append(result[i].cloneNode(true))
+        $("#lecover").coverflow("refresh");
+        return;
+    }
+    if (term=="musica")
+        term="song"
+    else if (term=="artista")
+        term="artist"
+    else if (term=="genero")
+        term="genre";
+    else if (term=="album")
+        term="album"
+    else if (term=="qualquer"){
+        var result= $("#musicList").find("div");
+        for (var i=0; i<result.length;i++)
+            $("#lecover").append(result[i].cloneNode(true))
+        $("#lecover").coverflow("refresh");
+        return;
+    }
+    var result= $("#musicList").find("div[data-"+term+"^="+input+"]");
+    console.log(result)
+    
+    
+    for (var i=0; i<result.length; i++)
+        $("#lecover").append(result[i].cloneNode(true))
+    $("#lecover").coverflow("index",0) 
+    $("#lecover").coverflow("refresh");
+}
+
+
+function cancelSearch(){
+     var term = document.getElementById("search_concept").innerHTML.toLowerCase();
+    var input = document.getElementById("searchBox").value.toLowerCase();
+    console.log(term);
+    console.log(input);
+    $(".coverflow").empty();
+    
+    var result= $("#musicList").find("div");
+    for (var i=0; i<result.length;i++)
+        $("#lecover").append(result[i].cloneNode(true))
+    $("#lecover").coverflow("refresh");
+    var term = document.getElementById("searchBox").value="";
+    $(".coverflow").coverflow("index",10);
+}
