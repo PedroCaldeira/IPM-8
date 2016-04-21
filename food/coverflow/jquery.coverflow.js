@@ -45,7 +45,7 @@
 			enableKeyboard:		'both',			// true, false, 'both', 'focus', 'hover', 'none'
 			enableClick:		true,
 			enableWheel:		true,
-			index:				0,
+			index:				5,
 			innerAngle:			-75,
 			innerCss:			undefined,
 			innerOffset:		100 / 3,
@@ -320,8 +320,7 @@
 					'z-index':				zIndex,
 					'-webkit-transform':	transform,
 					'-ms-transform':		transform,
-					'transform':			transform,
-					'display'				block
+					'transform':			transform
 				}));
 				
 				// Optional callback

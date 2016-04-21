@@ -328,7 +328,14 @@ form label{
     padding: 10px;
     border-radius: 4px;
 }
-
+#addMusic{
+     margin-left: 210px;
+     margin-top: 20px;
+    border: 1px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
 .button {
   display: inline-block;
   zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
@@ -436,3 +443,24 @@ form label{
   height:56px;
   margin-top:21.8px;
 }
+
+.dropdown-menu>li{
+  display:block;
+
+}
+
+.cover>img{
+  width:350px;
+  height:350px;
+}
+.cover>label{
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:20px;
+}
+
+#photos-info{
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 900;
+}
+

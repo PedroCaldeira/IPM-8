@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="../GlobalCSS/Global.css">
     <script language="JavaScript" type="text/javascript" src="../ContentFlow/contentflow.js"></script>
     <link rel="stylesheet" href="../ContentFlow/contentflow.css">
-    <link rel="stylesheet" href="http://bootsnipp.com/snippets/featured/search-panel-with-filters">
     <script tyle="text/javascript">
         var cf = new ContentFlow('contentFlow', {reflectionColor: "#000000"});
     </script>
@@ -576,15 +575,13 @@
        <div class="input-group" style="    margin-right: 75px; top: -5px;">
                         <div   class="input-group-btn search-panel">
                             <button type="button" style="font-size:30px"class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                <span id="search_concept">Filter by</span> <span class="caret"></span>
+                                <span id="search_concept">Musica</span> <span class="caret"></span>
                             </button>
-                            <ul class="dropdown-menu" role="menu">
-                              <li><a href="#contains">Contains</a></li>
-                              <li><a href="#its_equal">It's equal</a></li>
-                              <li><a href="#greather_than">Greather than ></a></li>
-                              <li><a href="#less_than">Less than < </a></li>
-                              <li class="divider"></li>
-                              <li><a href="#all">Anything</a></li>
+                            <ul class="dropdown-menu" role="menu" style="margin-top: -24px;">
+                              <li><a href="#musica">Musica</a></li>
+                              <li><a href="#genero">Genero</a></li>
+                              <li><a href="#artista">Artista</a></li>
+                              <li><a href="#album">Album</a></li>
                             </ul>
                         </div>
                         <input type="hidden" name="search_param" value="all" id="search_param">         
@@ -598,7 +595,7 @@
                             <button class="btn btn-default" type="button"style="font-size:30px"><span class="glyphicon glyphicon-search"></span></button>
                         </span>
                     </div>
-        <button style="background-color:#FF6666" id="shoppingcartmusic" type="button" class="btn btn-info" onclick="toggleVisible(Q)"><img id="paperticketmusic" style="height: 70px; width: 70px" src="./MusicImages/queue.png" /> <img src="./FoodImages/down.png" style="height: 20px; width: 20px" /></button>
+        <button style="background-color:#FF6666" id="shoppingcartmusic" type="button" class="btn btn-info" onclick="toggleVisible(Q);toggleTab(shoppingcartmusic)"><img id="paperticketmusic" style="height: 70px; width: 70px" src="./MusicImages/whitequeue.png" /> <img id="musicArrow" src="./FoodImages/down.png" style="height: 20px; width: 20px" /></button>
       </div>
       
       <div id = "Q">
@@ -607,20 +604,39 @@
       </div>
             
       <div class="coverflow">
-        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/><label></div>
-        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
-        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
-        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
-        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
-        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
-        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
-        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
-        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
-        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
-        <div class="cover"><img class="cover" data-name="Attic" src="coverflow/demo/attic.jpg"/></div>
+        <div class="cover"><img data-name="Avicii - Levels" src="./MusicImages/avicii.jpg"/></div>
+        <div class="cover"><img data-name="Ana Malhoa - Nada é proíbido" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div class="cover"><img data-name="Ana Malhoa - Já não sei o que sinto" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div class="cover"><img data-name="Ana Malhoa - Minha alma linda" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div class="cover"><img data-name="Ana Malhoa - Tu és o fogo" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div class="cover"><img data-name="Ana Malhoa - Quente Desejo" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div class="cover"><img data-name="Ana Malhoa - Contigo vou Vibrar" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div class="cover"><img data-name="Ana Malhoa - Comecar no A" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div class="cover"><img data-name="Ana Malhoa - Gimmi More" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div class="cover"><img data-name="Ana Malhoa - Brinca comigo pai" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div class="cover"><img data-name="Ana Malhoa - Angel" src="./MusicImages/anamalhoa.jpg"/></div>
+        <div class="cover"><img data-name="Jason Derulo - Whatcha Say" src="./MusicImages/jasonderulo.jpg"/></div>
+        <div class="cover"><img data-name="Jason Derulo - Ridin' Solo" src="./MusicImages/jasonderulo.jpg"/></div>
+        <div class="cover"><img data-name="Jason Derulo - In my Head" src="./MusicImages/jasonderulo.jpg"/></div>
+        <div class="cover"><img data-name="Jason Derulo - The Sky's the limit" src="./MusicImages/jasonderulo.jpg"/></div>
+        <div class="cover"><img data-name="MC Bin Laden - Ta Tranquilo Tá Favorável" src="./MusicImages/mcbinladen.jpg"/></div>
+        <div class="cover"><img data-name="MC Bin Laden - Bin Laden nao Morreu" src="./MusicImages/mcbinladen.jpg"/></div>
+        <div class="cover"><img data-name="MC Bin Laden - Tava muito Louco" src="./MusicImages/mcbinladen.jpg"/></div>
+        <div class="cover"><img data-name="Metallica - Enter Sandman" src="./MusicImages/metallica.jpg"/></div>
+        <div class="cover"><img data-name="Metallica - Nothing Else Matters" src="./MusicImages/metallica.jpg"/></div>
+        <div class="cover"><img data-name="Metallica - King Nothing" src="./MusicImages/metallica.jpg"/></div>
+        <div class="cover"><img data-name="Pink Floyd - Money" src="./MusicImages/pinkfloyd.jpg"/></div>
+        <div class="cover"><img data-name="Pink Floyd - Brain Damage" src="./MusicImages/pinkfloyd.jpg"/></div>
+        <div class="cover"><img data-name="Pink Floyd - Eclipse" src="./MusicImages/pinkfloyd.jpg"/></div>
+
+
+
        
     </div>
-
+  <div id="photos-info">
+      <div id="photos-name"></div>
+    </div>
+  <div id="AdicionarMusica"><button class="btn-danger" id="addMusic" onclick="enableblur(cabecalho,meio,rodape); show(ConfirmarApagar)"> Adicionar Música à Queue</button></div>
 
     
       
@@ -664,7 +680,13 @@
     </script>
     <script>
         $(document).ready(function() {
-            $('.coverflow').coverflow();
+            $('.coverflow').coverflow({index: 10,
+          selectedCss:  { opacity: 1  },
+          outerCss:   { opacity: .1 },
+          change:      function(event, cover) {
+            var img = $(cover).children().andSelf().filter('img').last();
+            $('#photos-name').text(img.data('name') || 'unknown');
+          }});
         });
     </script>
     <script type="text/javascript">window.onload = getTime();</script>

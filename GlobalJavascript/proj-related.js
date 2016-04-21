@@ -78,15 +78,26 @@ $(document).ready(function() {
     });
 
 function deactivateTab(id){
-    id.style.backgroundColor='rgb(0, 162, 232)';
+    
     id.style.color="white";
     id.style.height="106px";
     if (id.id=="shoppingcart"){
         changeImage(paperticket, "./FoodImages/paperticket.png", "./FoodImages/paperticket.png")
         changeImage(arrow, "./FoodImages/down.png", "./FoodImages/down.png")
+        id.style.backgroundColor='rgb(0, 162, 232)';
     }
-    else if (id.id=="filterbtn")
+    else if (id.id=="filterbtn"){
         changeImage(arrow1, "./FoodImages/down.png", "./FoodImages/down.png")
+        id.style.backgroundColor='rgb(0, 162, 232)';
+    }
+    else if (id.id=="shoppingcartmusic"){
+        changeImage(musicArrow, "./FoodImages/down.png", "./FoodImages/down.png");
+        id.style.backgroundColor='rgb(255, 102, 102)';
+        changeImage(paperticketmusic, "./MusicImages/whitequeue.png", "./MusicImages/whitequeue.png");
+
+
+
+    }
 }
 
 
@@ -99,7 +110,15 @@ function activateTab(id){
         changeImage(arrow, "./FoodImages/up.png", "./FoodImages/up.png")
     }
     else if (id.id=="filterbtn")
-        changeImage(arrow1, "./FoodImages/down.png", "./FoodImages/up.png")
+        changeImage(arrow1, "./FoodImages/up.png", "./FoodImages/up.png")
+    else if (id.id=="shoppingcartmusic"){
+        changeImage(musicArrow, "./FoodImages/up.png", "./FoodImages/up.png");
+        changeImage(paperticketmusic, "./MusicImages/queue.png", "./MusicImages/queue.png");
+    }
+        
+    
+        
+    
 }
 
 $(document).ready(function () {
@@ -416,8 +435,19 @@ function addToQueue2(identity, nome){
 function addToQueue(identity){
 
 	var id=identity.replace(" ","_")
-	addToTicket2(id, identity,price);
+	addToQueue2(id, identity);
 }
+
+
+$(document).ready(function(e){
+    $('.search-panel .dropdown-menu').find('a').click(function(e) {
+        e.preventDefault();
+        var param = $(this).attr("href").replace("#","");
+        var concept = $(this).text();
+        $('.search-panel span#search_concept').text(concept);
+        $('.input-group #search_param').val(param);
+    });
+});
 
 $(document).ready(function(e){
     $('.search-panel .dropdown-menu').find('a').click(function(e) {
