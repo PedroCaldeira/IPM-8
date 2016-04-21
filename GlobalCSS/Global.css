@@ -102,9 +102,9 @@
   width:50px;
   position:relative;
   left:170px;
-  top:-10px; 
+  top:-10px;
   pointer-events:none;
-  opacity:0.5;
+  opacity:0.0;
 }
 #rodapeMusic{
   height: 65px;
@@ -144,4 +144,8 @@
   height: 80px;
   margin: auto;
   float: left;
+}
+
+.dropdown-menu>li{
+  font-size: 30px;
 }
