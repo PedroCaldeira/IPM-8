@@ -498,9 +498,25 @@ function searchCover(){
         term="album"
     else if (term=="qualquer"){
         var result= $("#musicList").find("div");
-        for (var i=0; i<result.length;i++)
-            $("#lecover").append(result[i].cloneNode(true))
+        var j=0;
+        for (var i=0; i<result.length;i++){
+            
+            if ($(result[i]).data('album').indexOf(input) != -1 ||$(result[i]).data('artist').indexOf(input) != -1  ||$(result[i]).data('genre').indexOf(input) != -1  ||$(result[i]).data('song').indexOf(input) != -1  ){
+                $("#lecover").append(result[i].cloneNode(true));
+                j++;
+            }
+                
+        }
+        $("#lecover").coverflow({index:0})
         $("#lecover").coverflow("refresh");
+        if (j==0){
+        document.getElementById("addMusic").disabled=true;
+        document.getElementById("addMusic").style.opacity=0.6;
+        }
+        else{
+        document.getElementById("addMusic").disabled=false;
+        document.getElementById("addMusic").style.opacity=1;
+        }
         return;
     }
     var result= $("#musicList").find("div[data-"+term+"^="+input+"]");
@@ -536,6 +552,8 @@ function cancelSearch(){
     $(".coverflow").coverflow("index",10);
     document.getElementById("searchResetButton").style.pointerEvents="none";
     document.getElementById("searchResetButton").style.opacity=0.5;
+    document.getElementById("addMusic").disabled=false;
+    document.getElementById("addMusic").style.opacity=1;
     
 }
 function enableErase(){
