@@ -477,3 +477,98 @@ hr{
   background-image: linear-gradient(to right, rgba(0,0,0,0),rgba(0,0,0,1),rgba(0,0,0,0));
   margin-bottom: 0px;
 }
+
+
+#ProfilePictureFig{
+  text-align: center;
+  width:400px;
+  height:400px;
+  border-radius: 100%;
+  float:left;
+  margin-left: 150px;
+  margin-top: 75px;
+  background-color: #4d0099;
+  font-size: 40px;
+  color: black;
+  font-weight: 900;
+  display:inline-block;
+}
+
+#ProfilePicture{
+  width:380px;
+  height:380px;
+  vertical-align: middle;
+  display:inline-block;
+   vertical-align: middle;
+   border-radius: 100%;
+   margin:auto;
+   margin-top: 10px;
+}
+
+#PerfilTable{
+  float:right;
+  height: 650px;
+  width: 650px;
+  margin-right: 150px;
+
+}
+
+#PerfilTable>tr>td>a{
+
+}
+
+.PerfilCircle{
+  float:right;
+  height:300px;
+  width: 300px;
+  margin-top: 25px;
+  margin-right:25px;
+  background-color: black;
+  border-radius: 100%;
+  font-size:40px;
+}
+
+.PerfilCircle>img{
+  margin-left: 5px;
+  width:100%;
+  height:100%;
+}
+
+#alcoolemiaCaption{
+  margin-top: -150px;
+
+}
+
+.EcraPerfil{
+  width: 1000px;
+  height: 700px;
+  position: absolute;
+  left: 300px;
+  top: 100px;
+  background-color: white;
+  border: 5px solid black;
+  z-index: 20;
+  display:none;
+  font-size:40px;
+  border-radius:10px;
+
+}
+
+.EcraPerfilTitle{
+  padding-right: 45px;
+}
+
+.EcraPerfilBack{
+  width: 100%;
+  height: 80px;
+  border: 1px solid lightgray;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 80px;
+  font-size: 40px;
+  border-radius:10px;
+  background-color: #00A2E8;
+
+
+}
+

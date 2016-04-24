@@ -22,6 +22,10 @@
    background-image:url("../GlobalImages/Music_Background.jpg");
    margin-top:100px;
 }
+#Perfil{
+   background-image:url("../GlobalImages/Perfil_Background2.jpg");
+  display:none;
+}
 
 #cabecalho{
 	height: 5.555%;
@@ -62,6 +66,19 @@
 
 
 }
+#cabecalhoPerfil{
+  height: 5.555%;
+  width: 100%;
+  text-align: left;
+  font-size:40px;
+  color: white;
+  position:relative;
+  background-color:black;
+  opacity: 0.8;
+
+
+}
+
 
 .Name{
   position: relative;
@@ -116,6 +133,16 @@
 
 }
 
+#rodapePerfil{
+  height: 65px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin-left:20px;
+
+
+}
+
 .RodapeIcon{
   height:60px;
   width:60px;
@@ -149,3 +176,4 @@
 .dropdown-menu>li{
   font-size: 30px;
 }
+

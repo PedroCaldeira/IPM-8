@@ -62,8 +62,8 @@
         <a onclick="hide(menuPrincipal); show(Music);"><img src="../GlobalImages/Music-icon.png" style="margin-top:-10px;width:300px;height:300px"/></a>
       </div>
 
-      <div class="InitIcon" style="background-color: #e60000">
-        <img src="../GlobalImages/pepe.png" />
+      <div class="InitIcon" style="background-color: #4d0099">
+        <a onclick="hide(menuPrincipal);show(Perfil)"><img src="../GlobalImages/Perfil-icon.png" /></a>
       </div>
 
       </div>
@@ -558,9 +558,10 @@
           <div class="RodapeIcon" style="background-color:  #369130">
             <a onclick="show(Music);hide(Pedir)"><img src="../GlobalImages/Music-icon.png" /></a>
           </div>
-          <div class="RodapeIcon" style="background-color: #e60000" >
-            <img src="../GlobalImages/pepe.png" />
-          </div>
+          <div class="RodapeIcon" style="background-color:#4d0099" >
+          <a onclick="hide(Pedir);show(Perfil);"><img src="../GlobalImages/Perfil-icon.png" /></a>
+        </div>
+
         </div>
   </div>
     <div class="ecra" id="Music">
@@ -682,11 +683,71 @@
         <div class="RodapeIcon" style="background-color: #369130">
           <img src="../GlobalImages/Music-icon.png" />
         </div>
-        <div class="RodapeIcon" style="background-color: #e60000" >
-          <img src="../GlobalImages/pepe.png" />
+        <div class="RodapeIcon" style="background-color:#4d0099" >
+          <a onclick="hide(Music);show(Perfil);"><img src="../GlobalImages/Perfil-icon.png" /></a>
         </div>
       </div>
     </div>
+
+
+
+
+
+
+
+    <div class="ecra" id="Perfil">
+
+      <div id="cabecalhoPerfil">
+        <span class = "Name"style="color:white"> XYAO MING </span>
+        <span class = "Time"style="color:white"> Date </span>
+        <a style="background-color: ##4E69A2; color:#4d0099 white;border-radius:10px; text-decoration:none" onclick="hide(Perfil);show(menuPrincipal)"id = "Cenas">Inicio</a>
+      </div>
+
+       <div class="navBar" style="  background-image: linear-gradient(to right, rgba(37,29,73,1), rgba(37,29,73,0)); background-color: rgba(1,1,1,0)">
+        <span id = "Title" style="display: inline-block; padding-left: 35px;">O Meu Perfil </span>
+
+       </div>
+
+       <figure id="ProfilePictureFig">
+        <img id="ProfilePicture" src="./ProfileImages/yourboy.jpg">
+        <figcaption style="margin-top: 25px">Xyao Ming</figcaption>
+       </figure>
+       <table id = "PerfilTable">
+        <tr> 
+          <td><figure class="PerfilCircle" style="background-color: #0099ff"><img  src="./ProfileImages/alcoolemia.png"></img><figcaption id="alcoolemiaCaption"><span style="font-size:50px">3.15</span><span style="display:block; margin-top:-20px"> g/L</span></figcaption></figure></td>
+          <td><a class="PerfilCircle" style="background-color: #ffffff"><img style="margin-left:-5px" src="./ProfileImages/taxi.png"></a></td>
+        </tr>
+        <tr>
+          <td><a class="PerfilCircle" style="background-color: #ffffff" onclick="toggleVisible(EcraPerfil3)"><img style="height:80%;width:80%;margin-top:5%; margin-left:5px" src="./ProfileImages/carkeys.png"></img></a></td>
+          <td><a class="PerfilCircle" style="background-color: #ffffff"><img style="height:80%;width:80%;margin-top:10%" src="./ProfileImages/definicoes.png"></img></a></td>
+        </tr>
+     </table>
+
+     <div class  = "EcraPerfil" id="EcraPerfil3" style="background-image:url(./ProfileImages/)"> 
+              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil3)"/>
+              <img style="height:400px;width:400px;margin-top:50px; float:center" src="./ProfileImages/carkeys.png"></img>
+      </div>
+      <div id="rodapePerfil">
+        <div class="RodapeIcon" style="background-color:  #00A2E8" >
+          <a onclick="hide(Perfil);show(Pedir);"><img src="../GlobalImages/food.png" /></a>
+        </div>
+        <div class="RodapeIcon" style="background-color: #369130">
+          <a onclick="hide(Perfil);show(Music);"><img src="../GlobalImages/Music-icon.png" /></a>
+        </div>
+        <div class="RodapeIcon" style="background-color: #4d0099" >
+          <img src="../GlobalImages/Perfil-icon.png" />
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
