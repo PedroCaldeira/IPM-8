@@ -570,3 +570,14 @@ function enableErase(){
         document.getElementById("searchResetButton").style.opacity=1;
     }
 }
+
+
+function changeName(){
+    var name= $("#profileInfo").find("input[name='first_name']").val();
+
+    if (name!= ""){
+        $("#profilename").html(name);
+        $("#profilename2").html(name);
+        $(".Name").html(name);
+    }
+}

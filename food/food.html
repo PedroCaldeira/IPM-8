@@ -709,8 +709,8 @@
        </div>
 
        <figure id="ProfilePictureFig">
-        <img id="ProfilePicture" src="./ProfileImages/yourboy.jpg">
-        <figcaption style="margin-top: 25px">Xyao Ming</figcaption>
+        <img id="ProfilePicture" src="./ProfileImages/yourboy.png">
+        <figcaption id="profilename"style="margin-top: 25px">Xyao Ming</figcaption>
        </figure>
        <table id = "PerfilTable">
         <tr> 
@@ -719,7 +719,7 @@
         </tr>
         <tr>
           <td><a class="PerfilCircle" style="background-color: #ffffff" onclick="toggleVisible(EcraPerfil3)"><img style="height:80%;width:80%;margin-top:5%; margin-left:5px" src="./ProfileImages/carkeys.png"></img></a></td>
-          <td><a class="PerfilCircle" style="background-color: #ffffff"><img style="height:80%;width:80%;margin-top:10%" src="./ProfileImages/definicoes.png"></img></a></td>
+          <td><a class="PerfilCircle" style="background-color: #ffffff" onclick="toggleVisible(EcraPerfil4)"><img style="height:80%;width:80%;margin-top:10%" src="./ProfileImages/definicoes.png"></img></a></td>
         </tr>
      </table>
 
@@ -727,6 +727,53 @@
               <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil3)"/>
               <img style="height:400px;width:400px;margin-top:50px; float:center" src="./ProfileImages/carkeys.png"></img>
       </div>
+
+      <div class  = "EcraPerfil" id="EcraPerfil4" style="background-image:url(./ProfileImages/ecrabackground.jpg)"> 
+              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil4)"/>
+              <figure style="height:230px;width:auto;margin-top:150px; float:left">
+                <img id="ProfilePicture2"  src="./ProfileImages/yourboy.png"></img>
+                <figcaption id="profilename2"style="margin-top: 25px; width: 350px">Xyao Ming</figcaption>
+              </figure>
+
+
+
+              <div id="wrapper">
+        <form id="profileInfo" >
+            <fieldset>
+                <div>
+                    Nome:
+                    <input type="text" name="first_name" placeholder="First Name"/>
+                </div>
+               
+                <div>
+                    e-mail:
+                    <input type="text" name="email" placeholder="Email"/>
+                </div>
+                <div>
+                    Telemóvel:
+                    <input type="number" name="telemovel" placeholder="telemovel" style="width:100%; "/>
+                </div>
+                <div style="font-size: 20px;float: left; text-align: left">
+                  Sexo:
+                  <br>
+                  <input type="radio" name="gender" value="male" style="width: 15px; height: 15px;"> Masculino<br>
+                  <input type="radio" name="gender" value="female" style="width: 15px; height: 15px;"> Feminino<br>
+                </div>
+                <br>
+                <br>
+                <div style="margin-top: 35px">
+               Data de Nascimento:
+                   <input type="date" name="bday" max="1996-12-31">
+                </div>
+               
+                <input name="submit" value="Aplicar" onclick="changeName()" />
+            </fieldset>    
+        </form>
+    </div>
+     <button class="btn btn-primary" style="float: left; margin-left: 150px; font-size: 26px" > Alterar Imagem</button>
+
+      </div>
+
       <div id="rodapePerfil">
         <div class="RodapeIcon" style="background-color:  #00A2E8" >
           <a onclick="hide(Perfil);show(Pedir);"><img src="../GlobalImages/food.png" /></a>
@@ -808,5 +855,6 @@
         });
     </script>
     <script type="text/javascript">window.onload = getTime();</script>
+    
 </body>
 </html>
