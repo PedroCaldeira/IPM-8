@@ -581,6 +581,7 @@ function changeName(){
         $("#profilename2").html(name);
         $(".Name").html(name);
     }
+}
 
 function unlock(){
     var x = document.getElementById("NumeroAlcoolemia").innerHTML;
