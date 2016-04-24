@@ -570,3 +570,42 @@ function enableErase(){
         document.getElementById("searchResetButton").style.opacity=1;
     }
 }
+
+function unlock(){
+    var x = document.getElementById("NumeroAlcoolemia").innerHTML;
+    var y = document.getElementById("EcraPerfil3").getAttribute("data-state");
+    if(y==1){
+        if (x>0.5){
+            show(DesbloquearInsucesso);
+        }
+        else{
+            show(DesbloquearSucesso);
+            $("#EcraPerfil3").attr("data-state","0");
+            DesbloquearChaves.style.pointerEvents="none";
+            DesbloquearChaves.style.opacity=0.3;
+            BloquearChaves.style.pointerEvents="auto";
+            BloquearChaves.style.opacity=1;
+        }
+    }
+}
+
+function lock1(){
+    var y = document.getElementById("EcraPerfil3").getAttribute("data-state");
+    if(y==0)
+        show(ConfirmarBloquear);
+}
+
+function lock2(){
+    $("#EcraPerfil3").attr("data-state","1");
+    BloquearChaves.style.pointerEvents="none";
+    BloquearChaves.style.opacity=0.3;
+    DesbloquearChaves.style.pointerEvents="auto";
+    DesbloquearChaves.style.opacity=1;
+}
+
+function checkColorKeys(){
+     var x = document.getElementById("NumeroAlcoolemia").innerHTML;
+     if(x>0.5){
+        document.getElementById("KeysCircle").style.backgroundColor="#FF2525";
+     }
+}
