@@ -572,6 +572,7 @@ hr{
 
 }
 
+<<<<<<< HEAD
 
 
 
@@ -686,4 +687,40 @@ hr{
     }
 
 
+
+
+#BloquearChaves{
+  position: relative;
+  margin-left: 150px;
+  margin-top: 100px;
+  width:300px;
+  height:75px;
+  background-color: #FF2525;
+  font-size:30px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 75px;
+  border-radius:10px;
+  color: white;
+}
+
+#DesbloquearChaves{
+  position: relative;
+  margin-left: 550px;
+  margin-top: -75px;
+  width:300px;
+  height:75px;
+  background-color: lightgreen;
+  font-size:30px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 75px;
+  border-radius:10px;
+  opacity: 0.3;
+}
+
+.JanelaChaves{
+  margin-left:-254px;
+  width:90%;
+}
 
