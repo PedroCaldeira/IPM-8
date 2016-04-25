@@ -724,8 +724,10 @@
        </figure>
        <table id = "PerfilTable">
         <tr> 
-          <td><figure class="PerfilCircle" style="background-color: #0099ff;color:white"><img  src="./ProfileImages/alcoolemia.png"></img><figcaption id="alcoolemiaCaption"><span style="font-size:50px" id="NumeroAlcoolemia">3.15</span><span style="display:block; margin-top:-20px"> g/L</span></figcaption></figure></td>
+
+          <td><figure class="PerfilCircle" style="background-color: #0099ff;color:white" onclick="toggleVisible(EcraPerfil5); calculateAlcool()"><img  src="./ProfileImages/alcoolemia.png"></img><figcaption id="alcoolemiaCaption"><span style="font-size:50px" id="NumeroAlcoolemia">3.15</span><span style="display:block; margin-top:-20px"> g/L</span></figcaption></figure></td>
           <td><a class="PerfilCircle" onclick="toggleVisible(EcraPerfil2)" style="background-color: #00e600"><img id="TransporteRecomendado" style="margin-left:-5px" src="./ProfileImages/carro.png"></a></td>
+
         </tr>
         <tr>
 
@@ -867,6 +869,68 @@
 
       </div>
 
+
+
+      <div class  = "EcraPerfil" id="EcraPerfil5" style="background-image:url(./ProfileImages/ecrabackground.jpg)"> 
+              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil5)"/>
+              <div style="float:left;margin-top:150px; text-align: left">
+                <span style="font-size:30px ">Nivel de álcool no sangue:</span><br>
+                <span id="NivelAlcool" style="font-size:100px " >0.50</span>
+                <span style="font-size:30px ">g/L</span><br>
+                <span style="font-size:30px ">Tempo até 0.00 g/L:</span>
+                <span id="RemainingTime">Time</span>
+                <span style="font-size:30px ">hr</span>
+              </div>
+
+
+
+        <div id="alcoolWrapper">
+          <form id="profileInfo" >
+            <fieldset>
+              <div style="font-size: 30px">
+                <span style="">
+                  Limite actual:
+                </span>
+                <span id="limiteActual">0</span>
+                <span>g/L</span>
+              </div>
+               <br>
+               <div style="font-size: 30px">
+                <span>Tempo até desbloquear limite:</span>
+                <span id="timelimiter">0</span>
+                <span>
+                  hr
+                </span>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <span style="font-size: 30px">Estabelecer novo limite:</span>
+                    <div id="slider-BAC"></div>
+                    <input type="text" id="BAC" readonly style="border:0; color:#f6931f; font-weight:bold; text-align: right; float:right; width: 110px">
+                </div>
+                <br>
+                <br>
+                 <div id="timeSlider" style="opacity: 0.3; pointer-events: none">
+                    <span style="font-size: 30px">Bloquear limite:</span>
+                    <div id="slider-HOUR"></div>
+                    <input type="text" id="Hours" readonly style="border:0; color:#f6931f; font-weight:bold; text-align: right; float:right; width: 110px">
+                </div>
+                <br>
+                <br>
+               
+               
+                <input name="submit" value="Aplicar" onclick="limit()" />
+            </fieldset>    
+        </form>
+    </div>
+
+      </div>
+
+
+
+
+
       <div id="rodapePerfil">
         <div class="RodapeIcon" style="background-color:  #00A2E8" >
           <a onclick="hide(Perfil);show(Pedir);"><img src="../GlobalImages/food.png" /></a>
@@ -951,7 +1015,44 @@
     
     <script type="text/javascript">window.onload = getTime();</script>
     <script type="text/javascript">window.onload = checkColorKeys();</script>
+
+    <script>
+      $(function() {
+        $( "#slider-BAC" ).slider({
+          range: "min",
+          value: 0.00,
+          min: 0.00,
+          max: 3.00,
+          step: 0.01,
+          slide: function( event, ui ) {
+            $( "#BAC" ).val( ui.value.toFixed(2) +"g/L");
+            document.getElementById("timeSlider").style.pointerEvents="auto"
+            document.getElementById("timeSlider").style.opacity="1"
+          }
+        });
+        $( "#BAC" ).val( $( "#slider-BAC" ).slider( "value" ).toFixed(2) +"g/L" );
+      });
+  </script>
+  <script>
+      $(function() {
+        $( "#slider-HOUR" ).slider({
+          range: "min",
+          value: 0,
+          min: 0,
+          max: 7,
+          step: 1,
+          slide: function( event, ui ) {
+            $( "#Hours" ).val( ui.value +" horas");
+
+
+          }
+        });
+        $( "#Hours" ).val( $( "#slider-HOUR" ).slider( "value" ) +" horas" );
+      });
+  </script>
+
     <script type="text/javascript">window.onload = checkTransportes();</script>
+
 
 
 </body>
