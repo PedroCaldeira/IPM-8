@@ -68,6 +68,19 @@ $(document).ready(function() {
         $('ul.Listagem>li').click(function() {
         	var str=$(this).find("p")[0].textContent
             var price=this.getAttribute("data-price");
+            if ($(this).hasClass("calcool")){
+                var alcoolemia=document.getElementById("NumeroAlcoolemia").innerHTML
+                var limite= document.getElementById("limiteActual").innerHTML
+                if (alcoolemia>=limite){
+                    $().toastmessage('showToast', {
+                        text     : 'Bebida não adicionada, ja ultrapassou o limite de alcool estabelecido',
+                        type     : 'error',
+                        position : 'middle-right',
+                        stayTime : 3000
+                    });
+                    return;
+                }
+            }
         	if (str=="Criar Bebida"||str=="Criar Pizza"||str=="Menu Pizza"||str=="Menu Hamburguer"||str=="Menu Pasta"){
         		return
         	}
@@ -621,4 +634,54 @@ function checkColorKeys(){
         document.getElementById("KeysCircle").style.backgroundColor="#FF2525";
      }
 
+}
+
+
+function limit(){
+    var alcoolemia=document.getElementById("NumeroAlcoolemia").innerHTML
+    var limit= document.getElementById("limiteActual").innerHTML
+    var sliderLimit=$( "#slider-BAC" ).slider( "value" );
+    
+    var sliderHourLimit=$( "#slider-HOUR" ).slider( "value" );
+    console.log(sliderHourLimit)
+    if (sliderHourLimit!=0){
+        document.getElementById("timelimiter").innerHTML=sliderHourLimit
+        $( "#slider-HOUR" ).slider({
+              range: "min",
+              value: 0.00,
+              min: sliderHourLimit,
+              max: 7,
+              step: 1,
+              slide: function( event, ui ) {
+                $( "#Hours" ).val( ui.value +" horas");
+              }
+            });
+            $( "#Hours" ).val( $( "#slider-HOUR" ).slider( "value" )+ " horas");
+    }
+    var HourLimit=document.getElementById("timelimiter").innerHTML
+    if (sliderLimit!=0){
+       
+        
+            $("#limiteActual").html(sliderLimit.toFixed(2));
+            if (HourLimit==0) {sliderLimit=3}
+            $( "#slider-BAC" ).slider({
+              range: "min",
+              value: 0.00,
+              min: 0.00,
+              max: sliderLimit,
+              step: 0.01,
+              slide: function( event, ui ) {
+                $( "#BAC" ).val( ui.value.toFixed(2) +"g/L");
+              }
+            });
+            $( "#BAC" ).val( $( "#slider-BAC" ).slider( "value" ).toFixed(2) +"g/L" );
+        
+    }
+}
+
+function calculateAlcool(){
+    var alcoolemia=document.getElementById("NumeroAlcoolemia").innerHTML
+    $("#NivelAlcool").html(alcoolemia)
+    var tempo= (alcoolemia*4).toFixed(0)
+    $("#RemainingTime").html(tempo)
 }
