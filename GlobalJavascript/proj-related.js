@@ -601,6 +601,24 @@ function unlock(){
     }
 }
 
+function unlock2(){
+    var x = document.getElementById("NumeroAlcoolemia").innerHTML;
+    var y = document.getElementById("EcraPerfil3").getAttribute("data-state");
+    if(y==1){
+        if (x>0.5){
+            show(DesbloquearInsucesso2);
+        }
+        else{
+            show(DesbloquearSucesso2);
+            $("#EcraPerfil3").attr("data-state","0");
+            DesbloquearChaves.style.pointerEvents="none";
+            DesbloquearChaves.style.opacity=0.3;
+            BloquearChaves.style.pointerEvents="auto";
+            BloquearChaves.style.opacity=1;
+        }
+    }
+}
+
 function lock1(){
     var y = document.getElementById("EcraPerfil3").getAttribute("data-state");
     if(y==0)
@@ -621,4 +639,95 @@ function checkColorKeys(){
         document.getElementById("KeysCircle").style.backgroundColor="#FF2525";
      }
 
+}
+ function checkTransportes(){
+    var x = document.getElementById("NumeroAlcoolemia").innerHTML;
+    var y = document.getElementById("EcraPerfil3").getAttribute("data-state");
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    document.getElementById("Carro").style.backgroundColor="#00e600";
+    BotaoCarro.style.pointerEvents="auto";
+    BotaoCarro.style.opacity=1;
+    DesbloquearChaves.style.pointerEvents="auto";
+    DesbloquearChaves.style.opacity=1;
+    document.getElementById("Autocarro").style.backgroundColor="#00e600";
+    BotaoAutocarro.style.pointerEvents="auto";
+    BotaoAutocarro.style.opacity=1;
+    document.getElementById("TransporteRecomendado").src="./ProfileImages/carro.png";
+    document.getElementById("TransporteRecomendado").style.height="100%";
+    document.getElementById("TransporteRecomendado").style.width="100%";
+    document.getElementById("TransporteRecomendado").style.marginTop="-50px";
+    if(x>0.5 && (hours<5 || hours>=23)){
+        document.getElementById("Carro").style.backgroundColor="#FF2525";
+        BotaoCarro.style.pointerEvents="none";
+        BotaoCarro.style.opacity=0.3;
+        DesbloquearChaves.style.pointerEvents="none";
+        DesbloquearChaves.style.opacity=0.3;
+        document.getElementById("Autocarro").style.backgroundColor="#FF2525";
+        BotaoAutocarro.style.pointerEvents="none";
+        BotaoAutocarro.style.opacity=0.3;
+        document.getElementById("TransporteRecomendado").src="./ProfileImages/taxi.png";
+        document.getElementById("TransporteRecomendado").style.height="100%";
+        document.getElementById("TransporteRecomendado").style.width="100%";
+        document.getElementById("TransporteRecomendado").style.marginTop="10px";
+    }
+    else if(x>0.5){
+        document.getElementById("Carro").style.backgroundColor="#FF2525";
+        BotaoCarro.style.pointerEvents="none";
+        BotaoCarro.style.opacity=0.3;
+        DesbloquearChaves.style.pointerEvents="none";
+        DesbloquearChaves.style.opacity=0.3;
+        document.getElementById("TransporteRecomendado").src="./ProfileImages/autocarro.png";
+        document.getElementById("TransporteRecomendado").style.height="75%";
+        document.getElementById("TransporteRecomendado").style.width="75%";
+        document.getElementById("TransporteRecomendado").style.marginTop="25px";
+
+    }
+    else if(hours<5 || hours>=23){
+        document.getElementById("Autocarro").style.backgroundColor="#FF2525";
+        BotaoAutocarro.style.pointerEvents="none";
+        BotaoAutocarro.style.opacity=0.3;
+    }
+
+    if(y==0){
+        BotaoCarro.style.pointerEvents="none";
+        BotaoCarro.style.opacity=0.3;
+    }
+    setTimeout('checkTransportes()',1000); 
+
+
+}
+
+function TimeTaxi(){
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    minutes+=20;
+    if(minutes>60){
+        minutes-=60;
+        hours++;
+
+    }
+    if(hours<10)
+      hours="0"+hours;
+    if (minutes<10)
+      minutes="0"+minutes;
+    document.getElementById("TempoChegadaTaxi").innerHTML = hours+":"+minutes;
+}
+
+function TimeHelicoptero(){
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    minutes+=5;
+    if(minutes>60){
+        minutes-=60;
+        hours++;
+
+    }
+    if(hours<10)
+      hours="0"+hours;
+    if (minutes<10)
+      minutes="0"+minutes;
+    document.getElementById("TempoChegadaHelicoptero").innerHTML = hours+":"+minutes;
 }

@@ -724,3 +724,60 @@ hr{
   width:90%;
 }
 
+#TransportesTable{
+  margin-left: 200px;
+  margin-top: 20px;
+
+}
+
+#Carro{
+  background-color: #00e600; 
+  width:250px;
+  height:250px;
+}
+
+#Autocarro{
+  background-color: #00e600;
+  width:250px;
+  height:250px;
+  margin-left:100px;
+}
+
+#Taxi{
+  background-color:#00e600;
+  width:250px;
+  height:250px;
+  margin-top:75px;
+}
+
+#Helicoptero{
+  background-color:#00e600;
+  width:250px;
+  height:250px;
+  margin-top: 75px;
+}
+
+.Perfilcircle img{
+  width:90%;
+  height:90%;
+}
+
+.TransportesButton{
+  font-size: 26px;
+  display: block;
+  margin-top:55px;
+  margin-left:-25px;
+  width:300px;
+}
+
+#HorarioAutocarro{
+  margin-top:-150px;
+  margin-left: -350px;
+  height:110% !important; 
+  width:110%;
+  background-color: white;
+  border: solid 3px black;
+
+  display:none;
+  z-index: 20000;
+}
