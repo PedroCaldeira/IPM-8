@@ -465,6 +465,34 @@ function addToQueue(){
         NaoadicionarMusica()
 }
 
+function upVoteSong(){
+    $('.coverflow').coverflow({
+					change:			function(event, cover) {
+						var img = $(cover).children().andSelf().filter('img').last();
+						if (img.data('voted')=="True"){
+                            console.log("Im here")
+                            AlreadyVoted();
+                        }
+                        else{
+                            console.log(img.data('voting'))
+                            
+                            img.data("voting",(parseInt(img.data("voting"))+1).toString())
+                        }
+					}
+    });	
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
 
 $(document).ready(function(e){
     $('.search-panel .dropdown-menu').find('a').click(function(e) {
