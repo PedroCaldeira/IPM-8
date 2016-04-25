@@ -52,6 +52,12 @@
   top: 50px;
   height: 107px;
 }
+#TopSongsButton{
+  position: absolute;
+  right:170px;
+  top: 50px;
+  height: 107px;
+}
 
 #Qiconleft{
   position: absolute;
