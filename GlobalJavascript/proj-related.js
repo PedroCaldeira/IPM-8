@@ -466,22 +466,76 @@ function addToQueue(){
 }
 
 function upVoteSong(){
-    $('.coverflow').coverflow({
-					change:			function(event, cover) {
-						var img = $(cover).children().andSelf().filter('img').last();
-						if (img.data('voted')=="True"){
-                            console.log("Im here")
-                            AlreadyVoted();
-                        }
-                        else{
-                            console.log(img.data('voting'))
-                            
-                            img.data("voting",(parseInt(img.data("voting"))+1).toString())
-                        }
-					}
-    });	
-    
-    
+    var isUpVoted=$(".cover.current").find("img").attr("data-UpVoted")
+    var isDownVoted=$(".cover.current").find("img").attr("data-DownVoted")
+    var valor= parseInt($(".cover.current").find("img").attr("data-voting"))
+    var name=$(".cover.current").attr("data-song")
+    //Is DownVoted, becomes upVoted
+    if (isDownVoted=="true"){
+        $(".cover.current").find("img").attr("data-DownVoted","false")
+        $(".cover.current").find("img").attr("data-UpVoted","true")
+        $(".cover.current").find("img").attr("data-voting",valor+2);
+        $("#ValueOfVote").text(valor+2);
+        $($("#musicList").find("div[data-song^="+name+"]").children()[0]).attr("data-voting",valor+2)
+        $("#DownVoteImage").css("border","none");
+        $("#UpVoteImage").css("border","3px gold solid");
+        return
+    }
+    //Is UpVoted, becomes not Voted
+    else if (isUpVoted=="true"){
+        $(".cover.current").find("img").attr("data-UpVoted","false")
+        
+        $("#ValueOfVote").text(valor-1);
+        $($("#musicList").find("div[data-song^="+name+"]").children()[0]).attr("data-voting",valor-1)
+        $(".cover.current").find("img").attr("data-voting",valor-1);
+        $("#DownVoteImage").css("border","none");
+        $("#UpVoteImage").css("border","none");
+        return
+    }
+    //Not yet Voted, becomes Upvoted
+    else{
+       $(".cover.current").find("img").attr("data-UpVoted","true")
+        $("#ValueOfVote").text(valor+1);
+        $($("#musicList").find("div[data-song^="+name+"]").children()[0]).attr("data-voting",valor+1)
+        $(".cover.current").find("img").attr("data-voting",valor+1);
+        $("#DownVoteImage").css("border","none");
+        $("#UpVoteImage").css("border","3px gold solid");
+    }
+}
+function downVoteSong(){
+    var isUpVoted=$(".cover.current").find("img").attr("data-UpVoted")
+    var isDownVoted=$(".cover.current").find("img").attr("data-DownVoted")
+    var valor= parseInt($(".cover.current").find("img").attr("data-voting"))
+    var name=$(".cover.current").attr("data-song")
+    //Is Already DownVoted, becomes not voted
+    if (isDownVoted=="true"){
+        $(".cover.current").find("img").attr("data-DownVoted","false")
+        $(".cover.current").find("img").attr("data-voting",valor+1);
+        $("#ValueOfVote").text(valor+1);
+        $($("#musicList").find("div[data-song^="+name+"]").children()[0]).attr("data-voting",valor+1)
+        $("#DownVoteImage").css("border","none");
+        $("#UpVoteImage").css("border","none");
+        return
+    }
+    //Is UpVoted, becomes Downvoted
+    else if(isUpVoted=="true"){
+        $(".cover.current").find("img").attr("data-DownVoted","true")
+        $(".cover.current").find("img").attr("data-UpVoted","false")
+        $("#ValueOfVote").text(valor-2);
+        $($("#musicList").find("div[data-song^="+name+"]").children()[0]).attr("data-voting",valor-2)
+        $(".cover.current").find("img").attr("data-voting",valor-2);
+        $("#DownVoteImage").css("border","3px gold solid");
+        $("#UpVoteImage").css("border","none");
+    }
+    //Not yet voted, becomes downVoted
+    else{
+        $(".cover.current").find("img").attr("data-DownVoted","true")
+        $("#ValueOfVote").text(valor-1);
+        $($("#musicList").find("div[data-song^="+name+"]").children()[0]).attr("data-voting",valor-1)
+        $(".cover.current").find("img").attr("data-voting",valor-1);
+        $("#DownVoteImage").css("border","3px gold solid");
+        $("#UpVoteImage").css("border","none");
+    }
 }
 
 
@@ -490,7 +544,7 @@ function upVoteSong(){
 
 
 
-
+    
 
 
 
