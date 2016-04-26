@@ -798,3 +798,91 @@ hr{
   height:120px;
   border-radius: 50%;
 }
+
+#TopSongsButton{
+  display:relative;
+  float:right;
+}
+#TopSongsMenu{
+  border:black 2px solid;
+  display:none;
+  position:absolute;
+  height:700px;
+  width:1200px;
+  background-color: black;
+  left:50%;
+  top:55%;
+  transform: translate(-50%, -50%);
+  z-index:1000;
+}
+#TopSongsTitle{
+  color:white;
+  font-size:55px;
+  background-color: #298C2C;
+  height:80px;
+  text-align:middle;
+  
+}
+#TopSongsShow{
+  overflow-y:scroll;
+  height:620px;
+  width:1200px;
+  
+}
+#firstSong{
+  height:100px;
+  color:white;
+  font-size:40px;
+  border: 1px gold solid;
+  margin-top:2px;
+  margin-bottom:2px;
+  vertical-align: middle;
+}
+#secondSong{
+  color:white;
+  font-size:30px;
+  border: 1px silver solid;
+  margin-top:2px;
+  margin-bottom:2px;
+}
+#thirdSong{
+  color:white;
+  font-size:25px;
+  border: 1px saddlebrown solid;
+  margin-top:2px;
+  margin-bottom:2px;
+}
+
+.topSong{
+  padding-left:5px;
+  margin-left:10px;
+  text-align:left;
+  color:white;
+  font-size:20px;
+  border: 1px white solid;
+  margin-top:2px;
+  margin-bottom:2px;
+  text-align:center;
+}
+#AddButtonQueue1st{
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+  margin-top:-30px;
+}
+#AddButtonQueue2nd{
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+}
+#AddButtonQueue3rd{
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+}
+.AddButtonQueue{
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+  text-align:right;
+}

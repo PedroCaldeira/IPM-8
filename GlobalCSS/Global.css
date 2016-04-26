@@ -177,29 +177,7 @@
 .dropdown-menu>li{
   font-size: 30px;
 }
-#TopSongsButton{
-  display:relative;
-  float:right;
-}
-#TopSongsMenu{
-  display:none;
-  position:absolute;
-  height:600px;
-  width:1000px;
-  background-color: black;
-  left:50%;
-  top:55%;
-  transform: translate(-50%, -50%);
-  z-index:1000;
-}
-#TopSongsTitle{
-  color:white;
-  font-size:55px;
-  background-color: #298C2C;
-  height:80px;
-  text-align:middle;
-  
-}
+
 
 #Upvote_DownVote{
   position:absolute;

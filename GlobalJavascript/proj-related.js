@@ -464,6 +464,19 @@ function addToQueue(){
     else
         NaoadicionarMusica()
 }
+function addToQueueFromTop(identity){
+    var id=identity.replace(" ","_");
+    for(var i=0;i<20;i++)
+        id=id.replace(" ","_");
+
+    if ( $("#"+id).parent("#Qsongs").length == 0 ){
+
+        addToQueue2(id, identity);
+        adicionarMusica();
+    }
+    else
+        NaoadicionarMusica()
+}
 
 function upVoteSong(){
     var isUpVoted=$(".cover.current").find("img").attr("data-UpVoted")
@@ -538,8 +551,27 @@ function downVoteSong(){
     }
 }
 
+function createOrderedList(){
+    var array = $("#musicList").find("div");
+    array.splice(-1,1); 
+    array.sort(sortingFunction);
+    for (var i=0;i<array.length; i++) {
+        var name = $(array[i]).find("img").attr("data-name");
+        if(i==0)
+            $("#TopSongsShow").append("<div  class='topSong' id='firstSong'><span>"+(i+1)+"º : "+name+"</span><br><img class='AddButtonQueue' id='AddButtonQueue1st' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop('"+name+"');'/></div>");
+        else if(i==1)
+            $("#TopSongsShow").append("<div  class='topSong' id='secondSong'><span>"+(i+1)+"º : "+name+"</span><br><img class='AddButtonQueue' id='AddButtonQueue2nd' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop('"+name+"');'/></div>");
+        else if(i==2)
+            $("#TopSongsShow").append("<div class='topSong' id='thirdSong'><span>"+(i+1)+"º : "+name+"</span> <br><img class='AddButtonQueue' id='AddButtonQueue3rd' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop("+'"'+name+'"'+");'/></div>");
+        else
+            $("#TopSongsShow").append("<div class='topSong'><span>"+(i+1)+"º : "+name+"</span><br><img class='AddButtonQueue' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop('"+name+"');'/></div>");
+        
+    }
+}
 
-
+function sortingFunction(cover1,cover2){
+    return $($(cover2).find("img")).attr("data-voting")-$($(cover1).find("img")).attr("data-voting");
+}
 
 
 

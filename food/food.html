@@ -599,13 +599,15 @@
                             <button class="btn btn-default" onclick="searchCover();enableErase();" type="button"style="font-size:30px"><span class="glyphicon glyphicon-search"></span></button>
                         </span>
                     </div>
-        <button style="background-color:#2FFFFF" id="TopSongsButton" type="button" class="btn btn-info" onclick="toggleVisible(TopSongsMenu)"><img id="paperticketmusic" style="height: 70px; width: 70px" src="./MusicImages/whitequeue.png" /> <img id="musicArrow" src="./FoodImages/down.png" style="height: 20px; width: 20px" /></button>
+        <button style="background-color:#2FFFFF" id="TopSongsButton" type="button" class="btn btn-info" onclick="toggleVisible(TopSongsMenu);createOrderedList();"><img id="TopSongs" style="height: 70px; width: 70px" src="./MusicImages/whitequeue.png" /> <img id="musicArrow" src="./FoodImages/down.png" style="height: 20px; width: 20px" /></button>
         <button style="background-color:#298C2C" id="shoppingcartmusic" type="button" class="btn btn-info" onclick="toggleVisible(Q);toggleTab(shoppingcartmusic)"><img id="paperticketmusic" style="height: 70px; width: 70px" src="./MusicImages/whitequeue.png" /> <img id="musicArrow" src="./FoodImages/down.png" style="height: 20px; width: 20px" /></button>
         
       </div>
       <div id="TopSongsMenu">
         <div id="TopSongsTitle">
-          <img class="backarrow" src="../GlobalImages/backarrow.png" onclick="hide(JanelaMenu3);unselect('Food');unselect('Bebida');unselect('Acompanhamento');disableblur(cabecalho,meio,rodape);"/><span style="margin-left: -80px;">Músicas mais votadas</span></div>
+          <img class="backarrow" src="../GlobalImages/backarrow.png" onclick="hide(JanelaMenu3);unselect('Food');unselect('Bebida');unselect('Acompanhamento');disableblur(cabecalho,meio,rodape);"/><span style="margin-left: -80px;">Músicas mais votadas</span>
+        </div>
+        <div id="TopSongsShow"></div>
       </div>
         
       <div id = "Q">
