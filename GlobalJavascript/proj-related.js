@@ -786,6 +786,11 @@ function checkColorKeys(){
      if(x>0.5){
         document.getElementById("KeysCircle").style.backgroundColor="#FF2525";
      }
+     else{
+        document.getElementById("KeysCircle").style.backgroundColor="#00e600";
+     }
+
+     setTimeout('checkColorKeys()',1000); 
 
 }
 
@@ -889,6 +894,8 @@ function calculateAlcool(){
     if(y==0){
         BotaoCarro.style.pointerEvents="none";
         BotaoCarro.style.opacity=0.3;
+        DesbloquearChaves.style.pointerEvents="none";
+        DesbloquearChaves.style.opacity=0.3;
     }
     setTimeout('checkTransportes()',1000); 
 
