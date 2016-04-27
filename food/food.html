@@ -49,7 +49,8 @@
         <span class = "Name" > XYAO MING </span>
         <span class = "Time"  > Date </span>
 
-        <span id = "Cenas"> </span>
+         <a style="background-color: #4E69A2; color: white;border-radius:10px; text-decoration:none" onclick="hide(Logout);show(Login)"id = "Logout">Logout</a>
+          <a style="background-color: #4E69A2; color: white;border-radius:10px; text-decoration:none" onclick="hide(Login);show(Logout);Bemvindo()"id = "Login">Login</a>
       </div>
 
       <h1 id="InitTitle" style="color: white">Bem-Vindo ao BarISTa </h1>
@@ -1001,6 +1002,18 @@
         });
       }
     </script>
+
+    <script type="text/javascript">
+      function Bemvindo(){
+        $().toastmessage('showToast', {
+            text     : 'Bem-vindo Xyao Ming',
+            type     : 'success',
+            position : 'middle-right',
+            stayTime : 1000
+        });
+      }
+    </script>
+
 
     <script>
         $(document).ready(function() {

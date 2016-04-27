@@ -104,6 +104,29 @@
   padding-right: 15px;
 }
 
+#Logout{
+  position: relative;
+  right: 20px;
+  float: right;
+  width:8%;
+  text-align: right;
+  margin-bottom: 9px;
+  height: 100%;
+  padding-right: 15px;
+}
+
+#Login{
+  position: relative;
+  right: 20px;
+  float: right;
+  width:6%;
+  text-align: right;
+  margin-bottom: 9px;
+  height: 100%;
+  padding-right: 15px;
+  display:none;
+}
+
 #rodape{
   height: 65px;
   width: 100%;
