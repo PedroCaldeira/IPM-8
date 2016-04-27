@@ -1,3 +1,10 @@
+function EraseContent(elementID)
+{
+    document.getElementById(elementID).innerHTML = "";
+}
+
+
+
 function addToTicket2(identity, nome, price){
 		for(var i=0;i<price;i++)
 			document.getElementById("Total").innerHTML++;
@@ -557,14 +564,15 @@ function createOrderedList(){
     array.sort(sortingFunction);
     for (var i=0;i<array.length; i++) {
         var name = $(array[i]).find("img").attr("data-name");
+        var votes = $(array[i]).find("img").attr("data-voting");
         if(i==0)
-            $("#TopSongsShow").append("<div  class='topSong' id='firstSong'><span>"+(i+1)+"º : "+name+"</span><br><img class='AddButtonQueue' id='AddButtonQueue1st' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop("+'"'+name+'"'+");'/></div>");
+            $("#TopSongsShow").append("<div  class='topSong' id='firstSong'><span>"+(i+1)+"º : "+name+" ("+votes+")</span><br><img class='AddButtonQueue' id='AddButtonQueue1st' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop("+'"'+name+'"'+");'/></div>");
         else if(i==1)
-            $("#TopSongsShow").append("<div  class='topSong' id='secondSong'><span>"+(i+1)+"º : "+name+"</span><br><img class='AddButtonQueue' id='AddButtonQueue2nd' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop("+'"'+name+'"'+");'/></div>");
+            $("#TopSongsShow").append("<div  class='topSong' id='secondSong'><span>"+(i+1)+"º : "+name+" ("+votes+")</span><br><img class='AddButtonQueue' id='AddButtonQueue2nd' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop("+'"'+name+'"'+");'/></div>");
         else if(i==2)
-            $("#TopSongsShow").append("<div class='topSong' id='thirdSong'><span>"+(i+1)+"º : "+name+"</span> <br><img class='AddButtonQueue' id='AddButtonQueue3rd' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop("+'"'+name+'"'+");'/></div>");
+            $("#TopSongsShow").append("<div class='topSong' id='thirdSong'><span>"+(i+1)+"º : "+name+" ("+votes+")</span> <br><img class='AddButtonQueue' id='AddButtonQueue3rd' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop("+'"'+name+'"'+");'/></div>");
         else
-            $("#TopSongsShow").append("<div class='topSong'><span>"+(i+1)+"º : "+name+"</span><br><img class='AddButtonQueue' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop("+'"'+name+'"'+");'/></div>");
+            $("#TopSongsShow").append("<div class='topSong'><span>"+(i+1)+"º : "+name+" ("+votes+")</span><br><img class='AddButtonQueue' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop("+'"'+name+'"'+");'/></div>");
         
     }
 }
