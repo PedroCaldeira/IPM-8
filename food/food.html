@@ -49,8 +49,8 @@
         <span class = "Name" > XYAO MING </span>
         <span class = "Time"  > Date </span>
 
-         <a style="background-color: #4E69A2; color: white;border-radius:10px; text-decoration:none" onclick="hide(Logout);show(Login); limpar()"id = "Logout">Logout</a>
-          <a style="background-color: #4E69A2; color: white;border-radius:10px; text-decoration:none" onclick="show(wrapper1)"id = "Login">Login</a>
+         <a style="background-color: #ff1a1a; color: white;border-radius:10px; text-decoration:none" onclick="toggleVisible(ConfirmarLogout) "id = "Logout">Sair</a>
+          <a style="background-color: #4E69A2; color: white;border-radius:10px; text-decoration:none" onclick="show(wrapper1)"id = "Login">Entrar </a>
       </div>
 
        
@@ -65,10 +65,23 @@
                     <input type="text" name="first_name" placeholder="Nome"/>
                 </div>
                
-                <input name="submit" value="Aplicar" onclick="changeName1()" />
+                <input name="submit" value="Aplicar" onclick="changeName1(); show(Logout); hide(Login)" />
             </fieldset>    
         </form>
     </div>
+
+    <div class = "EcraPagamento EcraConfirmacao" id="ConfirmarLogout">
+              <div class= "EcraPagamentoBack" >
+                <span>Saír?</span>
+             </div>
+
+             <p style="margin-left:30px; margin-right:30px; margin-top: 50px">  Tem a certeza que quer sair da sua conta? </p>
+
+             <div id="DoneButton2" onclick="toggleVisible(ConfirmarLogout);hide(Logout);show(Login); limpar();   ">Sim</div>
+             <div id="DoneButton3" onclick="toggleVisible(ConfirmarLogout); ">Nao</div>
+
+
+            </div>
 
       <div class="InitIcon" style="background-color:  #00A2E8">
         <a onclick="hide(menuPrincipal); show(Pedir)"><img src="../GlobalImages/food.png"></a>
