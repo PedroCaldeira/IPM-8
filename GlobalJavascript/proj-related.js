@@ -854,7 +854,7 @@ function calculateAlcool(){
     document.getElementById("TransporteRecomendado").style.height="100%";
     document.getElementById("TransporteRecomendado").style.width="100%";
     document.getElementById("TransporteRecomendado").style.marginTop="-50px";
-    if(x>0.5 && (hours<5 || hours>=23)){
+    if(x>0.5 && (hours<5 || hours>=20)){
         document.getElementById("Carro").style.backgroundColor="#FF2525";
         BotaoCarro.style.pointerEvents="none";
         BotaoCarro.style.opacity=0.3;
@@ -880,7 +880,7 @@ function calculateAlcool(){
         document.getElementById("TransporteRecomendado").style.marginTop="25px";
 
     }
-    else if(hours<5 || hours>=23){
+    else if(hours<5 || hours>=20){
         document.getElementById("Autocarro").style.backgroundColor="#FF2525";
         BotaoAutocarro.style.pointerEvents="none";
         BotaoAutocarro.style.opacity=0.3;
