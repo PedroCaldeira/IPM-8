@@ -718,6 +718,19 @@ function changeName(){
     }
 }
 
+function changeName1(){
+    var name= $("#profileInfo1").find("input[name='first_name']").val();
+
+    if (name!= ""){
+        $("#profilename").html(name);
+        $("#profilename2").html(name);
+        $(".Name").html(name);
+    }
+    Bemvindo(name);
+
+    hide(wrapper1);
+}
+
 function unlock(){
     var x = document.getElementById("NumeroAlcoolemia").innerHTML;
     var y = document.getElementById("EcraPerfil3").getAttribute("data-state");
@@ -915,4 +928,18 @@ function TimeHelicoptero(){
       minutes="0"+minutes;
     document.getElementById("TempoChegadaHelicoptero").innerHTML = hours+":"+minutes;
 
+}
+
+function limpar(){
+    $("#profilename").html("O Seu Nome");
+    $("#profilename2").html("O Seu Nome");
+    $(".Name").html("O Seu Nome");
+    document.getElementById("ProfilePicture").src="./ProfileImages/anonimo.png";
+    document.getElementById("ProfilePicture2").src="./ProfileImages/anonimo.png";
+
+}
+
+function changeProfilePic(){
+    document.getElementById("ProfilePicture").src="./ProfileImages/crespo.jpg";
+    document.getElementById("ProfilePicture2").src="./ProfileImages/crespo.jpg";
 }

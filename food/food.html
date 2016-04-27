@@ -49,11 +49,26 @@
         <span class = "Name" > XYAO MING </span>
         <span class = "Time"  > Date </span>
 
-         <a style="background-color: #4E69A2; color: white;border-radius:10px; text-decoration:none" onclick="hide(Logout);show(Login)"id = "Logout">Logout</a>
-          <a style="background-color: #4E69A2; color: white;border-radius:10px; text-decoration:none" onclick="hide(Login);show(Logout);Bemvindo()"id = "Login">Login</a>
+         <a style="background-color: #4E69A2; color: white;border-radius:10px; text-decoration:none" onclick="hide(Logout);show(Login); limpar()"id = "Logout">Logout</a>
+          <a style="background-color: #4E69A2; color: white;border-radius:10px; text-decoration:none" onclick="show(wrapper1)"id = "Login">Login</a>
       </div>
 
+       
+
       <h1 id="InitTitle" style="color: white">Bem-Vindo ao BarISTa </h1>
+
+      <div id="wrapper1" style="float:right; display:none; background-color: white; margin-top:-140px">
+        <form id="profileInfo1" >
+            <fieldset>
+                <div>
+                    Não reconhecemos a sua impressão digital. Diga-nos, por favor, o seu nome:
+                    <input type="text" name="first_name" placeholder="Nome"/>
+                </div>
+               
+                <input name="submit" value="Aplicar" onclick="changeName1()" />
+            </fieldset>    
+        </form>
+    </div>
 
       <div class="InitIcon" style="background-color:  #00A2E8">
         <a onclick="hide(menuPrincipal); show(Pedir)"><img src="../GlobalImages/food.png"></a>
@@ -713,7 +728,7 @@
       <div id="cabecalhoPerfil">
         <span class = "Name"style="color:white"> XYAO MING </span>
         <span id="TimePerfil" class = "Time"style="color:white"> Date </span>
-        <a style="background-color: ##4E69A2; color:#4d0099 white;border-radius:10px; text-decoration:none" onclick="hide(Perfil);show(menuPrincipal)"id = "Cenas">Inicio</a>
+        <a style="background-color: #4E69A2; color: white;border-radius:10px; text-decoration:none" onclick="hide(Music);show(menuPrincipal)"id = "Cenas">Inicio</a>
       </div>
 
        <div class="navBar" style="  background-image: linear-gradient(to right, rgba(37,29,73,1), rgba(37,29,73,0)); background-color: rgba(1,1,1,0)">
@@ -829,7 +844,7 @@
       <div class  = "EcraPerfil" id="EcraPerfil4" style="background-image:url(./ProfileImages/ecrabackground.jpg)"> 
               <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil4)"/>
               <figure style="height:230px;width:auto;margin-top:150px; float:left">
-                <img id="ProfilePicture2"  src="./ProfileImages/yourboy.png"></img>
+                <img id="ProfilePicture2"  src="./ProfileImages/yourboy.png" style="height:250px;width:300px"></img>
                 <figcaption id="profilename2"style="margin-top: 25px; width: 350px">Xyao Ming</figcaption>
               </figure>
 
@@ -840,7 +855,7 @@
             <fieldset>
                 <div>
                     Nome:
-                    <input type="text" name="first_name" placeholder="First Name"/>
+                    <input type="text" name="first_name" placeholder="Nome"/>
                 </div>
                
                 <div>
@@ -868,7 +883,7 @@
             </fieldset>    
         </form>
     </div>
-     <button class="btn btn-primary" style="float: left; margin-left: 150px; font-size:26px " > Alterar Imagem</button>
+     <button class="btn btn-primary" style="float: left; margin-left: 150px; font-size:26px " onclick="changeProfilePic()"> Alterar Imagem</button>
 
       </div>
 
@@ -1004,9 +1019,9 @@
     </script>
 
     <script type="text/javascript">
-      function Bemvindo(){
+      function Bemvindo(name){
         $().toastmessage('showToast', {
-            text     : 'Bem-vindo Xyao Ming',
+            text     : 'Bem-vindo '+name,
             type     : 'success',
             position : 'middle-right',
             stayTime : 1000
