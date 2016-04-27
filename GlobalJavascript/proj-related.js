@@ -943,3 +943,9 @@ function changeProfilePic(){
     document.getElementById("ProfilePicture").src="./ProfileImages/crespo.jpg";
     document.getElementById("ProfilePicture2").src="./ProfileImages/crespo.jpg";
 }
+function randomizeAlcool(){
+    var RandomNumber=Math.random(0,3)
+    var randomrounded= Math.round(RandomNumber * 100) / 100;
+    console.log(randomrounded)
+    document.getElementById("NumeroAlcoolemia").innerHTML=randomrounded
+}
