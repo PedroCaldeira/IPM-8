@@ -504,7 +504,7 @@ function upVoteSong(){
     //Is UpVoted, becomes not Voted
     else if (isUpVoted=="true"){
         $(".cover.current").find("img").attr("data-UpVoted","false")
-        
+
         $("#ValueOfVote").text(valor-1);
         $($("#musicList").find("div[data-song^="+name+"]").children()[0]).attr("data-voting",valor-1)
         $(".cover.current").find("img").attr("data-voting",valor-1);
@@ -560,7 +560,7 @@ function downVoteSong(){
 
 function createOrderedList(){
     var array = $("#musicList").find("div");
-    array.splice(-1,1); 
+    array.splice(-1,1);
     array.sort(sortingFunction);
     for (var i=0;i<array.length; i++) {
         var name = $(array[i]).find("img").attr("data-name");
@@ -573,7 +573,7 @@ function createOrderedList(){
             $("#TopSongsShow").append("<div class='topSong' id='thirdSong'><span>"+(i+1)+"º : "+name+" ("+votes+")</span> <br><img class='AddButtonQueue' id='AddButtonQueue3rd' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop("+'"'+name+'"'+");'/></div>");
         else
             $("#TopSongsShow").append("<div class='topSong'><span>"+(i+1)+"º : "+name+" ("+votes+")</span><br><img class='AddButtonQueue' src='./MusicImages/Sign-Add-icon.png' onclick='addToQueueFromTop("+'"'+name+'"'+");'/></div>");
-        
+
     }
 }
 
@@ -584,7 +584,7 @@ function sortingFunction(cover1,cover2){
 
 
 
-    
+
 
 
 
@@ -648,10 +648,16 @@ function searchCover(){
 					$("#lecover").append(document.getElementById("noResults").cloneNode(true))
         document.getElementById("addMusic").disabled=true;
         document.getElementById("addMusic").style.opacity=0.0;
+        document.getElementById("DownVoteImage").style.display="none"
+        document.getElementById("UpVoteImage").style.display="none"
+        document.getElementById("ValueOfVote").style.display="none"
         }
         else{
         document.getElementById("addMusic").disabled=false;
         document.getElementById("addMusic").style.opacity=1;
+        document.getElementById("DownVoteImage").style.display="inline-block"
+        document.getElementById("UpVoteImage").style.display="inline-block"
+        document.getElementById("ValueOfVote").style.display="inline-block"
         }
 				$("#lecover").coverflow("refresh");
         return;
@@ -666,10 +672,16 @@ function searchCover(){
 				$("#lecover").append(document.getElementById("noResults").cloneNode(true))
         document.getElementById("addMusic").disabled=true;
         document.getElementById("addMusic").style.opacity=0.0;
+        document.getElementById("DownVoteImage").style.display="none"
+        document.getElementById("UpVoteImage").style.display="none"
+        document.getElementById("ValueOfVote").style.display="none"
     }
     else{
         document.getElementById("addMusic").disabled=false;
         document.getElementById("addMusic").style.opacity=1;
+        document.getElementById("DownVoteImage").style.display="inline-block"
+        document.getElementById("UpVoteImage").style.display="inline-block"
+        document.getElementById("ValueOfVote").style.display="inline-block"
      }
 		 $("#lecover").coverflow("index",0)
     $("#lecover").coverflow("refresh");
@@ -694,6 +706,9 @@ function cancelSearch(){
     document.getElementById("searchResetButton").style.opacity=0.0;
     document.getElementById("addMusic").disabled=false;
     document.getElementById("addMusic").style.opacity=1;
+    document.getElementById("DownVoteImage").style.display="inline-block"
+    document.getElementById("UpVoteImage").style.display="inline-block"
+    document.getElementById("ValueOfVote").style.display="inline-block"
 
 }
 function enableErase(){
@@ -790,7 +805,7 @@ function checkColorKeys(){
         document.getElementById("KeysCircle").style.backgroundColor="#00e600";
      }
 
-     setTimeout('checkColorKeys()',1000); 
+     setTimeout('checkColorKeys()',100);
 
 }
 
@@ -798,7 +813,7 @@ function limit(){
     var alcoolemia=document.getElementById("NumeroAlcoolemia").innerHTML
     var limit= document.getElementById("limiteActual").innerHTML
     var sliderLimit=$( "#slider-BAC" ).slider( "value" );
-    
+
     var sliderHourLimit=$( "#slider-HOUR" ).slider( "value" );
     console.log(sliderHourLimit)
     if (sliderHourLimit!=0){
@@ -817,8 +832,8 @@ function limit(){
     }
     var HourLimit=document.getElementById("timelimiter").innerHTML
     if (sliderLimit!=0){
-       
-        
+
+
             $("#limiteActual").html(sliderLimit.toFixed(2));
             if (HourLimit==0) {sliderLimit=3}
             $( "#slider-BAC" ).slider({
@@ -832,7 +847,7 @@ function limit(){
               }
             });
             $( "#BAC" ).val( $( "#slider-BAC" ).slider( "value" ).toFixed(2) +"g/L" );
-        
+
     }
 }
 
@@ -897,7 +912,7 @@ function calculateAlcool(){
         DesbloquearChaves.style.pointerEvents="none";
         DesbloquearChaves.style.opacity=0.3;
     }
-    setTimeout('checkTransportes()',1000); 
+    setTimeout('checkTransportes()',100);
 
 
 }
@@ -941,6 +956,7 @@ function limpar(){
     $("#profilename").html("O Seu Nome");
     $("#profilename2").html("O Seu Nome");
     $(".Name").html("O Seu Nome");
+    document.getElementById("nomeLogin").value="";
     document.getElementById("ProfilePicture").src="./ProfileImages/anonimo.png";
     document.getElementById("ProfilePicture2").src="./ProfileImages/anonimo.png";
 

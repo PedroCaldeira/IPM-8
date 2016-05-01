@@ -42,46 +42,46 @@
 
   </head>
   <body>
+    <div class = "EcraPagamento EcraConfirmacao" id="ConfirmarLogout"style="left:470px;">
+              <div class= "EcraPagamentoBack" >
+                <span>Sair?</span>
+             </div>
 
+             <p style="margin-left:100px; margin-top: 50px">  Tem a certeza que quer sair da sua conta? </p>
+
+             <div id="DoneButton2" onclick="toggleVisible(ConfirmarLogout);hide(Logout);show(Login); limpar();disableblur(menuPrincipal)   ">Sim</div>
+             <div id="DoneButton3" onclick="toggleVisible(ConfirmarLogout);disableblur(menuPrincipal) ">Nao</div>
+
+
+            </div>
     <div class="ecra" id="menuPrincipal">
 
       <div id="cabecalhoPrincipal">
         <span class = "Name" > XYAO MING </span>
         <span class = "Time"  > Date </span>
 
-         <a style="background-color: #ff1a1a; color: white;border-radius:10px; text-decoration:none" onclick="toggleVisible(ConfirmarLogout) "id = "Logout">Sair</a>
-          <a style="background-color: #4E69A2; color: white;border-radius:10px; text-decoration:none" onclick="show(wrapper1)"id = "Login">Entrar </a>
+         <a style="background-color: #ff1a1a; color: white;border-radius:10px; text-decoration:none; text-align:center" onclick="toggleVisible(ConfirmarLogout);enableblur(menuPrincipal) "id = "Logout">Sair</a>
+          <a style="background-color: #4E69A2; color: white;border-radius:10px; text-decoration:none; width:9%; text-align:center" onclick="show(wrapper1)"id = "Login">Entrar </a>
       </div>
 
-       
+
 
       <h1 id="InitTitle" style="color: white">Bem-Vindo ao BarISTa </h1>
 
-      <div id="wrapper1" style="float:right; display:none; background-color: white; margin-top:-140px">
+      <div id="wrapper1" style="float:right; display:none; background-color: white; margin-top:-140px; position:absolute; z-index:20000; left:1120px;top:200px">
         <form id="profileInfo1" >
             <fieldset>
                 <div>
                     Não reconhecemos a sua impressão digital. Diga-nos, por favor, o seu nome:
-                    <input type="text" name="first_name" placeholder="Nome"/>
+                    <input id="nomeLogin" type="text" name="first_name" placeholder="Nome"/>
                 </div>
-               
+
                 <input name="submit" value="Aplicar" onclick="changeName1(); show(Logout); hide(Login)" />
-            </fieldset>    
+            </fieldset>
         </form>
     </div>
 
-    <div class = "EcraPagamento EcraConfirmacao" id="ConfirmarLogout">
-              <div class= "EcraPagamentoBack" >
-                <span>Saír?</span>
-             </div>
 
-             <p style="margin-left:30px; margin-right:30px; margin-top: 50px">  Tem a certeza que quer sair da sua conta? </p>
-
-             <div id="DoneButton2" onclick="toggleVisible(ConfirmarLogout);hide(Logout);show(Login); limpar();   ">Sim</div>
-             <div id="DoneButton3" onclick="toggleVisible(ConfirmarLogout); ">Nao</div>
-
-
-            </div>
 
       <div class="InitIcon" style="background-color:  #00A2E8">
         <a onclick="hide(menuPrincipal); show(Pedir)"><img src="../GlobalImages/food.png"></a>
@@ -630,10 +630,10 @@
                       </div>
           <button style="background-color:#2FFFFF" id="TopSongsButton" type="button" class="btn btn-info" onclick="toggleVisible(TopSongsMenu);createOrderedList();enableblur(cabecalhoMusica,meioMusic,rodapeMusic);disableblur(TopSongsMenu)"><img id="TopSongs" style="height: 70px; width: 70px" src="./MusicImages/whitequeue.png" /> <img id="musicArrow" src="./FoodImages/down.png" style="height: 20px; width: 20px" /></button>
           <button style="background-color:#298C2C" id="shoppingcartmusic" type="button" class="btn btn-info" onclick="toggleVisible(Q);toggleTab(shoppingcartmusic)"><img id="paperticketmusic" style="height: 70px; width: 70px" src="./MusicImages/whitequeue.png" /> <img id="musicArrow" src="./FoodImages/down.png" style="height: 20px; width: 20px" /></button>
-          
+
         </div>
-        
-          
+
+
         <div id = "Q">
           <div id="Qsongs">
           </div>
@@ -665,7 +665,7 @@
           <div data-album="dark_side_of_the_moon" data-genre="rock" data-artist="pink floyd" data-song="money" class="cover"><img data-voting ="14" data-UpVoted="false" data-DownVoted="false" data-name="Pink Floyd - Money" src="./MusicImages/pinkfloyd.jpg"/></div>
           <div data-album="dark_side_of_the_moon" data-genre="rock" data-artist="pink floyd" data-song="brain_damage" class="cover"><img data-voting ="13" data-UpVoted="false" data-DownVoted="false" data-name="Pink Floyd - Brain Damage" src="./MusicImages/pinkfloyd.jpg"/></div>
           <div data-album="dark_side_of_the_moon" data-genre="rock" data-artist="pink floyd" data-song="eclipse" class="cover"><img data-voting ="10" data-UpVoted="false" data-DownVoted="false" data-name="Pink Floyd - Eclipse" src="./MusicImages/pinkfloyd.jpg"/></div>
-          <div id="noResults" data-album="notFound" data-genre="notFound" data-artist="notFound" data-song="notFound" class="cover"><img data-voting ="-1" data-name="O jardineiro é jesuis e as arvoris somu noizes" src="./MusicImages/noSearchResults.jpg"/></div>
+          <div id="noResults" data-album="notFound" data-genre="notFound" data-artist="notFound" data-song="notFound" class="cover"><img data-voting ="-1" data-name="Sem resultados" src="./MusicImages/noSearchResults.jpg"/></div>
 
         </div>
 
@@ -674,7 +674,7 @@
         <span id="ValueOfVote"></span>
         <img id="DownVoteImage" src="./MusicImages/VoteDown.png" onclick="downVoteSong()">
         </div>
-        
+
         <div id="lecover" class="coverflow">
           <div data-album="levels" data-genre="house" data-artist="avicii"  data-song="levels" class="cover"><img data-voting ="3" data-UpVoted="false" data-DownVoted="false" data-name="Avicii - Levels" src="./MusicImages/avicii.jpg"/></div>
           <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="nada_e_proíbido" class="cover"><img data-voting ="2" data-UpVoted="false" data-DownVoted="false" data-name="Ana Malhoa - Nada é proíbido" src="./MusicImages/anamalhoa.jpg"/></div>
@@ -722,7 +722,7 @@
         <div class="RodapeIcon" style="background-color:#4d0099" >
           <a onclick="hide(Music);show(Perfil);"><img src="../GlobalImages/Perfil-icon.png" /></a>
         </div>
-      </div> 
+      </div>
     </div>
     <div id="TopSongsMenu">
       <div id="TopSongsTitle">
@@ -737,7 +737,7 @@
 
 
     <div class="ecra" id="Perfil">
-
+      <div id="blurME">
       <div id="cabecalhoPerfil">
         <span class = "Name"style="color:white"> XYAO MING </span>
         <span id="TimePerfil" class = "Time"style="color:white"> Date </span>
@@ -754,24 +754,24 @@
         <figcaption id="profilename"style="margin-top: 25px">Xyao Ming</figcaption>
        </figure>
        <table id = "PerfilTable">
-        <tr> 
+        <tr>
 
-          <td><figure class="PerfilCircle" style="background-color: #0099ff;color:white" onclick="toggleVisible(EcraPerfil5); calculateAlcool()"><img  src="./ProfileImages/alcoolemia.png"></img><figcaption id="alcoolemiaCaption"><span style="font-size:50px" id="NumeroAlcoolemia">3.15</span><span style="display:block; margin-top:-20px"> g/L</span></figcaption></figure></td>
-          <td><a class="PerfilCircle" onclick="toggleVisible(EcraPerfil2)" style="background-color: #00e600"><img id="TransporteRecomendado" style="margin-left:-5px" src="./ProfileImages/carro.png"></a></td>
+          <td><figure class="PerfilCircle" style="background-color: #0099ff;color:white" onclick="toggleVisible(EcraPerfil5); calculateAlcool(); enableblur(blurME, rodapePerfil)"><img  src="./ProfileImages/alcoolemia.png"></img><figcaption id="alcoolemiaCaption"><span style="font-size:50px" id="NumeroAlcoolemia">3.15</span><span style="display:block; margin-top:-20px"> g/L</span></figcaption></figure></td>
+          <td><a class="PerfilCircle" onclick="toggleVisible(EcraPerfil2);enableblur(blurME, rodapePerfil) " style="background-color: #00e600"><img id="TransporteRecomendado" style="margin-left:-5px" src="./ProfileImages/carro.png"></a></td>
 
         </tr>
         <tr>
 
-          <td><a class="PerfilCircle" id="KeysCircle" style="background-color: #00e600" onclick="toggleVisible(EcraPerfil3)"><img style="height:80%;width:80%;margin-top:5%; margin-left:5px" src="./ProfileImages/carkeys.png"></img></a></td>
-          <td><a class="PerfilCircle" style="background-color: #ffffff" onclick="toggleVisible(EcraPerfil4)"><img style="height:80%;width:80%;margin-top:10%" src="./ProfileImages/definicoes.png"></img></a></td>
+          <td><a class="PerfilCircle" id="KeysCircle" style="background-color: #00e600" onclick="toggleVisible(EcraPerfil3); enableblur(blurME, rodapePerfil)"><img style="height:80%;width:80%;margin-top:5%; margin-left:5px" src="./ProfileImages/carkeys.png"></img></a></td>
+          <td><a class="PerfilCircle" style="background-color: #ffffff" onclick="toggleVisible(EcraPerfil4); enableblur(blurME, rodapePerfil)"><img style="height:80%;width:80%;margin-top:10%" src="./ProfileImages/definicoes.png"></img></a></td>
 
         </tr>
      </table>
 
-
+   </div>
 
       <div class  = "EcraPerfil" id="EcraPerfil2" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
-         <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil2)"/>
+         <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil2);disableblur(blurME, rodapePerfil)"/>
          <table id="TransportesTable">
           <tr>
             <td><a class="PerfilCircle" id="Carro" ><img src="./ProfileImages/carro.png" style="margin-top:-50px;margin-left:-3px"/><button class="btn btn-primary TransportesButton" style="margin-top:60px" id="BotaoCarro" onclick="unlock2()">Desbloquear Chaves</button></a></td>
@@ -823,8 +823,8 @@
 
 
 
-     <div class  = "EcraPerfil" id="EcraPerfil3" style="background-image:url(./ProfileImages/ecrabackground.jpg)" data-state="0"> 
-              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil3)"/>
+     <div class  = "EcraPerfil" id="EcraPerfil3" style="background-image:url(./ProfileImages/ecrabackground.jpg)" data-state="0">
+              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil3); disableblur(blurME, rodapePerfil)"/>
               <img style="height:400px;width:400px;margin-top:50px; float:center" src="./ProfileImages/carkeys.png"></img>
               <div id="BloquearChaves" onclick="lock1()">Bloquear Chaves</div>
               <div id="DesbloquearChaves" onclick="unlock()">Desbloquear Chaves</div>
@@ -841,18 +841,18 @@
                <p style="margin-left:30px; margin-right:30px; margin-top: 50px">  Chaves desbloqueadas com sucesso. </p>
                <div id="DoneButton3" style="margin-top:180px" onclick="hide(DesbloquearSucesso); ">Ok</div>
             </div>
-           
-         
+
+
             <div class = "EcraPerfil EcraConfirmacao JanelaChaves" id="BloquearSucesso">
                <p style="margin-left:30px; margin-right:30px; margin-top: 50px">  Chaves bloqueadas com sucesso. </p>
                <div id="DoneButton3" style="margin-top:180px" onclick="hide(BloquearSucesso);lock2() ">Ok</div>
             <!-- <div id="DoneButton2" style="margin-top:180px" onclick="hide(BloquearSucesso);show(ConfirmarBloquear) ">Cancelar</div> -->
-            </div>         
+            </div>
 
       </div>
 
-      <div class  = "EcraPerfil" id="EcraPerfil4" style="background-image:url(./ProfileImages/ecrabackground.jpg)"> 
-              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil4)"/>
+      <div class  = "EcraPerfil" id="EcraPerfil4" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
+              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil4); disableblur(blurME, rodapePerfil)"/>
               <figure style="height:230px;width:auto;margin-top:150px; float:left">
                 <img id="ProfilePicture2"  src="./ProfileImages/yourboy.png" style="height:250px;width:300px"></img>
                 <figcaption id="profilename2"style="margin-top: 25px; width: 350px">Xyao Ming</figcaption>
@@ -867,7 +867,7 @@
                     Nome:
                     <input type="text" name="first_name" placeholder="Nome"/>
                 </div>
-               
+
                 <div>
                     e-mail:
                     <input type="text" name="email" placeholder="Email"/>
@@ -888,9 +888,9 @@
                Data de Nascimento:
                    <input type="date" name="bday" max="1996-12-31">
                 </div>
-               
+
                 <input name="submit" value="Aplicar" onclick="changeName()" />
-            </fieldset>    
+            </fieldset>
         </form>
     </div>
      <button class="btn btn-primary" style="float: left; margin-left: 150px; font-size:26px " onclick="changeProfilePic()"> Alterar Imagem</button>
@@ -899,8 +899,8 @@
 
 
 
-      <div class  = "EcraPerfil" id="EcraPerfil5" style="background-image:url(./ProfileImages/ecrabackground.jpg)"> 
-              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil5)"/>
+      <div class  = "EcraPerfil" id="EcraPerfil5" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
+              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil5); disableblur(blurME, rodapePerfil)"/>
               <div style="float:left;margin-top:150px; text-align: left">
                 <span style="font-size:30px ">Nivel de álcool no sangue:</span><br>
                 <span id="NivelAlcool" style="font-size:100px " >0.50</span>
@@ -946,13 +946,13 @@
                 </div>
                 <br>
                 <br>
-               
-               
+
+
                 <input name="submit" value="Aplicar" onclick="limit()" />
-            </fieldset>    
+            </fieldset>
         </form>
     </div>
-    
+
 
       </div>
 
@@ -1065,7 +1065,7 @@
           }});
         });
     </script>
-    
+
     <script type="text/javascript">window.onload = getTime();</script>
     <script type="text/javascript">window.onload = checkColorKeys();</script>
 

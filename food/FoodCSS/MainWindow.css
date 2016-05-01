@@ -471,7 +471,7 @@ form label{
 #Q{
   overflow-y:scroll;
   overflow-x:show;
-      
+
 
 }
 
@@ -605,7 +605,7 @@ hr{
     }
     fieldset {
         border-radius:4px;
-        text-align: left; 
+        text-align: left;
         font-size: 20px;
         padding:20px;
         border-color:rgba(4, 129, 177, 0.4);
@@ -647,8 +647,8 @@ hr{
         -o-transition-duration: 400ms;
         -o-transition-property: width, background;
         -o-transition-timing-function: ease;
-        
-        
+
+
         border-color:#ccc;
         box-shadow:0 0 5px rgba(4, 129, 177, 0.5);
         opacity:0.6;
@@ -737,7 +737,7 @@ hr{
 }
 
 #Carro{
-  background-color: #00e600; 
+  background-color: #00e600;
   width:250px;
   height:250px;
 }
@@ -779,7 +779,7 @@ hr{
 #HorarioAutocarro{
   margin-top:-150px;
   margin-left: -350px;
-  height:110% !important; 
+  height:110% !important;
   width:110%;
   background-color: white;
   border: solid 3px black;
@@ -821,13 +821,13 @@ hr{
   background-color: #298C2C;
   height:80px;
   text-align:middle;
-  
+
 }
 #TopSongsShow{
   overflow-y:scroll;
   height:610px;
   width:1200px;
-  
+
 }
 #firstSong{
   height:100px;
@@ -890,7 +890,7 @@ hr{
   border-radius: 50%;
   margin-top:-5px;
   margin-bottom:5px;
-  
+
 }
 #TopSongsTitle>span{
   margin-left:250px;
@@ -910,6 +910,6 @@ hr{
     position: absolute;
     left: 13px;
  }
-  
-  
+
+
 }
