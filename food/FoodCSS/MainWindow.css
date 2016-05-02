@@ -164,6 +164,7 @@
 
 }
 
+
 .Listagem li:active{
   background-color:#00A2E8;
   color: #ffffff
@@ -178,6 +179,16 @@
    margin-top: 10%
 }
 
+.Listagem img.Favorite{
+  height:40px;
+  width:40px;
+  float:left;
+  margin-top:10px; 
+  margin-left:10px; 
+  z-index:30000; 
+  position:absolute;
+   
+}
 #Ticket{
   display: none;
   float:right;

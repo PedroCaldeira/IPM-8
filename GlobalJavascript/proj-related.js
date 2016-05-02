@@ -72,7 +72,9 @@ function cleanTicket(){
 
 
 $(document).ready(function() {
-        $('ul.Listagem>li').click(function() {
+        $('ul.Listagem>li').click(function(evt) {
+            if(evt.target.id == "Benfica")
+                return;
         	var str=$(this).find("p")[0].textContent
             var price=this.getAttribute("data-price");
             if ($(this).hasClass("calcool")){
@@ -971,4 +973,10 @@ function randomizeAlcool(){
     var randomrounded= Math.round(RandomNumber * 100) / 100;
     console.log(randomrounded)
     document.getElementById("NumeroAlcoolemia").innerHTML=randomrounded
+}
+
+function toggleFavorite(x){
+
+    changeImage(x,'./FoodImages/star.png','./FoodImages/nostar.png');
+   
 }
