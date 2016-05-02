@@ -978,5 +978,22 @@ function randomizeAlcool(){
 function toggleFavorite(x){
 
     changeImage(x,'./FoodImages/star.png','./FoodImages/nostar.png');
-   
+    if(x.src.split("/").pop()=="star.png"){
+      console.log(x.outerHTML);
+      var li = $(x).parent();
+      console.log(li);
+      $("#FoodListagem").prepend(li[0].outerHTML);
+      li.remove();
+
+
+    }
+    else if(x.src.split("/").pop()=="nostar.png"){
+      console.log(x.outerHTML);
+      var li = $(x).parent();
+      console.log(li);
+      $("#FoodListagem").append(li[0].outerHTML);
+      li.remove();
+    }
+
+
 }
