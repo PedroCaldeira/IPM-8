@@ -374,6 +374,7 @@ form label{
     border-radius: 4px;
 }
 #addMusic{
+  margin-left:130px;
     margin-top: 20px;
     border: 1px;
     font-size: 20px;
@@ -931,6 +932,16 @@ hr{
   margin-bottom:5px;
 
 }
+.favoriteMusicIcon{
+  position:relative;
+  display:inline-block;
+  width:75px !important;
+  height:75px !important;
+  margin-left:50px;
+  top:-5px;
+}
+
+
 #TopSongsTitle>span{
   margin-left:250px;
 }
