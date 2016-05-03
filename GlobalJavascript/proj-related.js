@@ -1077,3 +1077,16 @@ function confirmLimit(){
     aux=document.getElementById("settingsTime")
     aux.innerHTML=$( "#slider-HOUR" ).slider( "value" ) + " horas";
 }
+
+function activate2(id){
+    var x = document.getElementById(id);
+    console.log(x.style.backgroundColor);
+    if(x.style.backgroundColor=="rgb(0, 162, 232)"){
+        x.style.backgroundColor="white";
+
+        }
+    else{
+        x.style.backgroundColor="#00A2E8";
+    }
+
+}
