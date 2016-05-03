@@ -243,6 +243,8 @@
 
           <div class="navBar">
             <span id = "Title" style="display: inline-block; padding-left: 35px"> Fazer Pedido </span>
+            <button type="button" class="btn btn-info" id="recbtn" ><img src="./FoodImages/recommendations.png" style="width:100px;height:100px"></img> </button>
+            <button type="button" class="btn btn-info" id="favbtn" ><img src="./FoodImages/favorites.png" style="width:100px;height:100px"></img> </button>
             <button type="button" class="btn btn-info" id="filterbtn" onclick="hide(Ticket); toggleVisible(Filtro); toggleTab(filterbtn); deactivateTab(shoppingcart); ">Filtro <img id="arrow1" src="./FoodImages/down.png" width="20" height="20"/></button>
 
 
@@ -308,26 +310,26 @@
             <div class="tab-pane active" id="bebida">
               <ul id="FoodListagem" class="Listagem" style="text-align: left">
 
-                 <li class="calcool cgas" data-price="4" > <img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/> <span class="LiPrice">4€</span><img  src="./FoodImages/vodka-cola.png"/><p>Vodka-Cola</p> </p></li>
-                  <li class="calcool cgas" data-price="1"> <img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/> <span class="LiPrice">1€</span><img  src="./FoodImages/cerveja.png" /><p>Cerveja</p></li>
-                 <li class="calcool sgas"  data-price="1"> <img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/> <span class="LiPrice">1€</span><img  src="./FoodImages/copo-sangria.png" /><p>Sangria-Copo</p></li>
-                 <li class="calcool sgas"  data-price="9"> <img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/> <span class="LiPrice">9€</span><img  src="./FoodImages/jarro-sangria.png"  /><p>Sangria-Jarro</p></li>
+                 <li class="calcool cgas" data-price="4" > <img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended avicii" src="./FoodImages/recommended.png"></img> <span class="LiPrice">4€</span><img  src="./FoodImages/vodka-cola.png"/><p>Vodka-Cola</p></li>
+                  <li class="calcool cgas" data-price="1"> <img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/> <img class="Recommended ana" src="./FoodImages/recommended.png"><span class="LiPrice">1€</span><img  src="./FoodImages/cerveja.png" /><p>Cerveja</p></li>
+                 <li class="calcool sgas"  data-price="1"> <img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/> <img class="Recommended ana" src="./FoodImages/recommended.png"><span class="LiPrice">1€</span><img  src="./FoodImages/copo-sangria.png" /><p>Sangria-Copo</p></li>
+                 <li class="calcool sgas"  data-price="9"> <img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended ana" src="./FoodImages/recommended.png"> <span class="LiPrice">9€</span><img  src="./FoodImages/jarro-sangria.png"  /><p>Sangria-Jarro</p></li>
 
 
 
-                <li class="salcool cgas" data-price="2"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">2€</span><img  src="./FoodImages/cocacola.png"/><p>Coca-cola</p></li>
-                  <li class="salcool cgas" data-price="2"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">2€</span><img  src="./FoodImages/sprite.png" /><p>Sprite</p></li>
-                 <li class="salcool cgas" data-price="2"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">2€</span><img  src="./FoodImages/fantalaranja.png" /><p>Fanta Laranja</p></li>
-                 <li class="salcool cgas" data-price="2"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">2€</span><img  src="./FoodImages/guarana.png" /><p>Guarana</p></li>
+                <li class="salcool cgas" data-price="2"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended jason" src="./FoodImages/recommended.png"><span class="LiPrice">2€</span><img  src="./FoodImages/cocacola.png"/><p>Coca-cola</p></li>
+                  <li class="salcool cgas" data-price="2"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended jason" src="./FoodImages/recommended.png"><span class="LiPrice">2€</span><img  src="./FoodImages/sprite.png" /><p>Sprite</p></li>
+                 <li class="salcool cgas" data-price="2"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended jason" src="./FoodImages/recommended.png"><span class="LiPrice">2€</span><img  src="./FoodImages/fantalaranja.png" /><p>Fanta Laranja</p></li>
+                 <li class="salcool cgas" data-price="2"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended jason" src="./FoodImages/recommended.png"><span class="LiPrice">2€</span><img  src="./FoodImages/guarana.png" /><p>Guarana</p></li>
 
 
-                 <li class="calcool cgas" data-price="4"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">4€</span><img  src="./FoodImages/cubalivre.png"/><p>Cuba Livre</p></li>
-                  <li class="calcool sgas" data-price="6"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">6€</span><img  src="./FoodImages/bloodymary.png" /><p>Bloody Mary</p></li>
-                 <li class="calcool sgas" data-price="3"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">3€</span><img  src="./FoodImages/margarita.png" /><p>Margarita</p></li>
-                 <li class="salcool cgas" data-price="4"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">4€</span><img  src="./FoodImages/martini.png"/><p>Martini</p></li>
-                  <li class="salcool cgas" data-price="1"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">1€</span><img  src="./FoodImages/agua.png" /><p>Água</p></li>
-                 <li class="salcool cgas" data-price="4"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">4€</span><img  src="./FoodImages/mojito.png" /><p>Mojito</p></li>
-                 <li class="salcool cgas" data-price="6"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">6€</span><img  src="./FoodImages/gintonico.png" /><p>Gin-tónico</p></li>
+                 <li class="calcool cgas" data-price="4"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended mc" src="./FoodImages/recommended.png"><span class="LiPrice">4€</span><img  src="./FoodImages/cubalivre.png"/><p>Cuba Livre</p></li>
+                  <li class="calcool sgas" data-price="6"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended metallica" src="./FoodImages/recommended.png"><span class="LiPrice">6€</span><img  src="./FoodImages/bloodymary.png" /><p>Bloody Mary</p></li>
+                 <li class="calcool sgas" data-price="3"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended mc" src="./FoodImages/recommended.png"><span class="LiPrice">3€</span><img  src="./FoodImages/margarita.png" /><p>Margarita</p></li>
+                 <li class="salcool cgas" data-price="4"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended pink" src="./FoodImages/recommended.png"><span class="LiPrice">4€</span><img  src="./FoodImages/martini.png"/><p>Martini</p></li>
+                  <li class="salcool cgas" data-price="1"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended jason" src="./FoodImages/recommended.png"><span class="LiPrice">1€</span><img  src="./FoodImages/agua.png" /><p>Água</p></li>
+                 <li class="salcool cgas" data-price="4"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended mc" src="./FoodImages/recommended.png"><span class="LiPrice">4€</span><img  src="./FoodImages/mojito.png" /><p>Mojito</p></li>
+                 <li class="salcool cgas" data-price="6"><img id="Benfica" class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended pink" src="./FoodImages/recommended.png"><span class="LiPrice">6€</span><img  src="./FoodImages/gintonico.png" /><p>Gin-tónico</p></li>
                  <li onclick="show(JanelaPersonalizacao);enableblur(cabecalho,meio,rodape); " data-price="8"><span class="LiPrice">8€</span><img  src="./FoodImages/plus.png" /><p>Criar Bebida</p></li>
 
               </ul>
@@ -651,7 +653,7 @@
           <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="comecar_no_a" class="cover"><img data-voting ="7" data-UpVoted="false" data-DownVoted="false" data-name="Ana Malhoa - Comecar no A" src="./MusicImages/anamalhoa.jpg"/></div>
           <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="gimmi_more" class="cover"><img data-voting ="3" data-UpVoted="false" data-DownVoted="false" data-name="Ana Malhoa - Gimmi More" src="./MusicImages/anamalhoa.jpg"/></div>
           <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="brinca_comigo_pai" class="cover"><img data-voting ="2" data-UpVoted="false" data-DownVoted="false" data-name="Ana Malhoa - Brinca comigo pai" src="./MusicImages/anamalhoa.jpg"/></div>
-          <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="angel" class="cover"><img data-voting ="1" data-UpVoted="false" data-DownVoted="false" data-name="Ana Malhoa - Angel" src="./MusicImages/anamalhoa.jpg"/></div>
+          <div data-album="exotica" data-genre="pimba" data-artist="ana_malhoa" data-song="angel" class="cover" ><img data-voting ="1" data-UpVoted="false" data-DownVoted="false" data-name="Ana Malhoa - Angel" src="./MusicImages/anamalhoa.jpg"/></div>
           <div data-album="jason_derulo" data-genre="pop" data-artist="jason_derulo" data-song="whatcha_say" class="cover"><img data-voting ="10" data-UpVoted="false" data-DownVoted="false" data-name="Jason Derulo - Whatcha Say" src="./MusicImages/jasonderulo.jpg"/></div>
           <div data-album="jason_derulo" data-genre="pop" data-artist="jason_derulo" data-song="ridin_solo" class="cover"><img data-voting ="3" data-UpVoted="false" data-DownVoted="false" data-name="Jason Derulo - Ridin Solo" src="./MusicImages/jasonderulo.jpg"/></div>
           <div data-album="jason_derulo" data-genre="pop" data-artist="jason_derulo" data-song="in_my_head" class="cover"><img data-voting ="6" data-UpVoted="false" data-DownVoted="false" data-name="Jason Derulo - In my Head" src="./MusicImages/jasonderulo.jpg"/></div>
@@ -720,7 +722,7 @@
           <img src="../GlobalImages/Music-icon.png" />
         </div>
         <div class="RodapeIcon" style="background-color:#4d0099" >
-          <a onclick="hide(Music);show(Perfil);"><img src="../GlobalImages/Perfil-icon.png" /></a>
+          <a onclick="hide(Music);show(Perfil);checkFood()"><img src="../GlobalImages/Perfil-icon.png" /></a>
         </div>
       </div>
     </div>

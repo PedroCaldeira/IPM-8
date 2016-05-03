@@ -451,11 +451,11 @@ function deactivateButton(){
 
 function addToQueue2(identity, nome){
     if($("#Qsongs").children("div").length==0)
-        var div=$('<div class="QueueIcon" id="'+identity+'" style="display:inline-block ; text-align: left !important; margin-left:10px"><span style=" position: relative; left: 10px">'+nome+'</span><br><span style="float:left">4:20</span><span style="font-weight: 800;float:right;right:20px;position:relative;color: green;z-index:10000">  NOW PLAYING</span></div><hr>')
+        var div=$('<div class="QueueIcon" id="'+identity+'" style="display:inline-block ; text-align: left !important; margin-left:10px"><span id="NomeMusica" style=" position: relative; left: 10px">'+nome+'</span><br><span style="float:left">4:20</span><span style="font-weight: 800;float:right;right:20px;position:relative;color: green;z-index:10000">  NOW PLAYING</span></div><hr>')
     else if($("#Qsongs").children("div").length==1)
-        var div=$('<div class="QueueIcon" id="'+identity+'" style="display:inline-block ; text-align: left !important; margin-left:10px"><span style=" position: relative; left: 10px">'+nome+'</span><br><span style="font-weight: 800;float:right;right:20px;position:relative;color: #03A9F4;">UP NEXT</span></div><hr>')
+        var div=$('<div class="QueueIcon" id="'+identity+'" style="display:inline-block ; text-align: left !important; margin-left:10px"><span id="NomeMusica" style=" position: relative; left: 10px">'+nome+'</span><br><span style="font-weight: 800;float:right;right:20px;position:relative;color: #03A9F4;">UP NEXT</span></div><hr>')
     else
-        var div=$('<div class="QueueIcon" id="'+identity+'" style="display:inline-block ; text-align: left !important; margin-left:10px"><span style=" position: relative; left: 10px">'+nome+'</span></div><hr>')
+        var div=$('<div class="QueueIcon" id="'+identity+'" style="display:inline-block ; text-align: left !important; margin-left:10px"><span id="NomeMusica" style=" position: relative; left: 10px">'+nome+'</span></div><hr>')
     $("#Qsongs").append(div);
 }
 
@@ -978,6 +978,7 @@ function randomizeAlcool(){
 function toggleFavorite(x){
 
     changeImage(x,'./FoodImages/star.png','./FoodImages/nostar.png');
+    /*
     if(x.src.split("/").pop()=="star.png"){
       console.log(x.outerHTML);
       var li = $(x).parent();
@@ -994,6 +995,79 @@ function toggleFavorite(x){
       $("#FoodListagem").append(li[0].outerHTML);
       li.remove();
     }
+    */
+
+
+}
+
+function checkFood(){
+    var x = document.getElementById("NumeroAlcoolemia").innerHTML;
+    var y = document.getElementById("EcraPerfil3").getAttribute("data-state");
+    if($("#Q").find("span[id^=NomeMusica]").length!=0){
+        var z = $("#Q").find("span[id^=NomeMusica]")[0].innerHTML;
+        var artist = z.split(" ")[0];
+        console.log(artist);
+        var currentTime = document.getElementsByClassName("Time")[0].innerHTML.split(":")
+        var hours = currentTime[0];
+
+        var d = document.getElementsByClassName("Recommended");
+            for(var i=0;i<d.length;i++){
+                d[i].style.display="none";
+                d[i].src="./FoodImages/recommended.png";
+            }
+
+        if(artist=="Metallica" && (hours>=20 || hours<=5)){
+            var c = document.getElementsByClassName("metallica");
+            for(var i=0;i<c.length;i++){
+                c[i].style.display="block";
+                c[i].src="./FoodImages/recommended.png";
+            }
+        }
+
+        else if(artist=="Ana" && (hours>=20 || hours<=5)){
+            var c = document.getElementsByClassName("ana");
+            for(var i=0;i<c.length;i++){
+                c[i].style.display="block";
+                c[i].src="./FoodImages/recommended.png";
+            }
+        }
+        else if(artist=="Pink" && (hours>=20 || hours<=5)){
+            var c = document.getElementsByClassName("pink");
+            for(var i=0;i<c.length;i++){
+                c[i].style.display="block";
+                c[i].src="./FoodImages/recommended.png";
+            }
+        }
+        else if(artist=="Avicii" && (hours>=20 || hours<=5)){
+            var c = document.getElementsByClassName("avicii");
+            for(var i=0;i<c.length;i++){
+                c[i].style.display="block";
+                c[i].src="./FoodImages/recommended.png";
+            }
+        }
+        else if(artist=="Avicii" && (hours<=20 && hours>=5)){
+            var c = document.getElementsByClassName("jason");
+            for(var i=0;i<c.length;i++){
+                c[i].style.display="block";
+                c[i].src="./FoodImages/recommended.png";
+            }
+        }
+        else if(artist=="Jason"){
+            var c = document.getElementsByClassName("jason");
+            for(var i=0;i<c.length;i++){
+                c[i].style.display="block";
+                c[i].src="./FoodImages/recommended.png";
+            }
+        }
+        else{
+            var c = document.getElementsByClassName("jason");
+            for(var i=0;i<c.length;i++){
+                c[i].style.display="block";
+                c[i].src="./FoodImages/recommended.png";
+            }
+        }
+    }
+    setTimeout('checkFood()',1000);
 
 
 }

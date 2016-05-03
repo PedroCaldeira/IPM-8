@@ -74,6 +74,22 @@
   font-size: 40px;
   border:1px solid rgb(0, 162, 232);
 }
+
+#favbtn{
+  position: absolute;
+  left:1149px;
+  top: 50px;
+  height:105px;
+  border:1px solid rgb(0, 162, 232);
+}
+
+#recbtn{
+  position: absolute;
+  left:1020px;
+  top: 50px;
+  height:105px;
+  border:1px solid rgb(0, 162, 232);
+}
 #Tabs{
   width: 210px;
   height: 675px;
@@ -186,6 +202,17 @@
   margin-top:10px;
   margin-left:10px;
   position:absolute;
+
+}
+
+.Listagem img.Recommended{
+  height:40px;
+  width:40px;
+  float:right;
+  margin-top:60px;
+  margin-left:10px;
+  position:absolute;
+  display: none;
 
 }
 #Ticket{
