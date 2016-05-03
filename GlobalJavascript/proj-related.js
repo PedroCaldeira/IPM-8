@@ -80,7 +80,7 @@ $(document).ready(function() {
             if ($(this).hasClass("calcool")){
                 var alcoolemia=document.getElementById("NumeroAlcoolemia").innerHTML
                 var limite= document.getElementById("limiteActual").innerHTML
-                if (alcoolemia>=limite){
+                if (alcoolemia>=limite && limite!=0 ){
                     $().toastmessage('showToast', {
                         text     : 'Bebida não adicionada, ja ultrapassou o limite de alcool estabelecido',
                         type     : 'error',
@@ -862,8 +862,9 @@ function calculateAlcool(){
  function checkTransportes(){
     var x = document.getElementById("NumeroAlcoolemia").innerHTML;
     var y = document.getElementById("EcraPerfil3").getAttribute("data-state");
-    var currentTime = new Date();
-    var hours = currentTime.getHours();
+    var currentTime = document.getElementsByClassName("Time")[0].innerHTML.split(":")
+    var hours = currentTime[0];
+
     document.getElementById("Carro").style.backgroundColor="#00e600";
     BotaoCarro.style.pointerEvents="auto";
     BotaoCarro.style.opacity=1;
@@ -1069,5 +1070,10 @@ function checkFood(){
     }
     setTimeout('checkFood()',1000);
 
-
+}
+function confirmLimit(){
+    var aux= document.getElementById("settingsLimit")
+    aux.innerHTML=$( "#slider-BAC" ).slider( "value" ) + " g/L";
+    aux=document.getElementById("settingsTime")
+    aux.innerHTML=$( "#slider-HOUR" ).slider( "value" ) + " horas";
 }
