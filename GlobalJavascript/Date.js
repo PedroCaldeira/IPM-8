@@ -10,5 +10,18 @@ function getTime(){
     for (var i = array.length - 1; i >= 0; i--) {
       array[i].textContent=hours+":"+minutes;
     }
-    t=setTimeout('getTime()',1000);  
+    letime=setTimeout('getTime()',1000);  
   }
+
+
+function changeTime(hours, minutes){
+  if(hours<10)
+      hours="0"+hours;
+    if (minutes<10)
+      minutes="0"+minutes;
+  clearTimeout(letime);
+  array=document.getElementsByClassName("Time")
+    for (var i = array.length - 1; i >= 0; i--) {
+      array[i].textContent=hours+":"+minutes;
+    }
+}

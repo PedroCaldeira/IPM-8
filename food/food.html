@@ -948,11 +948,25 @@
                 <br>
 
 
-                <input name="submit" value="Aplicar" onclick="limit()" />
+                <input id="limitbutton" name="submit" value="Aplicar" style="opacity: 0.3" onclick="show(ConfirmarLimite); confirmLimit()" />
             </fieldset>
         </form>
+        
     </div>
+        <div class = "EcraPerfil EcraConfirmacao JanelaChaves" id="ConfirmarLimite" >
+             <p style="margin-left:30px; margin-right:30px; margin-top: 50px">  Tem a certeza que pretende bloquear o seu limite de álcool com as seguintes definições: </p>
+             <p style="font-size: 25px;margin-left:100px; text-align: left ">
+               Limite de álcool: <span id="settingsLimit">Limite</span>
+             </p>
+             <p style="font-size: 25px;margin-left:100px; text-align: left">
+               Tempo até desbloquear o limite: <span id="settingsTime">LTime </span>
+             </p>
 
+             <div id="DoneButton2" style="margin-top:30px" onclick="hide(ConfirmarLimite); limit()">Sim</div>
+             <div id="DoneButton3" style="margin-top:30px" onclick="hide(ConfirmarLimite); ">Nao</div>
+
+
+            </div>
 
       </div>
 
@@ -974,12 +988,11 @@
       <div id="butaoRandomAlcool" onclick="randomizeAlcool()"><span id="randomAlcoolSpan">Random<br>Alcool</span></div>
     </div>
 
-
-
-
-
-
-
+      <div style="font-size: 25px; text-align:center">
+        <span>botoes de teste</span>
+        <button style="font-size:25px" type="button" class="btn btn-info" onclick="changeTime(03,00)">3 AM</button>
+        <button style="font-size:25px" type="button" class="btn btn-info" onclick="changeTime(15,00)">3 PM</button>
+      </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -1079,8 +1092,18 @@
           step: 0.01,
           slide: function( event, ui ) {
             $( "#BAC" ).val( ui.value.toFixed(2) +"g/L");
-            document.getElementById("timeSlider").style.pointerEvents="auto"
-            document.getElementById("timeSlider").style.opacity="1"
+            if(ui.value ==  0){
+              document.getElementById("timeSlider").style.pointerEvents="none";
+              document.getElementById("timeSlider").style.opacity="0.3";
+              document.getElementById("limitbutton").style.pointerEvents="none";
+              document.getElementById("limitbutton").style.opacity="0.3";
+            }
+            else{
+              document.getElementById("timeSlider").style.pointerEvents="auto";
+              document.getElementById("timeSlider").style.opacity="1";
+              document.getElementById("limitbutton").style.pointerEvents="auto";
+              document.getElementById("limitbutton").style.opacity="1";
+            }
           }
         });
         $( "#BAC" ).val( $( "#slider-BAC" ).slider( "value" ).toFixed(2) +"g/L" );
@@ -1096,7 +1119,6 @@
           step: 1,
           slide: function( event, ui ) {
             $( "#Hours" ).val( ui.value +" horas");
-
 
           }
         });
