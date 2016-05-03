@@ -977,26 +977,21 @@ function randomizeAlcool(){
 }
 
 function toggleFavorite(x){
-
+    var identity = "Cerveja";
+    var nome = "Cerveja";
+    var price = 1;
     changeImage(x,'./FoodImages/star.png','./FoodImages/nostar.png');
-    /*
     if(x.src.split("/").pop()=="star.png"){
-      console.log(x.outerHTML);
-      var li = $(x).parent();
-      console.log(li);
-      $("#FoodListagem").prepend(li[0].outerHTML);
-      li.remove();
+      var div=$('<div class="TicketIcon" id="'+identity+'ticket" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span><div class="input-group" style="width: 130px;display: inline-table; "><span class="input-group-btn"><button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]" onclick="removeFromTicket2('+"'"+identity+"'"+');" ><span class="glyphicon glyphicon-minus"></span></button></span><input id="'+identity+'Value"type="text" name="quant[2]" class="form-control input-number" value="1" min="-1000000" max="100"><span class="input-group-btn"><button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]" onclick="addToTicket('+"'"+identity+"'"+','+price+')"><span class="glyphicon  glyphicon-plus"></span></button></span></div> <p style="text-align:right; margin-top: 20px"><span id="'+identity+'Price" class ="TicketPrice" data-price="'+price+'">'+price+'</span> <span class="Euro">€</span><img class="redcross"src="./FoodImages/redcross.png" onclick="cleanTicketIcon('+"'"+identity+"'"+')"/></p></div>');
+      $("#ListagemFavoritosFood").append(div);
+
 
 
     }
     else if(x.src.split("/").pop()=="nostar.png"){
-      console.log(x.outerHTML);
-      var li = $(x).parent();
-      console.log(li);
-      $("#FoodListagem").append(li[0].outerHTML);
-      li.remove();
+
     }
-    */
+
 
 
 }

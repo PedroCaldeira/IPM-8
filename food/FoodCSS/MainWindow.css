@@ -80,7 +80,7 @@
   left:1149px;
   top: 50px;
    height: 107px;
- 
+
 }
 
 #recbtn{
@@ -552,9 +552,9 @@ hr{
 
 #PerfilTable{
   float:right;
-  height: 650px;
+  height: 600px;
   width: 650px;
-  margin-right: 150px;
+  margin-right: 50px;
 
 }
 
@@ -564,8 +564,8 @@ hr{
 
 .PerfilCircle{
   float:right;
-  height:300px;
-  width: 300px;
+  height:250px;
+  width: 250px;
   margin-top: 25px;
   margin-right:25px;
   background-color: black;
@@ -951,4 +951,35 @@ hr{
  }
 
 
+
+
+
+
+#ListagemFavoritosFood{
+	margin-top:75px;
+	margin-left: 0px;
+	float:left;
+	height: 80%;
+	width: 40%;
+	background-color: transparent;
+	border: 3px solid black;
+}
+
+#ListagemFavoritosMusica{
+	margin-right: 50px;
+	margin-top:75px;
+	display: inline-block;
+	float:right;
+	height: 80%;
+	width: 40%;
+	background-color: transparent;
+	border: 3px solid black;
+}
+
+.ListLabels{
+	position:absolute;
+	width:35%;
+	height:5%;
+	font-size: 30px;
+	margin-top: 20px;
 }
