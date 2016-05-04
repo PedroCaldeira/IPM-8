@@ -1,3 +1,14 @@
+
+
+var ana = 0;
+var avicii = 0;
+var jason = 0;
+var mc = 0;
+var metallica = 0;
+var pink = 0;
+
+
+
 function EraseContent(elementID)
 {
     document.getElementById(elementID).innerHTML = "";
@@ -975,28 +986,88 @@ function randomizeAlcool(){
 }
 
 function toggleFavorite(x){
-
+    var parent = $(x).parent();
+    console.log();
+    var nome = $(parent).find("p")[0].innerHTML;
+    var identity = nome.replace(" ","_");
+    var identity2 = ""
     changeImage(x,'./FoodImages/star.png','./FoodImages/nostar.png');
-    /*
     if(x.src.split("/").pop()=="star.png"){
-      console.log(x.outerHTML);
-      var li = $(x).parent();
-      console.log(li);
-      $("#FoodListagem").prepend(li[0].outerHTML);
-      li.remove();
+      var div=$('<div class="FavoriteIcon" id="'+identity+'favorite" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromFavorites('+"'"+identity+"'"+')"/></p></div>');
+      $("#ListagemFavoritosFood").append(div);
+
 
 
     }
     else if(x.src.split("/").pop()=="nostar.png"){
-      console.log(x.outerHTML);
-      var li = $(x).parent();
-      console.log(li);
-      $("#FoodListagem").append(li[0].outerHTML);
-      li.remove();
+        $("#"+identity+"favorite").remove();
     }
-    */
 
 
+
+}
+
+function toggleFavoriteMusic(){
+    var isFavourite=$(".cover.current").find("img").attr("data-favorite")
+    var favouriteIcon=document.getElementById("favouriteMusicIcon")
+    var nome =$(".cover.current").find("img").attr("data-name")
+    var identity = nome.replace(" ","_");
+    var result= $("#musicList").find("div");
+    var musicListImage;
+    for(var i=0; i<result.length;i++){
+        if($(result[i]).find("img").attr("data-name")==nome){
+            musicListImage=$(result[i]).find("img")
+            
+        }
+    }
+    for(var i=0;i<20;i++)
+        identity=identity.replace(" ","_");
+        
+    changeImage(favouriteIcon,"./ProfileImages/favorites.ico",'./FoodImages/nostar.png');
+    if(favouriteIcon.src.split("/").pop()=="favorites.ico"){
+      musicListImage.attr("data-favorite","true")
+      $(".cover.current").find("img").attr("data-favorite","true")
+      console.log(identity)
+      var div=$('<div class="FavoriteIcon" id="'+identity+'favorite" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px;">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromFavoritesMusic('+"'"+identity+"'"+')"/></p></div>');
+      $("#ListagemFavoritosMusica").append(div);
+
+
+
+    }
+    else if(favouriteIcon.src.split("/").pop()=="nostar.png"){
+        $(".cover.current").find("img").attr("data-favorite","false")
+        musicListImage.attr("data-favorite","false")
+        console.log(identity)
+        $("#"+identity+"favorite").remove();
+    }
+}
+
+function removeFromFavoritesMusic(id){
+    
+    var result= $("#musicList").find("div");
+    for(var i=0; i<result.length;i++){
+        if($(result[i]).find("img").attr("data-name")==$("#"+id+"favorite").find("span")[0].innerHTML){
+            console.log($(result[i]).find("img").attr("data-favorite"))
+            $(result[i]).find("img").attr("data-favorite","false")
+        }
+    }
+    var result= $("#lecover").find("div");
+    for(var i=0; i<result.length;i++){
+        if($(result[i]).find("img").attr("data-name")==$("#"+id+"favorite").find("span")[0].innerHTML){
+            console.log($(result[i]).find("img").attr("data-favorite"))
+            $(result[i]).find("img").attr("data-favorite","false")
+            if($(".cover.current").find("img").attr("data-name")==$("#"+id+"favorite").find("span")[0].innerHTML)
+                changeImage(document.getElementById("favouriteMusicIcon"),"./ProfileImages/favorites.ico",'./FoodImages/nostar.png');
+        }
+    }
+    
+    $("#"+id+"favorite").remove();
+}
+
+
+
+function removeFromFavorites(id){
+    $("#"+id+"favorite").remove();
 }
 
 function checkFood(){
@@ -1065,6 +1136,13 @@ function checkFood(){
                 c[i].src="./FoodImages/recommended.png";
             }
         }
+    }
+    else{
+        var c = document.getElementsByClassName("avicii");
+            for(var i=0;i<c.length;i++){
+                c[i].style.display="block";
+                c[i].src="./FoodImages/recommended.png";
+            }
     }
     setTimeout('checkFood()',1000);
 
