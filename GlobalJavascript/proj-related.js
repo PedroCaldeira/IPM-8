@@ -1065,6 +1065,58 @@ function removeFromFavorites(id){
     $("#"+id+"favorite").remove();
 }
 
+function addToHistoryMusic(){
+    var nome=$(".cover.current").find("img").attr("data-name")
+    var identity=nome.replace(" ","_")
+    for(var i=0;i<20;i++)
+        identity=identity.replace(" ","_");
+    var div=$('<div class="FavoriteIcon" id="'+identity+'History" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px;">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromHistoryMusic('+"'"+identity+"'"+')"/></p></div>');
+    $("#HistoricoMusica").append(div);
+}
+function removeFromHistoryMusic(id){
+    $("#"+id+"History").remove();
+    
+}
+var alternate=0;
+
+function addToHistoryFood(){
+    var children = $("#TicketProducts").find("div");
+    var tam = children.length;
+    for(var i=0;i<tam;i+=2){
+        var clone = $(children[i]).clone();
+        console.log(clone);
+        var nome=$(clone[0]).find("span")[0].innerHTML;
+        var num = $(clone[0]).find("input")[0].value;
+        console.log(nome);
+        var identity=nome.replace(" ","_");
+        if(num>1){
+            nome +=" x "+num;
+            var div=$('<div class="FavoriteIcon" id="'+identity+'History" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromHistoryFood('+"'"+identity+"'"+')"/></p></div>');
+        }
+        else
+            var div=$('<div class="FavoriteIcon" id="'+identity+'History" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromHistoryFood('+"'"+identity+"'"+')"/></p></div>');
+        console.log(div)
+        
+        if(alternate==0){
+            div[0].style.backgroundColor="#99ccff";
+        }
+        else{
+            div[0].style.backgroundColor="#3399ff";
+        }
+        $("#HistoricoFood").append(div[0]);
+    }
+    if(alternate==0)
+        alternate++;
+    else
+        alternate--;
+}
+
+function removeFromHistoryFood(id){
+    $("#"+id+"History").remove();
+}
+
+
+
 function checkFood(){
     var x = document.getElementById("NumeroAlcoolemia").innerHTML;
     var y = document.getElementById("EcraPerfil3").getAttribute("data-state");
@@ -1175,6 +1227,8 @@ function FilterFavorite(){
     var array= document.getElementsByClassName("Favorite")
     var favbtn=document.getElementById("favbtn")
     var recbtn=document.getElementById("recbtn")
+    var arrayPers= document.getElementsByClassName("Personalizavel")
+    console.log(arrayPers)
     recbtn.style.backgroundColor="#00A2E8"
     $('.Listagem>li').show()
     if (favbtn.style.backgroundColor!="white"){
@@ -1185,6 +1239,11 @@ function FilterFavorite(){
                 $(array[i]).parent().hide()
             }
         }
+        for (var i = 0; i < arrayPers.length; i++) {
+            console.log(arrayPers[i])
+            $(arrayPers[i]).hide();
+        }
+            
     }
     else{
         favbtn.style.backgroundColor="#00A2E8";

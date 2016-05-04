@@ -206,7 +206,7 @@
              </div>
              <img id="Checkbox" style="margin-top:50px;"src="./FoodImages/checkbox-icon.png"/>
              <p style="margin-left:30px; margin-right:30px;">  O seu pedido foi finalizado com sucesso e será entregue dentro de aproximadamente 20 minutos. </br>Obrigado pela sua paciência. </p>
-              <div id="OkButton" onclick="toggleVisible(EcraPagamento4); disableblur(cabecalho,meio,rodape); cleanTicket()">OK</div>
+              <div id="OkButton" onclick="toggleVisible(EcraPagamento4); disableblur(cabecalho,meio,rodape); addToHistoryFood(); cleanTicket(); ">OK</div>
             </div>
 
 
@@ -326,57 +326,57 @@
                   <li class="salcool cgas" data-price="1"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended jason" src="./FoodImages/recommended.png"><span class="LiPrice">1€</span><img  src="./FoodImages/agua.png" /><p>Água</p></li>
                  <li class="salcool cgas" data-price="4"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended mc" src="./FoodImages/recommended.png"><span class="LiPrice">4€</span><img  src="./FoodImages/mojito.png" /><p>Mojito</p></li>
                  <li class="salcool cgas" data-price="6"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended pink avicii" src="./FoodImages/recommended.png"><span class="LiPrice">6€</span><img  src="./FoodImages/gintonico.png" /><p>Gin-tónico</p></li>
-                 <li onclick="show(JanelaPersonalizacao);enableblur(cabecalho,meio,rodape); " data-price="8"><span class="LiPrice">8€</span><img  src="./FoodImages/plus.png" /><p>Criar Bebida</p></li>
+                 <li class="Personalizavel" onclick="show(JanelaPersonalizacao);enableblur(cabecalho,meio,rodape); " data-price="8"><span class="LiPrice">8€</span><img  src="./FoodImages/plus.png" /><p>Criar Bebida</p></li>
 
               </ul>
             </div>
             <div class="tab-pane" id="refeicoes">
               <ul class="Listagem">
 
-              <li class="pizza" data-price="6"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">6€</span><img  src="./FoodImages/pizzamargarita.png"/><p>Pizza Margarita</p></li>
-               <li class="pizza" data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">8€</span><img  src="./FoodImages/pizzahawaii.png"/><p>Pizza Hawaii</p></li>
-                <li class="pizza" data-price="7"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">7€</span><img  src="./FoodImages/pizzaprosciutto.png"/><p>Pizza Prosciutto</p></li>
+              <li class="pizza" data-price="6"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended avicii" src="./FoodImages/recommended.png"><span class="LiPrice">6€</span><img  src="./FoodImages/pizzamargarita.png"/><p>Pizza Margarita</p></li>
+               <li class="pizza" data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended mc" src="./FoodImages/recommended.png"><span class="LiPrice">8€</span><img  src="./FoodImages/pizzahawaii.png"/><p>Pizza Hawaii</p></li>
+                <li class="pizza" data-price="7"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended ana" src="./FoodImages/recommended.png"><span class="LiPrice">7€</span><img  src="./FoodImages/pizzaprosciutto.png"/><p>Pizza Prosciutto</p></li>
 
-                <li class="pizza" data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">8€</span><img  src="./FoodImages/pizzacogumelos.png" /><p>Pizza Cogumelos</p></li>
-               <li  class="hamburguer" data-price="4"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">4€</span><img  src="./FoodImages/hamburguer.png" /><p>Hamburguer Simples</p></li>
-                <li class="hamburguer" data-price="6"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">6€</span><img  src="./FoodImages/hamburguerchili.png" /><p>Hamburguer Chili</p></li>
-                <li class="hamburguer" data-price="6"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">6€</span><img  src="./FoodImages/bacon-cheeseburger.png" /><p>Hamburguer Bacon</p></li>
-                <li class="hamburguer" data-price="6"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">6€</span><img  src="./FoodImages/OnionBurguer.png" /><p>Hamburguer Cebola</p></li>
-               <li class="hamburguer" data-price="5"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">5€</span><img  src="./FoodImages/cheeseburger.png" /><p>CheeseBurger</p></li>
-               <li class="pasta" data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">8€</span><img  src="./FoodImages/bolonhesa.png" /><p>Esparguete Bolonhesa</p></li>
-                <li class="pasta" data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">8€</span><img  src="./FoodImages/esparguetepesto.png"/><p>Esparguete Pesto</p></li>
-                <li class="pasta" data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">8€</span><img  src="./FoodImages/lasanha.png" /><p>Lasanha</p></li>
-                <li class="pasta" data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">8€</span><img  src="./FoodImages/carbonara.png" /><p>Carbonara</p></li>
+                <li class="pizza" data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended pink" src="./FoodImages/recommended.png"><span class="LiPrice">8€</span><img  src="./FoodImages/pizzacogumelos.png" /><p>Pizza Cogumelos</p></li>
+               <li  class="hamburguer" data-price="4"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended avicii jason" src="./FoodImages/recommended.png"><span class="LiPrice">4€</span><img  src="./FoodImages/hamburguer.png" /><p>Hamburguer Simples</p></li>
+                <li class="hamburguer" data-price="6"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended ana" src="./FoodImages/recommended.png"><span class="LiPrice">6€</span><img  src="./FoodImages/hamburguerchili.png" /><p>Hamburguer Chili</p></li>
+                <li class="hamburguer" data-price="6"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended metallica" src="./FoodImages/recommended.png"><span class="LiPrice">6€</span><img  src="./FoodImages/bacon-cheeseburger.png" /><p>Hamburguer Bacon</p></li>
+                <li class="hamburguer" data-price="6"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended pink jason" src="./FoodImages/recommended.png"><span class="LiPrice">6€</span><img  src="./FoodImages/OnionBurguer.png" /><p>Hamburguer Cebola</p></li>
+               <li class="hamburguer" data-price="5"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended metallica" src="./FoodImages/recommended.png"><span class="LiPrice">5€</span><img  src="./FoodImages/cheeseburger.png" /><p>CheeseBurger</p></li>
+               <li class="pasta" data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended avicii" src="./FoodImages/recommended.png"><span class="LiPrice">8€</span><img  src="./FoodImages/bolonhesa.png" /><p>Esparguete Bolonhesa</p></li>
+                <li class="pasta" data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended pink jason" src="./FoodImages/recommended.png"><span class="LiPrice">8€</span><img  src="./FoodImages/esparguetepesto.png"/><p>Esparguete Pesto</p></li>
+                <li class="pasta" data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended mc" src="./FoodImages/recommended.png"><span class="LiPrice">8€</span><img  src="./FoodImages/lasanha.png" /><p>Lasanha</p></li>
+                <li class="pasta" data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended pink" src="./FoodImages/recommended.png"><span class="LiPrice">8€</span><img  src="./FoodImages/carbonara.png" /><p>Carbonara</p></li>
 
-               <li onclick="show(JanelaPersonalizacaoPizza);enableblur(cabecalho,meio,rodape); "><span class="LiPrice">9€</span><img  src="./FoodImages/plus.png" /><p>Criar Pizza</p></li>
+               <li class="Personalizavel" onclick="show(JanelaPersonalizacaoPizza);enableblur(cabecalho,meio,rodape); "><span class="LiPrice">9€</span><img  src="./FoodImages/plus.png" /><p>Criar Pizza</p></li>
 
             </ul>
             </div>
             <div class="tab-pane" id="snacks"><ul class="Listagem">
 
-               <li class="salgado" data-price="1"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">1€</span><img  src="./FoodImages/tremocos.png"/><p>Tremocos</p></li>
-                <li class="salgado" data-price="1"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">1€</span><img  src="./FoodImages/amendoins.png" /><p>Amendoins</p></li>
-               <li class="salgado" data-price="1"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">1€</span><img  src="./FoodImages/batatasfritas.png" /><p>BatatasFritas</p></li>
-               <li class="salgado" data-price="2"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">2€</span><img  src="./FoodImages/snack.png" /><p>Nachos</p></li>
+               <li class="salgado" data-price="1"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended ana" src="./FoodImages/recommended.png"><span class="LiPrice">1€</span><img  src="./FoodImages/tremocos.png"/><p>Tremocos</p></li>
+                <li class="salgado" data-price="1"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended ana" src="./FoodImages/recommended.png"><span class="LiPrice">1€</span><img  src="./FoodImages/amendoins.png" /><p>Amendoins</p></li>
+               <li class="salgado" data-price="1"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended metallica" src="./FoodImages/recommended.png"><span class="LiPrice">1€</span><img  src="./FoodImages/batatasfritas.png" /><p>BatatasFritas</p></li>
+               <li class="salgado" data-price="2"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended metallica" src="./FoodImages/recommended.png"><span class="LiPrice">2€</span><img  src="./FoodImages/snack.png" /><p>Nachos</p></li>
 
 
 
-              <li class="salgado" data-price="2"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">2€</span><img  src="./FoodImages/pretzels.png"/><p>Pretzels</p></li>
-              <li class="salgado" data-price="1"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">1€</span><img  src="./FoodImages/chamucagif.gif"/><p>Chamuca</p></li>
-                <li class="salgado" data-price="1"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">1€</span><img  src="./FoodImages/pistachios.png" /><p>Pistachios</p></li>
+              <li class="salgado" data-price="2"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended pink" src="./FoodImages/recommended.png"><span class="LiPrice">2€</span><img  src="./FoodImages/pretzels.png"/><p>Pretzels</p></li>
+              <li class="salgado" data-price="1"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended ana jason" src="./FoodImages/recommended.png"><span class="LiPrice">1€</span><img  src="./FoodImages/chamucagif.gif"/><p>Chamuca</p></li>
+                <li class="salgado" data-price="1"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended mc" src="./FoodImages/recommended.png"><span class="LiPrice">1€</span><img  src="./FoodImages/pistachios.png" /><p>Pistachios</p></li>
 
-                <li class="doce" data-price="2"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">2€</span><img  src="./FoodImages/geladochocolate.png" /><p>Gelado Chocolate</p></li>
-                <li class="doce" data-price="2"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">2€</span><img  src="./FoodImages/geladobaunilha.png" /><p>Gelado Baunilha</p></li>
-                <li class="doce" data-price="2"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">2€</span><img  src="./FoodImages/geladonata.png" /><p>Gelado Nata</p></li>
-                <li class="doce" data-price="2"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">2€</span><img  src="./FoodImages/geladocaramelo.png" /><p>Gelado Caramelo</p></li>
+                <li class="doce" data-price="2"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended mc" src="./FoodImages/recommended.png"><span class="LiPrice">2€</span><img  src="./FoodImages/geladochocolate.png" /><p>Gelado Chocolate</p></li>
+                <li class="doce" data-price="2"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended pink jason" src="./FoodImages/recommended.png"><span class="LiPrice">2€</span><img  src="./FoodImages/geladobaunilha.png" /><p>Gelado Baunilha</p></li>
+                <li class="doce" data-price="2"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended ana" src="./FoodImages/recommended.png"><span class="LiPrice">2€</span><img  src="./FoodImages/geladonata.png" /><p>Gelado Nata</p></li>
+                <li class="doce" data-price="2"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended avicii jason" src="./FoodImages/recommended.png"><span class="LiPrice">2€</span><img  src="./FoodImages/geladocaramelo.png" /><p>Gelado Caramelo</p></li>
             </ul>
             </div>
             <div class="tab-pane" id="menus">
               <ul class="Listagem">
 
-               <li onclick='showMenu("JanelaMenu");enableblur(cabecalho,meio,rodape)' data-price="10"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice" >10€</span><img style="width: 130px" src="./FoodImages/menupizza.png"/><p>Menu Pizza</p></li>
-                <li onclick='showMenu("JanelaMenu2");enableblur(cabecalho,meio,rodape)' data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">8€</span><img style="width: 130px" src="./FoodImages/menu.png" /><p>Menu Hamburguer</p></li>
-               <li onclick='showMenu("JanelaMenu3");enableblur(cabecalho,meio,rodape)' data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">8€</span><img style="width: 130px" src="./FoodImages/menupasta23.png" /><p>Menu Pasta</p></li>
+               <li onclick='showMenu("JanelaMenu");enableblur(cabecalho,meio,rodape)' data-price="10"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended mc jason" src="./FoodImages/recommended.png"><span class="LiPrice" >10€</span><img style="width: 130px" src="./FoodImages/menupizza.png"/><p>Menu Pizza</p></li>
+                <li onclick='showMenu("JanelaMenu2");enableblur(cabecalho,meio,rodape)' data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended ana metallica" src="./FoodImages/recommended.png"><span class="LiPrice">8€</span><img style="width: 130px" src="./FoodImages/menu.png" /><p>Menu Hamburguer</p></li>
+               <li onclick='showMenu("JanelaMenu3");enableblur(cabecalho,meio,rodape)' data-price="8"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><img class="Recommended pink avicii" src="./FoodImages/recommended.png"><span class="LiPrice">8€</span><img style="width: 130px" src="./FoodImages/menupasta23.png" /><p>Menu Pasta</p></li>
 
 
 
@@ -707,7 +707,7 @@
     <div id="photos-info" style="color:white">
         <div id="photos-name"></div>
       </div>
-    <div id="AdicionarMusica"><button class="btn-info" id="addMusic" onclick="addToQueue();"> Adicionar Música à Fila</button><img id="favouriteMusicIcon" class="favoriteMusicIcon" onclick="toggleFavoriteMusic()"src="./FoodImages/nostar.png"></div>
+    <div id="AdicionarMusica"><button class="btn-info" id="addMusic" onclick="addToQueue();addToHistoryMusic();"> Adicionar Música à Fila</button><img id="favouriteMusicIcon" class="favoriteMusicIcon" onclick="toggleFavoriteMusic()"src="./FoodImages/nostar.png"></div>
 </div>
 
 
@@ -757,7 +757,7 @@
 
           <td><figure class="PerfilCircle" style="background-color: #0099ff;color:white" onclick="toggleVisible(EcraPerfil5); calculateAlcool(); enableblur(blurME, rodapePerfil)"><img  src="./ProfileImages/alcoolemia.png"></img><figcaption id="alcoolemiaCaption"><span style="font-size:50px" id="NumeroAlcoolemia">3.15</span><span style="display:block; margin-top:-20px"> g/L</span></figcaption></figure></td>
           <td><a class="PerfilCircle" onclick="toggleVisible(EcraPerfil2);enableblur(blurME, rodapePerfil) " style="background-color: #00e600"><img id="TransporteRecomendado" style="margin-left:-5px" src="./ProfileImages/carro.png"></a></td>
-          <td><a class="PerfilCircle"  style="background-color: #bfbfbf;" onclick="toggleVisible(EcraPerfil7); enablur(blurME,rodapePerfil)"><img style="height:75%;width:75%;margin-top:12%; margin-left:-10px" src="./ProfileImages/history.ico" /></a></td>
+          <td><a class="PerfilCircle"  style="background-color: #bfbfbf;" onclick="toggleVisible(EcraPerfil7); enableblur(blurME,rodapePerfil)"><img style="height:75%;width:75%;margin-top:12%; margin-left:-10px" src="./ProfileImages/history.ico" /></a></td>
         </tr>
         <tr>
 
@@ -984,7 +984,7 @@
           <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil7); disableblur(blurME, rodapePerfil)"/>
           <div class="ListLabels" style="margin-left:110px">Pedidos Efectuados</div>
           <ul id="HistoricoFood">
-
+           
           </ul>
           <div class="ListLabels"  style="margin-left:570px">Músicas Adicionadas</div>
           <ul id="HistoricoMusica">

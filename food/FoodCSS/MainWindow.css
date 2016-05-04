@@ -984,6 +984,7 @@ hr{
 	width: 40%;
 	background-color: transparent;
 	border: 3px solid black;
+  overflow-y: scroll;
 }
 
 #ListagemFavoritosMusica{
@@ -995,6 +996,8 @@ hr{
 	width: 40%;
 	background-color: transparent;
 	border: 3px solid black;
+  overflow-y: scroll;
+  
 }
 
 #HistoricoFood{
@@ -1005,6 +1008,7 @@ hr{
   width: 40%;
   background-color: transparent;
   border: 3px solid black;
+  overflow-y: scroll;
 }
 
 #HistoricoMusica{
@@ -1016,6 +1020,7 @@ hr{
   width: 40%;
   background-color: transparent;
   border: 3px solid black;
+  overflow-y: scroll;
 }
 
 .ListLabels{
