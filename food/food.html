@@ -27,12 +27,8 @@
     <link rel="stylesheet" href="./FoodCSS/MainWindow.css">
     <link rel="stylesheet" href="../Main_screen/MainScreen.css">
     <link rel="stylesheet" href="../GlobalCSS/Global.css">
-    <script language="JavaScript" type="text/javascript" src="../ContentFlow/contentflow.js"></script>
+    <link rel="stylesheet" href="../Keyboard-master/css/keyboard.css">
     <link rel="stylesheet" href="../ContentFlow/contentflow.css">
-    <script tyle="text/javascript">
-        var cf = new ContentFlow('contentFlow', {reflectionColor: "#000000"});
-    </script>
-
 
 
 
@@ -244,7 +240,7 @@
           <div class="navBar">
             <span id = "Title" style="display: inline-block; padding-left: 35px"> Fazer Pedido </span>
             <button type="button" onclick="activate2('recbtn');" class="btn btn-info" style="background-color: #00A2E8" id="recbtn" ><img src="./FoodImages/recommendations.png" style="width:100px;height:100px"></img> </button>
-            <button type="button" class="btn btn-info" id="favbtn" onclick="activate2('favbtn');" style="background-color: #00A2E8" ><img src="./FoodImages/favorites.png" style="width:100px;height:100px; "></img> </button>
+            <button type="button" class="btn btn-info" id="favbtn" onclick="activate2('favbtn'); toggleRecommended()" style="background-color: #00A2E8" ><img src="./FoodImages/favorites.png" style="width:100px;height:100px; "></img> </button>
             <button type="button" class="btn btn-info" id="filterbtn" onclick="hide(Ticket); toggleVisible(Filtro); toggleTab(filterbtn); deactivateTab(shoppingcart); ">Filtro <img id="arrow1" src="./FoodImages/down.png" width="20" height="20"/></button>
 
 
@@ -867,16 +863,16 @@
             <fieldset>
                 <div>
                     Nome:
-                    <input type="text" name="first_name" placeholder="Nome"/>
+                    <input class="profileForm" type="text" name="first_name" placeholder="Nome"/>
                 </div>
 
                 <div>
                     e-mail:
-                    <input type="text" name="email" placeholder="Email"/>
+                    <input class="profileForm" type="text" name="email" placeholder="Email"/>
                 </div>
                 <div>
                     Telemóvel:
-                    <input type="number" name="telemovel" placeholder="telemovel" style="width:100%; "/>
+                    <input id="telemovel" type="text" name="telemovel" placeholder="telemovel" style="width:100%; "/>
                 </div>
                 <div style="font-size: 20px;float: left; text-align: left">
                   Sexo:
@@ -1004,7 +1000,8 @@
     <script src="../coverflow-master/jquery.coverflow.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../GlobalJavascript/Date.js" ></script>
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>-->
+    <script src="../Keyboard-master/js/jquery.keyboard.js"></script>
+    <script type="text/javascript"  src="../Keyboard-master/js/jquery.keyboard.extension-all.js"></script>
     <script type="text/javascript" src="../akquinet-jquery-toastmessage-plugin-6f5d7bf/src/main/javascript/jquery.toastmessage.js" ></script>
     <script src="../jquery.tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.js"></script>
     <script src="../jquery.tzCheckbox/js/script.js"></script>
@@ -1130,7 +1127,43 @@
 
     <script type="text/javascript">window.onload = checkTransportes();</script>
 
+    <script type="text/javascript">
+    var availableTags = ["ActionScript", "AppleScript", "Asp", "BASIC", "C", "C++", "Clojure",
+  "COBOL", "ColdFusion", "Erlang", "Fortran", "Groovy", "Haskell", "Java", "JavaScript",
+  "Lisp", "Perl", "PHP", "Python", "Ruby", "Scala", "Scheme" ];
 
-
+      $('.profileForm')
+  .keyboard({ layout: 'qwerty' })
+  .autocomplete({
+    source: availableTags
+  })
+  // position options added after v1.23.4
+  .addAutocomplete({
+    position : {
+      of : null,        // when null, element will default to kb.$keyboard
+      my : 'right top', // 'center top', (position under keyboard)
+      at : 'left top',  // 'center bottom',
+      collision: 'flip'
+    }
+  })
+  .addTyping();
+    </script>
+    <script type="text/javascript">
+    $('#telemovel')
+      .keyboard({
+        layout : 'num',
+        restrictInput : true, // Prevent keys not in the displayed keyboard from being typed in
+        preventPaste : true,  // prevent ctrl-v and right click
+        autoAccept : true,
+        position : {
+        of : null, // null (attach to input/textarea) or a jQuery object (attach elsewhere)
+        my : 'left top',
+        at : 'left top',
+        at2: 'left bottom', // used when "usePreview" is false (centers keyboard at the bottom of the input/textarea)
+        collision: 'fit fit'
+      }
+      })
+      .addTyping();
+</script>
 </body>
 </html>

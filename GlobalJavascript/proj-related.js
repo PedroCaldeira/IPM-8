@@ -693,8 +693,7 @@ function searchCover(){
 function cancelSearch(){
      var term = document.getElementById("search_concept").innerHTML.toLowerCase();
     var input = document.getElementById("searchBox").value.toLowerCase();
-    console.log(term);
-    console.log(input);
+
     $(".coverflow").empty();
 
     var result= $("#musicList").find("div");
@@ -715,9 +714,9 @@ function cancelSearch(){
 }
 function enableErase(){
     var input = document.getElementById("searchBox").value.toLowerCase();
-    console.log(input);
+    
     if (input!=""){
-        console.log("ayaaaaa")
+        
         document.getElementById("searchResetButton").style.pointerEvents="auto";
         document.getElementById("searchResetButton").style.opacity=1;
     }
@@ -817,7 +816,7 @@ function limit(){
     var sliderLimit=$( "#slider-BAC" ).slider( "value" );
 
     var sliderHourLimit=$( "#slider-HOUR" ).slider( "value" );
-    console.log(sliderHourLimit)
+
     if (sliderHourLimit!=0){
         document.getElementById("timelimiter").innerHTML=sliderHourLimit
         $( "#slider-HOUR" ).slider({
@@ -972,7 +971,6 @@ function changeProfilePic(){
 function randomizeAlcool(){
     var RandomNumber=Math.random(0,3)
     var randomrounded= Math.round(RandomNumber * 100) / 100;
-    console.log(randomrounded)
     document.getElementById("NumeroAlcoolemia").innerHTML=randomrounded
 }
 
@@ -1007,7 +1005,7 @@ function checkFood(){
     if($("#Q").find("span[id^=NomeMusica]").length!=0){
         var z = $("#Q").find("span[id^=NomeMusica]")[0].innerHTML;
         var artist = z.split(" ")[0];
-        console.log(artist);
+
         var currentTime = document.getElementsByClassName("Time")[0].innerHTML.split(":")
         var hours = currentTime[0];
 
@@ -1090,3 +1088,15 @@ function activate2(id){
     }
 
 }
+
+function toggleRecommended(){
+    var array= document.getElementsByClassName("Recommended")
+    
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].style.display=="none"){
+
+            $(array[i]).parent().hide()
+        }
+    }
+}
+
