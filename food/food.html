@@ -898,8 +898,8 @@
             </fieldset>
         </form>
     </div>
-     <button class="btn btn-primary" style="float: left; margin-left: 150px; font-size:26px " onclick="changeProfilePic()"> Alterar Imagem</button>
-
+     <button class="btn btn-primary" style="float: left; margin-left: 150px; font-size:26px " onclick="toggleVisible(ConfirmarAlterarImagem); enableblur(EcraPerfil4)"> Alterar Imagem</button>
+      
       </div>
 
 
@@ -973,8 +973,15 @@
 
             </div>
 
-      </div>
 
+      </div>
+      
+      <div class = "EcraPerfil EcraConfirmacao" id="ConfirmarAlterarImagem" style="background-image:url(./ProfileImages/ecrabackground.jpg); margin-left:50px;margin-top:50px;width:900px; height:400px;">
+        <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(ConfirmarAlterarImagem);disableblur(EcraPerfil4)"/>
+         <p style="margin-left:30px; margin-right:30px; margin-top: 50px">  Tem a certeza que pretende alterar a sua imagem? Se sim, posicione-se em frente à câmara e pressione o botão. </p>
+          <div id="DoneButton3" style="margin-top:30px" onclick="hide(ConfirmarAlterarImagem); changeProfilePic();disableblur(EcraPerfil4)">Tirar Foto</div>
+      </div>
+      
       <div class  = "EcraPerfil" id="EcraPerfil6" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
           <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil6); disableblur(blurME, rodapePerfil)"/>
           <div class="ListLabels" style="margin-left:110px">Pedidos Favoritos</div>
