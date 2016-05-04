@@ -993,7 +993,7 @@ hr{
 }
 
 #ListagemFavoritosMusica{
-	margin-right: 50px;
+	margin-right: 80px;
 	margin-top:75px;
 	display: inline-block;
 	float:right;
@@ -1017,7 +1017,7 @@ hr{
 }
 
 #HistoricoMusica{
-  margin-right: 50px;
+  margin-right: 80px;
   margin-top:75px;
   display: inline-block;
   float:right;
@@ -1034,4 +1034,12 @@ hr{
 	height:5%;
 	font-size: 30px;
 	margin-top: 20px;
+}
+
+.HelpPerfilWindow{
+  position:absolute;
+  height:80px;
+  width:80px;
+  left:910px;
+  top:610px;
 }
