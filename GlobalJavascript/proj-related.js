@@ -84,7 +84,7 @@ function cleanTicket(){
 
 $(document).ready(function() {
         $('ul.Listagem>li').click(function(evt) {
-            if(evt.target.id == "Benfica")
+            if(evt.target.className == "Favorite")
                 return;
         	var str=$(this).find("p")[0].textContent
             var price=this.getAttribute("data-price");
@@ -987,7 +987,6 @@ function randomizeAlcool(){
 
 function toggleFavorite(x){
     var parent = $(x).parent();
-    console.log();
     var nome = $(parent).find("p")[0].innerHTML;
     var identity = nome.replace(" ","_");
     var identity2 = ""
@@ -1027,7 +1026,6 @@ function toggleFavoriteMusic(){
     if(favouriteIcon.src.split("/").pop()=="favorites.ico"){
       musicListImage.attr("data-favorite","true")
       $(".cover.current").find("img").attr("data-favorite","true")
-      console.log(identity)
       var div=$('<div class="FavoriteIcon" id="'+identity+'favorite" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px;">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromFavoritesMusic('+"'"+identity+"'"+')"/></p></div>');
       $("#ListagemFavoritosMusica").append(div);
 
@@ -1037,7 +1035,6 @@ function toggleFavoriteMusic(){
     else if(favouriteIcon.src.split("/").pop()=="nostar.png"){
         $(".cover.current").find("img").attr("data-favorite","false")
         musicListImage.attr("data-favorite","false")
-        console.log(identity)
         $("#"+identity+"favorite").remove();
     }
 }
@@ -1047,14 +1044,12 @@ function removeFromFavoritesMusic(id){
     var result= $("#musicList").find("div");
     for(var i=0; i<result.length;i++){
         if($(result[i]).find("img").attr("data-name")==$("#"+id+"favorite").find("span")[0].innerHTML){
-            console.log($(result[i]).find("img").attr("data-favorite"))
             $(result[i]).find("img").attr("data-favorite","false")
         }
     }
     var result= $("#lecover").find("div");
     for(var i=0; i<result.length;i++){
         if($(result[i]).find("img").attr("data-name")==$("#"+id+"favorite").find("span")[0].innerHTML){
-            console.log($(result[i]).find("img").attr("data-favorite"))
             $(result[i]).find("img").attr("data-favorite","false")
             if($(".cover.current").find("img").attr("data-name")==$("#"+id+"favorite").find("span")[0].innerHTML)
                 changeImage(document.getElementById("favouriteMusicIcon"),"./ProfileImages/favorites.ico",'./FoodImages/nostar.png');
@@ -1154,27 +1149,45 @@ function confirmLimit(){
     aux.innerHTML=$( "#slider-HOUR" ).slider( "value" ) + " horas";
 }
 
-function activate2(id){
-    var x = document.getElementById(id);
-    console.log(x.style.backgroundColor);
-    if(x.style.backgroundColor=="rgb(0, 162, 232)"){
-        x.style.backgroundColor="white";
 
+function FilterRecommended(){
+    var array= document.getElementsByClassName("Recommended")
+    var recbtn=document.getElementById("recbtn")
+    var favbtn=document.getElementById("favbtn")
+    favbtn.style.backgroundColor="#00A2E8"
+    $('.Listagem>li').show()
+    if (recbtn.style.backgroundColor!="white"){
+        recbtn.style.backgroundColor="white"
+        for (var i = 0; i < array.length; i++) {
+            
+            if (array[i].style.display!="block"){
+                console.log(array[i].style.display)
+                $(array[i]).parent().hide()
+            }
         }
-    else{
-        x.style.backgroundColor="#00A2E8";
     }
-
+    else{
+        recbtn.style.backgroundColor="#00A2E8";
+    }
 }
 
-function toggleRecommended(){
-    var array= document.getElementsByClassName("Recommended")
-    
-    for (var i = 0; i < array.length; i++) {
-        if (array[i].style.display=="none"){
-
-            $(array[i]).parent().hide()
+function FilterFavorite(){
+    var array= document.getElementsByClassName("Favorite")
+    var favbtn=document.getElementById("favbtn")
+    var recbtn=document.getElementById("recbtn")
+    recbtn.style.backgroundColor="#00A2E8"
+    $('.Listagem>li').show()
+    if (favbtn.style.backgroundColor!="white"){
+        favbtn.style.backgroundColor="white"
+        for (var i = 0; i < array.length; i++) {
+            console.log(array[i].src.split("/").pop())
+            if (array[i].src.split("/").pop()=="nostar.png"){
+                $(array[i]).parent().hide()
+            }
         }
+    }
+    else{
+        favbtn.style.backgroundColor="#00A2E8";
     }
 }
 
