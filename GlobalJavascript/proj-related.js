@@ -205,15 +205,29 @@ function toggleTab(){
 
 $(document).ready(function() {
         $('.listFilter>li').click(function() {
+            $(".Listagem>li").hide()
+            var array= $("#Filtro").find("input[id^='ch_']")
+            var items=$(".Listagem>li")
+            console.log(items.length)
+            for (var i = 0; i < items.length; i++) {
+                var shown=true
+                for (var j = 0; j < array.length; j++) {
+                    if(!$(items[i]).hasClass(array[j].getAttribute("data-class"))&& array[j].checked)
+                        shown=false;
+                }
+                if (shown)
+                    $(items[i]).show();
+            }
+            /*
             var array= $("#Filtro").find("input[id^='ch_']")
             for (var i = 0; i < array.length; i++) {
                 var clas=""+array[i].getAttribute("data-class");
                 hideclass(clas)
             }
-            var active=0;
+            //var active=0;
             for (var i = 0; i < array.length; i++) {
                 if (array[i].checked){
-                    active++;
+                    console.log(""+array[i].getAttribute("data-class"))
                     showclass(""+array[i].getAttribute("data-class"));
                 }
             }
@@ -223,12 +237,18 @@ $(document).ready(function() {
                     showclass(clas)
                 }
             }
-        })
+        */$(".Personalizavel").show()
+    })
     })
 
 
 function changeFilter(filter){
     var array= $("#Filtro").find("ul");
+    $(".Listagem>li").show()
+    var checks= $("#Filtro").find("input[id^='ch_']")
+    for (var i = 0; i < checks.length; i++) {
+        $(checks[i]).attr("checked", false)
+    }
     for (var i = 0; i < array.length; i++) {
         array[i].style.display="none"
     }

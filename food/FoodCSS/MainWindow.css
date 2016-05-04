@@ -472,6 +472,11 @@ form label{
 .listFilter{
   display: none;
 }
+
+.listFilter>li>label{
+  display: inline-block;
+}
+
 #DrinkFilter{
   display: inline-block;
 }
