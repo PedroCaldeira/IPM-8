@@ -1,3 +1,14 @@
+
+
+var ana = 0;
+var avicii = 0;
+var jason = 0;
+var mc = 0;
+var metallica = 0;
+var pink = 0;
+
+
+
 function EraseContent(elementID)
 {
     document.getElementById(elementID).innerHTML = "";
@@ -1127,6 +1138,13 @@ function checkFood(){
                 c[i].src="./FoodImages/recommended.png";
             }
         }
+    }
+    else{
+        var c = document.getElementsByClassName("avicii");
+            for(var i=0;i<c.length;i++){
+                c[i].style.display="block";
+                c[i].src="./FoodImages/recommended.png";
+            }
     }
     setTimeout('checkFood()',1000);
 
