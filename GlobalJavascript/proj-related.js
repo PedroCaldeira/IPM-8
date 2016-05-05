@@ -992,6 +992,9 @@ function limpar(){
     document.getElementById("nomeLogin").value="";
     document.getElementById("ProfilePicture").src="./ProfileImages/anonimo.png";
     document.getElementById("ProfilePicture2").src="./ProfileImages/anonimo.png";
+    cleanTicket();
+
+
 
 }
 
@@ -1140,6 +1143,11 @@ function removeFromHistoryFood(id){
 function checkFood(){
     var x = document.getElementById("NumeroAlcoolemia").innerHTML;
     var y = document.getElementById("EcraPerfil3").getAttribute("data-state");
+    var d = document.getElementsByClassName("Recommended");
+            for(var i=0;i<d.length;i++){
+                d[i].style.display="none";
+                d[i].src="./FoodImages/recommended.png";
+            }
     if($("#Q").find("span[id^=NomeMusica]").length!=0){
         var z = $("#Q").find("span[id^=NomeMusica]")[0].innerHTML;
         var artist = z.split(" ")[0];
@@ -1147,11 +1155,7 @@ function checkFood(){
         var currentTime = document.getElementsByClassName("Time")[0].innerHTML.split(":")
         var hours = currentTime[0];
 
-        var d = document.getElementsByClassName("Recommended");
-            for(var i=0;i<d.length;i++){
-                d[i].style.display="none";
-                d[i].src="./FoodImages/recommended.png";
-            }
+        
 
         if(artist=="Metallica" && (hours>=20 || hours<=5)){
             var c = document.getElementsByClassName("metallica");
@@ -1205,11 +1209,22 @@ function checkFood(){
         }
     }
     else{
-        var c = document.getElementsByClassName("avicii");
+        var currentTime = document.getElementsByClassName("Time")[0].innerHTML.split(":")
+        var hours = currentTime[0];
+        if(hours>=23||hours<5){
+            var c = document.getElementsByClassName("avicii");
             for(var i=0;i<c.length;i++){
                 c[i].style.display="block";
                 c[i].src="./FoodImages/recommended.png";
             }
+        }
+        else{
+            var c = document.getElementsByClassName("jason");
+            for(var i=0;i<c.length;i++){
+                c[i].style.display="block";
+                c[i].src="./FoodImages/recommended.png";
+            }
+        }
     }
     setTimeout('checkFood()',1000);
 
@@ -1247,22 +1262,22 @@ function FilterFavorite(){
     var array= document.getElementsByClassName("Favorite")
     var favbtn=document.getElementById("favbtn")
     var recbtn=document.getElementById("recbtn")
-    var arrayPers= document.getElementsByClassName("Personalizavel")
-    console.log(arrayPers)
+    //var arrayPers= document.getElementsByClassName("Personalizavel")
+    //console.log(arrayPers)
     recbtn.style.backgroundColor="#00A2E8"
     $('.Listagem>li').show()
     if (favbtn.style.backgroundColor!="white"){
         favbtn.style.backgroundColor="white"
         for (var i = 0; i < array.length; i++) {
-            console.log(array[i].src.split("/").pop())
+
             if (array[i].src.split("/").pop()=="nostar.png"){
                 $(array[i]).parent().hide()
             }
         }
-        for (var i = 0; i < arrayPers.length; i++) {
+        /*for (var i = 0; i < arrayPers.length; i++) {
             console.log(arrayPers[i])
             $(arrayPers[i]).hide();
-        }
+        }*/
             
     }
     else{
@@ -1272,22 +1287,23 @@ function FilterFavorite(){
 
 function toggleShow(x,id){
     help=document.getElementById(id);
-    if(help.style.display=='none'){
+    console.log(help.style.display)
+    if(help.style.display!='block' ){
         x.style.backgroundColor="#0066ff";
-        $(help).show();
+        show(help)
     }
     else{
         x.style.backgroundColor="#cce6ff";
-        $(help).hide();
+        hide(help)
     }
 }
 
 function toggleShow2(id){
     help=document.getElementById(id);
-    if(help.style.display=='none'){
-        $(help).show();
+    if(help.style.display!='block'){
+        show(help);
     }
     else{
-        $(help).hide();
+        hide(help)
     }
 }

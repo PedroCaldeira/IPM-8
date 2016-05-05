@@ -188,11 +188,12 @@
 
 }
 
-
+/*
 .Listagem li:active{
   background-color:#00A2E8;
   color: #ffffff
 }
+*/
 
 .Listagem img{
 
@@ -998,7 +999,8 @@ hr{
 	background-color: transparent;
 	border: 3px solid black;
   overflow-y: scroll;
-}
+    padding: 0px;
+  }
 
 #ListagemFavoritosMusica{
 	margin-right: 80px;
@@ -1010,6 +1012,7 @@ hr{
 	background-color: transparent;
 	border: 3px solid black;
   overflow-y: scroll;
+  padding: 0px;
 
 }
 
@@ -1022,6 +1025,7 @@ hr{
   background-color: transparent;
   border: 3px solid black;
   overflow-y: scroll;
+    padding: 0px;
 }
 
 #HistoricoMusica{
@@ -1034,6 +1038,7 @@ hr{
   background-color: transparent;
   border: 3px solid black;
   overflow-y: scroll;
+    padding: 0px;
 }
 
 .ListLabels{
@@ -1056,18 +1061,14 @@ hr{
   position:absolute;
   left:0px;
   top:0px;
-  height:900px;
-  width:1600px;
   display:none;
   z-index:30000;
 }
 
 .HelpIMGG{
   position:absolute;
-  left:000px;
+  left:50px;
   top:600px;
-  height:300px;
-  width:600px;
   display:none;
   z-index:30000;
 }
