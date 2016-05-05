@@ -50,6 +50,8 @@
             </div>
     <div class="ecra" id="menuPrincipal">
 
+    <img src="../GlobalImages/helpIMG.png" id="HelpPrincipalIMG" class="HelpIMG"></img>
+
       <div id="cabecalhoPrincipal">
         <span class = "Name" > XYAO MING </span>
         <span class = "Time"  > Date </span>
@@ -90,7 +92,7 @@
       </div>
 
       <div id="rodapePrincipal">
-      <div style="height:55px;width:200px; font-size: 35px; position:absolute; display:inline-block; left:1300px; top:5px; background-color:#cce6ff; border-radius: 5px"><span>Ajuda  </span><img style="height:50px;width:50px" src="../GlobalImages/help.png"/></div>
+      <div onclick="toggleShow(this,'HelpPrincipalIMG')" style="height:55px;width:200px; font-size: 35px; position:absolute; display:inline-block; left:1300px; top:5px; background-color:#cce6ff; border-radius: 5px; z-index:40000"><span>Ajuda  </span><img style="height:50px;width:50px" src="../GlobalImages/help.png"/></div>
 
       </div>
 
@@ -101,6 +103,7 @@
 
 
     <div class="ecra" id="Pedir">
+      <img src="./FoodImages/helpIMG.png" id="HelpFoodIMG" class="HelpIMG"></img>
 
         <div class="MenusWindow" id="JanelaPersonalizacao" >
       			<div class= "PersonalizacaoBackground" id= "PersonalizacaoBackgroundBebida">
@@ -592,11 +595,12 @@
           <a onclick="hide(Pedir);show(Perfil);"><img src="../GlobalImages/Perfil-icon.png" /></a>
         </div>
 
-        <div style="height:55px;width:200px; font-size: 35px; position:absolute; display:inline-block; left:1300px; top:5px; background-color:#cce6ff; border-radius: 5px"><span>Ajuda  </span><img style="height:50px;width:50px" src="../GlobalImages/help.png"/></div>
+        <div onclick="toggleShow(this,'HelpFoodIMG')" style="height:55px;width:200px; font-size: 35px; position:absolute; display:inline-block; left:1300px; top:5px; background-color:#cce6ff; border-radius: 5px; z-index:40000"><span>Ajuda  </span><img  style="height:50px;width:50px" src="../GlobalImages/help.png"/></div>
 
         </div>
   </div>
     <div class="ecra" id="Music">
+       <img src="./MusicImages/helpIMG.png" id="HelpMusicIMG" class="HelpIMG"></img>
       <div id="cabecalhoMusica">
         <span class = "Name"style="color:white"> XYAO MING </span>
         <span class = "Time"style="color:white"> Date </span>
@@ -669,7 +673,7 @@
           <div data-album="dark_side_of_the_moon" data-genre="rock" data-artist="pink floyd"   data-song="brain_damage" class="cover"><img data-voting ="13" data-UpVoted="false" data-favorite="false" data-DownVoted="false" data-name="Pink Floyd - Brain Damage" src="./MusicImages/pinkfloyd.jpg"/></div>
           <div data-album="dark_side_of_the_moon" data-genre="rock" data-artist="pink floyd"   data-song="eclipse" class="cover"><img data-voting ="10" data-UpVoted="false" data-favorite="false" data-DownVoted="false" data-name="Pink Floyd - Eclipse" src="./MusicImages/pinkfloyd.jpg"/></div>
           <div id="noResults" data-album="notFound" data-genre="notFound" data-artist="notFound" data-song="notFound" class="cover"><img data-voting ="-1" data-name="Sem resultados" src="./MusicImages/noSearchResults.jpg"/></div>
-           <div data-album="sugerir_musica" data-genre="sugerir_musica" data-artist="sugerir_musica" data-favorite="false" data-song="sugerir_musica" class="cover"><img data-voting ="0" data-UpVoted="false" data-DownVoted="false" data-name="Sugerir uma música" src="./MusicImages/sugerir.png"/></div>
+          
         </div>
         <div id="Upvote_Downvote">
         <img id="UpVoteImage" src="./MusicImages/VoteUp.png" onclick="upVoteSong()" >
@@ -726,7 +730,7 @@
         <div class="RodapeIcon" style="background-color:#4d0099" >
           <a onclick="hide(Music);show(Perfil);checkFood()"><img src="../GlobalImages/Perfil-icon.png" /></a>
         </div>
-        <div style="height:55px;width:200px; font-size: 35px; position:absolute; display:inline-block; left:1300px; top:5px; background-color:#cce6ff; border-radius: 5px"><span>Ajuda  </span><img style="height:50px;width:50px" src="../GlobalImages/help.png"/></div>
+        <div onclick="toggleShow(this,'HelpMusicIMG')" style="height:55px;width:200px; font-size: 35px; position:absolute; display:inline-block; left:1300px; top:5px; background-color:#cce6ff; border-radius: 5px; z-index:40000;"><span>Ajuda  </span><img style="height:50px;width:50px" src="../GlobalImages/help.png"/></div>
       </div>
     </div>
     <div id="TopSongsMenu">
@@ -742,6 +746,13 @@
 
 
     <div class="ecra" id="Perfil">
+      <img src="./ProfileImages/help1IMG.png" id="Help1IMG" class="HelpIMGG"></img>
+      <img src="./ProfileImages/help2IMG.png" id="Help2IMG" class="HelpIMGG"></img>
+      <img src="./ProfileImages/help3IMG.png" id="Help3IMG" class="HelpIMGG"></img>
+      <img src="./ProfileImages/help4IMG.png" id="Help4IMG" class="HelpIMGG"></img>
+      <img src="./ProfileImages/help5IMG.png" id="Help5IMG" class="HelpIMGG"></img>
+      <img src="./ProfileImages/help6IMG.png" id="Help6IMG" class="HelpIMGG"></img>
+      <img src="./ProfileImages/helpIMG.png" id="HelpPerfilIMG" class="HelpIMG"></img>
       <div id="blurME">
       <div id="cabecalhoPerfil">
         <span class = "Name"style="color:white"> XYAO MING </span>
@@ -822,7 +833,7 @@
               <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="hide(HorarioAutocarro)"/>
             <img style="height:85%; width:100%" src="./ProfileImages/horario.jpg"></img>
           </div>
-        <img class="HelpPerfilWindow" src ="../GLobalImages/help.png"></img>
+        <img class="HelpPerfilWindow" onclick="toggleShow2('Help2IMG')" src ="../GLobalImages/help.png"></img>
 
         </div>
 
@@ -830,7 +841,7 @@
 
 
      <div class  = "EcraPerfil" id="EcraPerfil3" style="background-image:url(./ProfileImages/ecrabackground.jpg)" data-state="0">
-       <img class="HelpPerfilWindow" src ="../GLobalImages/help.png"></img>
+       <img onclick="toggleShow2('Help4IMG')" class="HelpPerfilWindow" src ="../GLobalImages/help.png"></img>
               <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil3); disableblur(blurME, rodapePerfil)"/>
               <img style="height:400px;width:400px;margin-top:50px; float:center" src="./ProfileImages/carkeys.png"></img>
               <div id="BloquearChaves" onclick="lock1()">Bloquear Chaves</div>
@@ -859,7 +870,7 @@
       </div>
 
       <div class  = "EcraPerfil" id="EcraPerfil4" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
-         <img class="HelpPerfilWindow" src ="../GLobalImages/help.png"></img>
+         <img onclick="toggleShow2('Help6IMG')" class="HelpPerfilWindow" src ="../GLobalImages/help.png"></img>
               <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil4); disableblur(blurME, rodapePerfil)"/>
               <figure style="height:230px;width:auto;margin-top:150px; float:left">
                 <img id="ProfilePicture2"  src="./ProfileImages/yourboy.png" style="height:250px;width:300px"></img>
@@ -912,7 +923,7 @@
 
 
       <div class  = "EcraPerfil" id="EcraPerfil5" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
-         <img class="HelpPerfilWindow" src ="../GLobalImages/help.png"></img>
+         <img onclick="toggleShow2('Help1IMG')" class="HelpPerfilWindow" src ="../GLobalImages/help.png"></img>
               <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil5); disableblur(blurME, rodapePerfil)"/>
               <div style="float:left;margin-top:150px; text-align: left">
                 <span style="font-size:30px ">Nivel de álcool no sangue:</span><br>
@@ -991,7 +1002,7 @@
       </div>
       
       <div class  = "EcraPerfil" id="EcraPerfil6" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
-         <img class="HelpPerfilWindow" src ="../GLobalImages/help.png"></img>
+         <img onclick="toggleShow2('Help5IMG')" class="HelpPerfilWindow" src ="../GLobalImages/help.png"></img>
           <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil6); disableblur(blurME, rodapePerfil)"/>
           <div class="ListLabels" style="margin-left:110px">Pedidos Favoritos</div>
           <ul id="ListagemFavoritosFood">
@@ -1003,7 +1014,7 @@
       </div>
 
       <div class  = "EcraPerfil" id="EcraPerfil7" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
-         <img class="HelpPerfilWindow" src ="../GLobalImages/help.png"></img>
+         <img onclick="toggleShow2('Help3IMG')" class="HelpPerfilWindow" src ="../GLobalImages/help.png"></img>
           <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil7); disableblur(blurME, rodapePerfil)"/>
           <div class="ListLabels" style="margin-left:110px">Pedidos Efectuados</div>
           <ul id="HistoricoFood">
@@ -1028,7 +1039,7 @@
         <div class="RodapeIcon" style="background-color: #4d0099" >
           <img src="../GlobalImages/Perfil-icon.png" />
         </div>
-        <div style="height:55px;width:200px; font-size: 35px; position:absolute; display:inline-block; left:1300px; top:5px; background-color:#cce6ff; border-radius: 5px"><span>Ajuda  </span><img style="height:50px;width:50px" src="../GlobalImages/help.png"/></div>
+        <div onclick="toggleShow(this,'HelpPerfilIMG')" style="height:55px;width:200px; font-size: 35px; position:absolute; display:inline-block; left:1300px; top:5px; background-color:#cce6ff; border-radius: 5px; z-index:40000;"><span>Ajuda  </span><img style="height:50px;width:50px" src="../GlobalImages/help.png"/></div>
       </div>
       <div id="butaoRandomAlcool" onclick="randomizeAlcool()"><span id="randomAlcoolSpan">Random<br>Alcool</span></div>
     </div>

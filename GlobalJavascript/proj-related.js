@@ -1270,3 +1270,24 @@ function FilterFavorite(){
     }
 }
 
+function toggleShow(x,id){
+    help=document.getElementById(id);
+    if(help.style.display=='none'){
+        x.style.backgroundColor="#0066ff";
+        $(help).show();
+    }
+    else{
+        x.style.backgroundColor="#cce6ff";
+        $(help).hide();
+    }
+}
+
+function toggleShow2(id){
+    help=document.getElementById(id);
+    if(help.style.display=='none'){
+        $(help).show();
+    }
+    else{
+        $(help).hide();
+    }
+}

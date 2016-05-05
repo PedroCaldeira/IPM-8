@@ -83,6 +83,14 @@
 
 }
 
+#favbtnmusic{
+  position: absolute;
+  left:1149px;
+  top: 50px;
+   height: 107px;
+
+}
+
 #recbtn{
   position: absolute;
   left:1020px;
@@ -1042,4 +1050,24 @@ hr{
   width:80px;
   left:910px;
   top:610px;
+}
+
+.HelpIMG{
+  position:absolute;
+  left:0px;
+  top:0px;
+  height:900px;
+  width:1600px;
+  display:none;
+  z-index:30000;
+}
+
+.HelpIMGG{
+  position:absolute;
+  left:000px;
+  top:600px;
+  height:300px;
+  width:600px;
+  display:none;
+  z-index:30000;
 }
