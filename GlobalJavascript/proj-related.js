@@ -745,9 +745,9 @@ function cancelSearch(){
 }
 function enableErase(){
     var input = document.getElementById("searchBox").value.toLowerCase();
-    
+
     if (input!=""){
-        
+
         document.getElementById("searchResetButton").style.pointerEvents="auto";
         document.getElementById("searchResetButton").style.opacity=1;
     }
@@ -1039,12 +1039,12 @@ function toggleFavoriteMusic(){
     for(var i=0; i<result.length;i++){
         if($(result[i]).find("img").attr("data-name")==nome){
             musicListImage=$(result[i]).find("img")
-            
+
         }
     }
     for(var i=0;i<20;i++)
         identity=identity.replace(" ","_");
-        
+
     changeImage(favouriteIcon,"./ProfileImages/favorites.ico",'./FoodImages/nostar.png');
     if(favouriteIcon.src.split("/").pop()=="favorites.ico"){
       musicListImage.attr("data-favorite","true")
@@ -1063,7 +1063,7 @@ function toggleFavoriteMusic(){
 }
 
 function removeFromFavoritesMusic(id){
-    
+
     var result= $("#musicList").find("div");
     for(var i=0; i<result.length;i++){
         if($(result[i]).find("img").attr("data-name")==$("#"+id+"favorite").find("span")[0].innerHTML){
@@ -1078,7 +1078,7 @@ function removeFromFavoritesMusic(id){
                 changeImage(document.getElementById("favouriteMusicIcon"),"./ProfileImages/favorites.ico",'./FoodImages/nostar.png');
         }
     }
-    
+
     $("#"+id+"favorite").remove();
 }
 
@@ -1098,7 +1098,7 @@ function addToHistoryMusic(){
 }
 function removeFromHistoryMusic(id){
     $("#"+id+"History").remove();
-    
+
 }
 var alternate=0;
 
@@ -1119,7 +1119,7 @@ function addToHistoryFood(){
         else
             var div=$('<div class="FavoriteIcon" id="'+identity+'History" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromHistoryFood('+"'"+identity+"'"+')"/></p></div>');
         console.log(div)
-        
+
         if(alternate==0){
             div[0].style.backgroundColor="#99ccff";
         }
@@ -1146,7 +1146,7 @@ function checkFood(){
     var d = document.getElementsByClassName("Recommended");
             for(var i=0;i<d.length;i++){
                 d[i].style.display="none";
-                d[i].src="./FoodImages/recommended.png";
+                //d[i].src="./FoodImages/recommended.png";
             }
     if($("#Q").find("span[id^=NomeMusica]").length!=0){
         var z = $("#Q").find("span[id^=NomeMusica]")[0].innerHTML;
@@ -1155,13 +1155,13 @@ function checkFood(){
         var currentTime = document.getElementsByClassName("Time")[0].innerHTML.split(":")
         var hours = currentTime[0];
 
-        
+
 
         if(artist=="Metallica" && (hours>=20 || hours<=5)){
             var c = document.getElementsByClassName("metallica");
             for(var i=0;i<c.length;i++){
                 c[i].style.display="block";
-                c[i].src="./FoodImages/recommended.png";
+                //c[i].src="./FoodImages/recommended.png";
             }
         }
 
@@ -1169,42 +1169,42 @@ function checkFood(){
             var c = document.getElementsByClassName("ana");
             for(var i=0;i<c.length;i++){
                 c[i].style.display="block";
-                c[i].src="./FoodImages/recommended.png";
+                //c[i].src="./FoodImages/recommended.png";
             }
         }
         else if(artist=="Pink" && (hours>=20 || hours<=5)){
             var c = document.getElementsByClassName("pink");
             for(var i=0;i<c.length;i++){
                 c[i].style.display="block";
-                c[i].src="./FoodImages/recommended.png";
+                //c[i].src="./FoodImages/recommended.png";
             }
         }
         else if(artist=="Avicii" && (hours>=20 || hours<=5)){
             var c = document.getElementsByClassName("avicii");
             for(var i=0;i<c.length;i++){
                 c[i].style.display="block";
-                c[i].src="./FoodImages/recommended.png";
+                //c[i].src="./FoodImages/recommended.png";
             }
         }
         else if(artist=="Avicii" && (hours<=20 && hours>=5)){
             var c = document.getElementsByClassName("jason");
             for(var i=0;i<c.length;i++){
                 c[i].style.display="block";
-                c[i].src="./FoodImages/recommended.png";
+                //c[i].src="./FoodImages/recommended.png";
             }
         }
         else if(artist=="Jason"){
             var c = document.getElementsByClassName("jason");
             for(var i=0;i<c.length;i++){
                 c[i].style.display="block";
-                c[i].src="./FoodImages/recommended.png";
+                //c[i].src="./FoodImages/recommended.png";
             }
         }
         else{
             var c = document.getElementsByClassName("jason");
             for(var i=0;i<c.length;i++){
                 c[i].style.display="block";
-                c[i].src="./FoodImages/recommended.png";
+                //c[i].src="./FoodImages/recommended.png";
             }
         }
     }
@@ -1215,14 +1215,14 @@ function checkFood(){
             var c = document.getElementsByClassName("avicii");
             for(var i=0;i<c.length;i++){
                 c[i].style.display="block";
-                c[i].src="./FoodImages/recommended.png";
+                //c[i].src="./FoodImages/recommended.png";
             }
         }
         else{
             var c = document.getElementsByClassName("jason");
             for(var i=0;i<c.length;i++){
                 c[i].style.display="block";
-                c[i].src="./FoodImages/recommended.png";
+                //c[i].src="./FoodImages/recommended.png";
             }
         }
     }
@@ -1246,7 +1246,7 @@ function FilterRecommended(){
     if (recbtn.style.backgroundColor!="white"){
         recbtn.style.backgroundColor="white"
         for (var i = 0; i < array.length; i++) {
-            
+
             if (array[i].style.display!="block"){
                 console.log(array[i].style.display)
                 $(array[i]).parent().hide()
@@ -1278,7 +1278,7 @@ function FilterFavorite(){
             console.log(arrayPers[i])
             $(arrayPers[i]).hide();
         }*/
-            
+
     }
     else{
         favbtn.style.backgroundColor="#00A2E8";
