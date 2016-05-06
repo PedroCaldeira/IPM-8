@@ -1075,6 +1075,7 @@ hr{
 
 
 .RecommendedDIV{
+	position:absolute;
 	width:165px;
 	height:30px;
 	background-color: #3366ff;
