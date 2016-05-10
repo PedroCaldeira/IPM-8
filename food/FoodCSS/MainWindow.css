@@ -855,12 +855,14 @@ hr{
   width:120px;
   height:120px;
   border-radius: 50%;
+  background-color:green;
 }
 
 #DownVoteImage{
   width:120px;
   height:120px;
   border-radius: 50%;
+  background-color:red;
 }
 
 #TopSongsButton{
