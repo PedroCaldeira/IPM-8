@@ -36,8 +36,24 @@
 
   </head>
   <body>
+
+    <div class = "EcraPagamento EcraConfirmacao" id="ConfirmarEmpregado">
+              <div class= "EcraPagamentoBack" >
+                <span>Chamar?</span>
+             </div>
+
+             <p id="waiterText" style="margin-left:30px; margin-right:30px; margin-top: 50px">  Tem a certeza que pretende chamar o AAAAAAA </p>
+
+             <div id="DoneButton2" style="margin-top: 20px" onclick="hide(ConfirmarEmpregado); disableblur(menuPrincipal); Chamar() ">Sim</div>
+             <div id="DoneButton3" style="margin-top: 20px"  onclick="hide(ConfirmarEmpregado); show(ChamarEmpregado); ">Nao</div>
+
+
+            </div>
+    
+    
     <div class = "EcraPagamento EcraConfirmacao" id="ConfirmarLogout"style="left:470px;">
               <div class= "EcraPagamentoBack" >
+
                 <span>Sair?</span>
              </div>
 
@@ -48,7 +64,44 @@
 
 
             </div>
+
+
+    <div class = "EcraPagamento" id="ChamarEmpregado">
+              <div class= "EcraPagamentoBack" >
+               <img class = "backarrow" style="left:0px; position:absolute;" src="../GlobalImages/backarrow.png" onclick="hide(ChamarEmpregado); disableblur(menuPrincipal);"/>
+                <span>Que empregado pretende chamar?</span>
+             </div>
+
+             <ul id="WaiterList" >
+               <li>
+                 <figure>
+                   <img src="./ProfileImages/crespo.jpg" />
+                  <figcaption><button class="btn btn-info" onclick="hide(ChamarEmpregado); show(ConfirmarEmpregado); changeWaiter(this.innerHTML)" style="font-size:25px; margin-top:20px; width: 190px"> João Crespo</button></figcaption>
+                 </figure>
+               </li>
+
+               <li>
+                 <figure>
+                   <img src="./ProfileImages/caldeira.jpg" />
+                  <figcaption><button class="btn btn-info" onclick="hide(ChamarEmpregado); show(ConfirmarEmpregado); changeWaiter(this.innerHTML)" style="font-size:25px; margin-top:20px; width: 190px"> Pedro Caldeira</button></figcaption>
+                 </figure>
+               </li>
+
+               <li>
+                 <figure>
+                   <img src="./ProfileImages/fagit.jpg" />
+                  <figcaption><button class="btn btn-info" onclick="hide(ChamarEmpregado); show(ConfirmarEmpregado); changeWaiter(this.innerHTML)" style="font-size:25px; margin-top:20px; width: 190px">Rodrigo Mira</button></figcaption>
+                 </figure>
+               </li>
+
+             </ul>
+
+            </div>
     <div class="ecra" id="menuPrincipal">
+
+    
+
+     
 
     <img src="../GlobalImages/helpIMG.png" id="HelpPrincipalIMG" class="HelpIMG"></img>
 
@@ -95,10 +148,17 @@
       </div>
 
       <div id="rodapePrincipal">
+      
+
       <div onclick="toggleShow(this,'HelpPrincipalIMG')" style="height:55px;width:200px; font-size: 35px; position:absolute; display:inline-block; left:1300px; top:5px; background-color:#cce6ff; border-radius: 5px; z-index:40000"><span>Ajuda  </span><img style="height:50px;width:50px" src="../GlobalImages/help.png"/></div>
 
       </div>
-
+      <figure id="CallWaiterPic" onclick="show(ChamarEmpregado); enableblur(menuPrincipal)">
+        <img src="../GlobalImages/waiter.png"/>
+        <figcaption style="font-size:20px; color:black">
+          Chamar Empregado
+        </figcaption>
+      </figure>
       </div>
 
 
@@ -1107,6 +1167,17 @@
             type     : 'success',
             position : 'middle-right',
             stayTime : 1000
+        });
+      }
+    </script>
+
+    <script type="text/javascript">
+      function Chamar(){
+        $().toastmessage('showToast', {
+            text     : 'Empregado chamado',
+            type     : 'success',
+            position : 'middle-right',
+            stayTime : 3000
         });
       }
     </script>

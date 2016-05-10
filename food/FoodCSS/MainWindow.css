@@ -1087,3 +1087,32 @@ hr{
 	margin-left: 40px;
 	display:none;
 }
+
+
+
+#WaiterList>li>figure{
+  margin: 50px;
+  text-align: center;
+}
+#WaiterList>li>figure>img{
+  width: 200px;
+}
+
+
+
+#ChamarEmpregado{
+
+  left:470px;
+  height: 500px;
+}
+
+
+#CallWaiterPic{
+  position: absolute;
+  left: 30px;
+  bottom:20px;
+}
+#CallWaiterPic>img{
+  height: 100px;
+
+}
