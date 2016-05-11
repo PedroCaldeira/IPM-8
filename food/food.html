@@ -588,7 +588,7 @@
         <div id= "PersonalizacaoBackground">
           <div id="TopPart" style="height: 80px">
             <img class="backarrow" src="../GlobalImages/backarrow.png" onclick="hide(JanelaMenu3);unselect('Food');unselect('Bebida');unselect('Acompanhamento');disableblur(cabecalho,meio,rodape);"/>
-            <span id="MenuTitle">Menu Pasta</span><span onclick="addCustom(MainDish,'Menu Pasta',4); unselect('Food');unselect('Bebida');unselect('Acompanhamento'); adicionarPedido('Menu Pasta');disableblur(cabecalho,meio,rodape);hide(JanelaMenu3);" id="ChooseMenu2" class="DoneButton" style=" pointer-events:none;opacity:0.3;color:black;top:24px; left:-200px">Escolher</span>
+            <span id="MenuTitle">Menu Pasta</span><span onclick="addCustom(MainDish,'Menu Pasta',4); unselect('Food');unselect('Bebida');unselect('Acompanhamento'); adicionarPedido('Menu Pasta');disableblur(cabecalho,meio,rodape);hide(JanelaMenu3);" id="ChooseMenu2" class="DoneButton" style=" pointer-events:none;opacity:0.3;color:black;top:24px; left:-150px">Escolher</span>
           </div>
           <div id="ContentMenu">
           <div id="MainDish" ><div class="PlaceTitle"> Escolha a Pasta</div>
@@ -842,7 +842,7 @@
         <tr>
 
           <td><a class="PerfilCircle" id="KeysCircle" style="background-color: #00e600" onclick="toggleVisible(EcraPerfil3); enableblur(blurME, rodapePerfil)"><img style="height:80%;width:80%;margin-top:5%; margin-left:5px" src="./ProfileImages/carkeys.png"></img></a></td>
-          <td><a class="PerfilCircle"  onclick="toggleVisible(EcraPerfil6);enableblur(blurME,rodapePerfil);" style="background-color: #E6D400"><img style="height:80%;width:80%;margin-top:5%; margin-left:5px" src="./ProfileImages/favorites.ico" /></a></td>
+          <td><a class="PerfilCircle"  onclick="toggleVisible(EcraPerfil6);enableblur(blurME,rodapePerfil);" style="background-color: #E6D400"><img style="height:80%;width:80%;margin-top:5%; margin-left:5px" src="./FoodImages/star.png" /></a></td>
           <td><a class="PerfilCircle" style="background-color: #ffffff" onclick="toggleVisible(EcraPerfil4); enableblur(blurME, rodapePerfil)"><img style="height:80%;width:80%;margin-top:10%" src="./ProfileImages/definicoes.png"></img></a></td>
         </tr>
      </table>
@@ -1208,7 +1208,7 @@
               document.getElementById("favouriteMusicIcon").src = './FoodImages/nostar.png'
             }
             else{
-              document.getElementById("favouriteMusicIcon").src = "./ProfileImages/favorites.ico"
+              document.getElementById("favouriteMusicIcon").src = "./FoodImages/star.png"
             }
 
           }});

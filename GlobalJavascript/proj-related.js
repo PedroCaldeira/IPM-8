@@ -1043,7 +1043,7 @@ function toggleFavoriteMusic(){
     for(var i=0;i<20;i++)
         identity=identity.replace(" ","_");
 
-    changeImage(favouriteIcon,"./ProfileImages/favorites.ico",'./FoodImages/nostar.png');
+    changeImage(favouriteIcon,"./FoodImages/star.png",'./FoodImages/nostar.png');
     if(favouriteIcon.src.split("/").pop()=="favorites.ico"){
       musicListImage.attr("data-favorite","true")
       $(".cover.current").find("img").attr("data-favorite","true")
@@ -1073,7 +1073,7 @@ function removeFromFavoritesMusic(id){
         if($(result[i]).find("img").attr("data-name")==$("#"+id+"favorite").find("span")[0].innerHTML){
             $(result[i]).find("img").attr("data-favorite","false")
             if($(".cover.current").find("img").attr("data-name")==$("#"+id+"favorite").find("span")[0].innerHTML)
-                changeImage(document.getElementById("favouriteMusicIcon"),"./ProfileImages/favorites.ico",'./FoodImages/nostar.png');
+                changeImage(document.getElementById("favouriteMusicIcon"),"./FoodImages/star.png",'./FoodImages/nostar.png');
         }
     }
 
@@ -1083,7 +1083,18 @@ function removeFromFavoritesMusic(id){
 
 
 function removeFromFavorites(id){
+    var name = $("#"+id+"favorite").find("span").html()
+    console.log(name)
     $("#"+id+"favorite").remove();
+    console.log(id)
+    var imgs=$(".Listagem").find("p")
+    for (i=0;i<imgs.length;i++){
+       if(imgs[i].innerHTML==name){
+        console.log(imgs[i].innerHTML)
+        $(imgs[i]).siblings(".Favorite")[0].src="./FoodImages/nostar.png"
+       }
+    }
+    
 }
 
 function addToHistoryMusic(){
