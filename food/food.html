@@ -936,8 +936,8 @@
          <img onclick="toggleShow2('Help6IMG')" class="HelpPerfilWindow" src ="../GlobalImages/help.png"></img>
               <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil4); disableblur(blurME, rodapePerfil); $('.HelpIMGG').hide()"/>
               <figure style="height:230px;width:auto;margin-top:150px; float:left">
-                <img id="ProfilePicture2"  src="./ProfileImages/yourboy.png" style="height:250px;width:300px"></img>
-                <figcaption id="profilename2"style="margin-top: 25px; width: 350px">Xyao Ming</figcaption>
+                <img id="ProfilePicture2"  src="./ProfileImages/yourboy.png" style="height:300px;width:300px"></img>
+                <figcaption id="profilename2"style="margin-top: 15px; width: 350px">Xyao Ming</figcaption>
               </figure>
 
 
@@ -960,7 +960,7 @@
                 </div>
                 <div>
                     Telemóvel:
-                    <input id="telemovel" type="text" name="telemovel" placeholder="telemovel" style="width:100%; "/>
+                    <input id="telemovel" type="text" name="telemovel" placeholder="Telemovel" style="width:100%; "/>
                 </div>
                 <div style="font-size: 20px;float: left; text-align: left">
                   Sexo:
@@ -979,7 +979,7 @@
             </fieldset>
         </form>
     </div>
-     <button class="btn btn-primary" style="margin-top: -80px; float: left; margin-left: 150px; font-size:26px " onclick="toggleVisible(ConfirmarAlterarImagem); enableblur(EcraPerfil4)"> Alterar Imagem</button>
+     <button class="btn btn-primary" style="margin-top: -70px; float: left; margin-left: 150px; font-size:26px " onclick="toggleVisible(ConfirmarAlterarImagem); enableblur(EcraPerfil4)"> Alterar Imagem</button>
 
       </div>
 
@@ -1000,7 +1000,7 @@
 
 
         <div id="alcoolWrapper">
-          <form id="profileInfo" >
+          <form id="profileInfo" onsubmit="return false">
             <fieldset>
               <div style="font-size: 30px">
                 <span style="">
@@ -1035,7 +1035,7 @@
                 <br>
 
 
-                <input id="limitbutton" name="submit" value="Aplicar" style="opacity: 0.3" onclick="show(ConfirmarLimite); confirmLimit()" />
+                <input type="submit" id="limitbutton" name="submit" value="Aplicar" style="opacity: 0.3; pointer-events: none" onclick="show(ConfirmarLimite); confirmLimit()" />
             </fieldset>
         </form>
 
