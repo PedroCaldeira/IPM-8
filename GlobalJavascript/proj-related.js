@@ -1016,7 +1016,7 @@ function toggleFavorite(x){
     var identity2 = ""
     changeImage(x,'./FoodImages/star.png','./FoodImages/nostar.png');
     if(x.src.split("/").pop()=="star.png"){
-      var div=$('<div class="FavoriteIcon" id="'+identity+'favorite" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromFavorites('+"'"+identity+"'"+')"/></p></div>');
+      var div=$('<div class="FavoriteIcon" id="'+identity+'favorite" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px;  ">'+nome+'</span> <p style="text-align:right; margin-top: -10px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromFavorites('+"'"+identity+"'"+')"/></p></div>');
       $("#ListagemFavoritosFood").append(div);
 
 
@@ -1050,7 +1050,7 @@ function toggleFavoriteMusic(){
     if(favouriteIcon.src.split("/").pop()=="star.png"){
       musicListImage.attr("data-favorite","true")
       $(".cover.current").find("img").attr("data-favorite","true")
-      var div=$('<div class="FavoriteIcon" id="'+identity+'favorite" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px;">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromFavoritesMusic('+"'"+identity+"'"+')"/></p></div>');
+      var div=$('<div class="FavoriteIcon" id="'+identity+'favorite" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px;">'+nome+'</span> <p style="text-align:right; margin-top: -10px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromFavoritesMusic('+"'"+identity+"'"+')"/></p></div>');
       $("#ListagemFavoritosMusica").append(div);
 
 
@@ -1105,7 +1105,7 @@ function addToHistoryMusic(){
     var identity=nome.replace(" ","_")
     for(var i=0;i<20;i++)
         identity=identity.replace(" ","_");
-    var div=$('<div class="FavoriteIcon" id="'+identity+'History" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px;">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromHistoryMusic('+"'"+identity+"'"+')"/></p></div>');
+    var div=$('<div class="FavoriteIcon" id="'+identity+'History" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px;">'+nome+'</span> <p style="text-align:right; margin-top: -10px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromHistoryMusic('+"'"+identity+"'"+')"/></p></div>');
     $("#HistoricoMusica").append(div);
 }
 function removeFromHistoryMusic(id){
@@ -1126,10 +1126,10 @@ function addToHistoryFood(){
         var identity=nome.replace(" ","_");
         if(num>1){
             nome +=" x "+num;
-            var div=$('<div class="FavoriteIcon" id="'+identity+'History" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromHistoryFood('+"'"+identity+"'"+')"/></p></div>');
+            var div=$('<div class="FavoriteIcon" id="'+identity+'History" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span> <p style="text-align:right; margin-top: -10px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromHistoryFood('+"'"+identity+"'"+')"/></p></div>');
         }
         else
-            var div=$('<div class="FavoriteIcon" id="'+identity+'History" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromHistoryFood('+"'"+identity+"'"+')"/></p></div>');
+            var div=$('<div class="FavoriteIcon" id="'+identity+'History" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px">'+nome+'</span> <p style="text-align:right; margin-top: -10px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromHistoryFood('+"'"+identity+"'"+')"/></p></div>');
         console.log(div)
 
         if(alternate==0){
