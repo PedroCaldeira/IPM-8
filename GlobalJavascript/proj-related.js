@@ -86,6 +86,7 @@ $(document).ready(function() {
         $('ul.Listagem>li').click(function(evt) {
             if(evt.target.className == "Favorite")
                 return;
+            
         	var str=$(this).find("p")[0].textContent
             var price=this.getAttribute("data-price");
             if ($(this).hasClass("calcool")){
@@ -102,6 +103,8 @@ $(document).ready(function() {
                 }
             }
         	if (str=="Criar Bebida"||str=="Criar Pizza"||str=="Menu Pizza"||str=="Menu Hamburguer"||str=="Menu Pasta"){
+                showMenu(this.getAttribute("data-janela"));
+                enableblur(cabecalho,meio,rodape)
         		return
         	}
             addToTicket(str,price);
