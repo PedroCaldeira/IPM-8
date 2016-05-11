@@ -1325,3 +1325,7 @@ function toggleShow2(id){
         hide(help)
     }
 }
+
+function changeWaiter(name){
+    document.getElementById("waiterText").innerHTML="Tem a certeza que pretende chamar o "+name+ "?"
+}

@@ -1113,11 +1113,11 @@ hr{
 
 
 #CallWaiterPic{
-  width:300px;
+  width:200px;
   position: absolute;
-  left: 60px;
-  bottom:10px;
-   background-color: #cccccc;
+  left: 15px;
+  bottom:5px;
+   background-color: #cce6ff;
    border-radius: 5px;
 }
 #CallWaiterPic>img{
