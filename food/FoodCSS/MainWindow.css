@@ -77,7 +77,7 @@
 
 #favbtn{
   position: absolute;
-  left:1149px;
+  left:1190px;
   top: 50px;
    height: 107px;
 
@@ -93,7 +93,7 @@
 
 #recbtn{
   position: absolute;
-  left:1020px;
+  left:1070px;
   top: 50px;
    height: 107px;
   border:1px solid rgb(0, 162, 232);
@@ -1118,3 +1118,24 @@ hr{
   height: 100px;
 
 }
+
+
+.botaoAjuda {
+    position: absolute;
+    background: #ccc;
+    cursor: pointer;
+    border-top: solid 2px #eaeaea;
+    border-left: solid 2px #eaeaea;
+    border-bottom: solid 2px #777;
+    border-right: solid 2px #777;
+    padding: 5px 5px;     
+    z-index: 30001  
+    }
+
+.botaoAjuda.down {
+    background: #bbb;
+    border-top: solid 2px #777;
+    border-left: solid 2px #777;
+    border-bottom:solid 2px  #eaeaea;
+    border-right: solid 2px #eaeaea;
+    }

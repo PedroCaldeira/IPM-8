@@ -308,9 +308,9 @@
 
           <div class="navBar">
             <span id = "Title" style="display: inline-block; padding-left: 35px"> Fazer Pedido </span>
-            <button type="button" onclick=" FilterRecommended()" class="btn btn-info" style="background-color: #00A2E8" id="recbtn" ><img src="./FoodImages/recommendations.png" style="width:100px;height:100px"></img> </button>
-            <button type="button" class="btn btn-info" id="favbtn" onclick=" FilterFavorite()" style="background-color: #00A2E8" ><img src="./FoodImages/favorites.png" style="width:100px;height:100px; "></img> </button>
-            <button type="button" class="btn btn-info" id="filterbtn" onclick="hide(Ticket); toggleVisible(Filtro); toggleTab(filterbtn); deactivateTab(shoppingcart); ">Filtro <img id="arrow1" src="./FoodImages/down.png" width="20" height="20"/></button>
+            <button type="button" onclick=" FilterRecommended()" class="btn btn-info" style="background-color: #00A2E8" id="recbtn" ><img src="./FoodImages/recomendado-WHITE.png" style="width:100px;height:100px" id="recICON"></img> </button>
+            <button type="button" class="btn btn-info" id="favbtn" onclick=" FilterFavorite()" style="background-color: #00A2E8" ><img src="./FoodImages/starICON-WHITE.png" style="width:80px;height:80px;" id="favICON"></img> </button>
+            <button type="button" class="btn btn-info" id="filterbtn" onclick="hide(Ticket); toggleVisible(Filtro); toggleTab(filterbtn); deactivateTab(shoppingcart); "><img id="FilterICON" src="./FoodImages/Filter-Settings.png" width="60px" height="60px" /> <img id="arrow1" src="./FoodImages/down.png" width="20" height="20"/></button>
 
 
             <button type="button" class="btn btn-info" id="shoppingcart" onclick="hide(Filtro); toggleVisible(Ticket); toggleTab(shoppingcart); deactivateTab(filterbtn); "><img id="paperticket" src="./FoodImages/paperticket.png" width="50px" height="50px" /> <img id="arrow" src="./FoodImages/down.png" width="20" height="20"/></button>
@@ -394,7 +394,7 @@
                  <li class="calcool sgas" data-price="4"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">4€</span><img  src="./FoodImages/martini.png"/><p>Martini</p><div class="RecommendedDIV pink avicii">RECOMENDADO</div></li>
                   <li class="salcool sgas" data-price="1"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">1€</span><img  src="./FoodImages/agua.png" /><p>Água</p><div class="RecommendedDIV jason">RECOMENDADO</div></li>
                  <li class="calcool cgas" data-price="4"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">4€</span><img  src="./FoodImages/mojito.png" /><p>Mojito</p><div class="RecommendedDIV mc">RECOMENDADO</div></li>
-                 <li class="calcool cgas" data-price="6"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/<span class="LiPrice">6€</span><img  src="./FoodImages/gintonico.png" /><p>Gin-tónico</p><div class="RecommendedDIV pink avicii">RECOMENDADO</div></li>
+                 <li class="calcool cgas" data-price="6"><img class="Favorite" onclick="toggleFavorite(this);" src="./FoodImages/nostar.png"/><span class="LiPrice">6€</span><img  src="./FoodImages/gintonico.png" /><p>Gin-tónico</p><div class="RecommendedDIV pink avicii">RECOMENDADO</div></li>
                  <li class="Personalizavel" onclick="show(JanelaPersonalizacao);enableblur(cabecalho,meio,rodape); " data-price="8"><span class="LiPrice">8€</span><img  src="./FoodImages/plus.png" /><p>Criar Bebida</p></li>
 
               </ul>
@@ -698,7 +698,7 @@
                               <button class="btn btn-default" onclick="searchCover();enableErase();" type="button"style="font-size:30px"><span class="glyphicon glyphicon-search"></span></button>
                           </span>
                       </div>
-          <button style="background-color:#298C2C" id="TopSongsButton" type="button" class="btn btn-info" onclick="toggleVisible(TopSongsMenu);createOrderedList();enableblur(cabecalhoMusica,meioMusic,rodapeMusic);disableblur(TopSongsMenu)" ><img id="TopSongs" style="height: 90px; width: 90px; border: 3px green solid;" src="./MusicImages/top.png" /> </button>
+          <button style="background-color:#298C2C" id="TopSongsButton" type="button" class="btn btn-info" onclick="toggleVisible(TopSongsMenu);createOrderedList();enableblur(cabecalhoMusica,meioMusic,rodapeMusic);disableblur(TopSongsMenu)" ><img id="TopSongs" style="height: 90px; width: 90px;" src="./MusicImages/top.png" /> </button>
           <button style="background-color:#298C2C" id="shoppingcartmusic" type="button" class="btn btn-info" onclick="toggleVisible(Q);toggleTab(shoppingcartmusic)"><img id="paperticketmusic" style="height: 70px; width: 70px" src="./MusicImages/whitequeue.png" /> <img id="musicArrow" src="./FoodImages/down.png" style="height: 20px; width: 20px" /></button>
 
         </div>
@@ -850,7 +850,7 @@
    </div>
 
       <div class  = "EcraPerfil" id="EcraPerfil2" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
-         <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil2);disableblur(blurME, rodapePerfil)"/>
+         <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil2);disableblur(blurME, rodapePerfil); $('.HelpIMGG').hide()"/>
          <table id="TransportesTable">
           <tr>
             <td><a class="PerfilCircle" id="Carro" ><img src="./ProfileImages/carro.png" style="margin-top:-50px;margin-left:-3px"/><button class="btn btn-primary TransportesButton" style="margin-top:60px" id="BotaoCarro" onclick="unlock2()">Desbloquear Chaves</button></a></td>
@@ -905,7 +905,7 @@
 
      <div class  = "EcraPerfil" id="EcraPerfil3" style="background-image:url(./ProfileImages/ecrabackground.jpg)" data-state="0">
        <img onclick="toggleShow2('Help4IMG')" class="HelpPerfilWindow" src ="../GlobalImages/help.png"></img>
-              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil3); disableblur(blurME, rodapePerfil)"/>
+              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil3); disableblur(blurME, rodapePerfil); $('.HelpIMGG').hide()"/>
               <img style="height:400px;width:400px;margin-top:50px; float:center" src="./ProfileImages/carkeys.png"></img>
               <div id="BloquearChaves" onclick="lock1()">Bloquear Chaves</div>
               <div id="DesbloquearChaves" onclick="unlock()">Desbloquear Chaves</div>
@@ -934,7 +934,7 @@
 
       <div class  = "EcraPerfil" id="EcraPerfil4" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
          <img onclick="toggleShow2('Help6IMG')" class="HelpPerfilWindow" src ="../GlobalImages/help.png"></img>
-              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil4); disableblur(blurME, rodapePerfil)"/>
+              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil4); disableblur(blurME, rodapePerfil); $('.HelpIMGG').hide()"/>
               <figure style="height:230px;width:auto;margin-top:150px; float:left">
                 <img id="ProfilePicture2"  src="./ProfileImages/yourboy.png" style="height:250px;width:300px"></img>
                 <figcaption id="profilename2"style="margin-top: 25px; width: 350px">Xyao Ming</figcaption>
@@ -987,7 +987,7 @@
 
       <div class  = "EcraPerfil" id="EcraPerfil5" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
          <img onclick="toggleShow2('Help1IMG')" class="HelpPerfilWindow" src ="../GlobalImages/help.png"></img>
-              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil5); disableblur(blurME, rodapePerfil)"/>
+              <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil5); disableblur(blurME, rodapePerfil); $('.HelpIMGG').hide()"/>
               <div style="float:left;margin-top:150px; text-align: left">
                 <span style="font-size:30px ">Nivel de álcool no sangue:</span><br>
                 <span id="NivelAlcool" style="font-size:100px " >0.50</span>
@@ -1066,7 +1066,7 @@
 
       <div class  = "EcraPerfil" id="EcraPerfil6" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
          <img onclick="toggleShow2('Help5IMG')" class="HelpPerfilWindow" src ="../GlobalImages/help.png"></img>
-          <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil6); disableblur(blurME, rodapePerfil)"/>
+          <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil6); disableblur(blurME, rodapePerfil); $('.HelpIMGG').hide()"/>
           <div class="ListLabels" style="margin-left:110px">Pedidos Favoritos</div>
           <ul id="ListagemFavoritosFood">
 
@@ -1078,7 +1078,7 @@
 
       <div class  = "EcraPerfil" id="EcraPerfil7" style="background-image:url(./ProfileImages/ecrabackground.jpg)">
          <img onclick="toggleShow2('Help3IMG')" class="HelpPerfilWindow" src ="../GlobalImages/help.png"></img>
-          <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil7); disableblur(blurME, rodapePerfil)"/>
+          <img class = "backarrow" src="../GlobalImages/backarrow.png" onclick="toggleVisible(EcraPerfil7); disableblur(blurME, rodapePerfil); $('.HelpIMGG').hide()"/>
           <div class="ListLabels" style="margin-left:110px">Pedidos Efectuados</div>
           <ul id="HistoricoFood">
 

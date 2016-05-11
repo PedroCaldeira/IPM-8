@@ -122,6 +122,8 @@ function deactivateTab(id){
     else if (id.id=="filterbtn"){
         changeImage(arrow1, "./FoodImages/down.png", "./FoodImages/down.png")
         id.style.backgroundColor='rgb(0, 162, 232)';
+        changeImage(FilterICON, "./FoodImages/Filter-Settings.png", "./FoodImages/Filter-Settings.png")
+
     }
     else if (id.id=="shoppingcartmusic"){
         changeImage(musicArrow, "./FoodImages/down.png", "./FoodImages/down.png");
@@ -142,16 +144,26 @@ function activateTab(id){
         changeImage(paperticket, "./FoodImages/paperticket.ico", "./FoodImages/paperticket.ico")
         changeImage(arrow, "./FoodImages/up.png", "./FoodImages/up.png")
     }
-    else if (id.id=="filterbtn")
+    else if (id.id=="filterbtn"){
         changeImage(arrow1, "./FoodImages/up.png", "./FoodImages/up.png")
+        changeImage(FilterICON, "./FoodImages/Filter-SettingsBLACK.png", "./FoodImages/Filter-SettingsBLACK.png")
+    }
     else if (id.id=="shoppingcartmusic"){
         changeImage(musicArrow, "./FoodImages/up.png", "./FoodImages/up.png");
         changeImage(paperticketmusic, "./MusicImages/queue.png", "./MusicImages/queue.png");
     }
 
+}
 
-
-
+function toggleTab(){
+    var id;
+    for (var i = 0; i < arguments.length; i++){
+        id=arguments[i];
+        if (id.style.backgroundColor=="white")
+            deactivateTab(id);
+        else
+            activateTab(id);
+    }
 }
 
 $(document).ready(function () {
@@ -188,20 +200,6 @@ $(document).ready(function () {
     });
 });
 
-
-
-function toggleTab(){
-    var id;
-    for (var i = 0; i < arguments.length; i++){
-        id=arguments[i];
-        if (id.style.backgroundColor=="white")
-            deactivateTab(id);
-        else
-            activateTab(id);
-    }
-
-
-}
 
 $(document).ready(function() {
         $('.listFilter>li').click(function() {
@@ -1143,7 +1141,7 @@ function removeFromHistoryFood(id){
 function checkFood(){
     var x = document.getElementById("NumeroAlcoolemia").innerHTML;
     var y = document.getElementById("EcraPerfil3").getAttribute("data-state");
-    var d = document.getElementsByClassName("Recommended");
+    var d = document.getElementsByClassName("RecommendedDIV");
             for(var i=0;i<d.length;i++){
                 d[i].style.display="none";
                 //d[i].src="./FoodImages/recommended.png";
@@ -1238,13 +1236,16 @@ function confirmLimit(){
 
 
 function FilterRecommended(){
-    var array= document.getElementsByClassName("Recommended")
+    var array= document.getElementsByClassName("RecommendedDIV")
     var recbtn=document.getElementById("recbtn")
     var favbtn=document.getElementById("favbtn")
+    changeImage(favICON, "./FoodImages/starICON-WHITE.png", "./FoodImages/starICON-WHITE.png")
+
     favbtn.style.backgroundColor="#00A2E8"
     $('.Listagem>li').show()
     if (recbtn.style.backgroundColor!="white"){
         recbtn.style.backgroundColor="white"
+        changeImage(recICON, "./FoodImages/recomendado.png", "./FoodImages/recomendado.png")
         for (var i = 0; i < array.length; i++) {
 
             if (array[i].style.display!="block"){
@@ -1254,6 +1255,7 @@ function FilterRecommended(){
         }
     }
     else{
+        changeImage(recICON, "./FoodImages/recomendado-WHITE.png", "./FoodImages/recomendado-WHITE.png")
         recbtn.style.backgroundColor="#00A2E8";
     }
 }
@@ -1268,6 +1270,7 @@ function FilterFavorite(){
     $('.Listagem>li').show()
     if (favbtn.style.backgroundColor!="white"){
         favbtn.style.backgroundColor="white"
+        changeImage(favICON, "./FoodImages/starICON.png", "./FoodImages/starICON.png")
         for (var i = 0; i < array.length; i++) {
 
             if (array[i].src.split("/").pop()=="nostar.png"){
@@ -1281,6 +1284,7 @@ function FilterFavorite(){
 
     }
     else{
+        changeImage(favICON, "./FoodImages/starICON-WHITE.png", "./FoodImages/starICON-WHITE.png")
         favbtn.style.backgroundColor="#00A2E8";
     }
 }
