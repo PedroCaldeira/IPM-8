@@ -308,7 +308,7 @@
 
           <div class="navBar">
             <span id = "Title" style="display: inline-block; padding-left: 35px"> Fazer Pedido </span>
-            <button type="button" onclick=" FilterRecommended()" class="btn btn-info" style="background-color: #00A2E8" id="recbtn" ><img src="./FoodImages/recomendado-WHITE.png" style="width:100px;height:100px" id="recICON"></img> </button>
+            <button type="button" onclick=" FilterRecommended()" class="btn btn-info" style="background-color: #00A2E8" id="recbtn" ><img src="./FoodImages/recomendado-WHITE.png" style="width:100px;height:75px" id="recICON"></img> </button>
             <button type="button" class="btn btn-info" id="favbtn" onclick=" FilterFavorite()" style="background-color: #00A2E8" ><img src="./FoodImages/starICON-WHITE.png" style="width:80px;height:80px;" id="favICON"></img> </button>
             <button type="button" class="btn btn-info" id="filterbtn" onclick="hide(Ticket); toggleVisible(Filtro); toggleTab(filterbtn); deactivateTab(shoppingcart); "><img id="FilterICON" src="./FoodImages/Filter-Settings.png" width="60px" height="60px" /> <img id="arrow1" src="./FoodImages/down.png" width="20" height="20"/></button>
 
@@ -943,7 +943,7 @@
 
 
               <div id="wrapper">
-        <form id="profileInfo" >
+        <form id="profileInfo" onsubmit="return false;" >
             <fieldset>
                 <div>
                     Nome:
@@ -975,7 +975,7 @@
                    <input type="date" name="bday" max="1996-12-31">
                 </div>
 
-                <input name="submit" value="Aplicar" onclick="changeName()" />
+                <input type="submit" name="submit" value="Aplicar" onclick="changeName()" />
             </fieldset>
         </form>
     </div>
