@@ -274,6 +274,7 @@
   border-left: 3px solid black;
   border-right: 3px solid black;
   border-bottom: 3px solid black;
+  opacity:0.9;
 }
 
 form label{
@@ -535,6 +536,7 @@ form label{
 #Q{
   overflow-y:scroll;
   overflow-x:show;
+  opacity:0.9;
 
 
 }
