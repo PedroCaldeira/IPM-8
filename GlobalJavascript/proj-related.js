@@ -1044,7 +1044,7 @@ function toggleFavoriteMusic(){
         identity=identity.replace(" ","_");
 
     changeImage(favouriteIcon,"./FoodImages/star.png",'./FoodImages/nostar.png');
-    if(favouriteIcon.src.split("/").pop()=="favorites.ico"){
+    if(favouriteIcon.src.split("/").pop()=="star.png"){
       musicListImage.attr("data-favorite","true")
       $(".cover.current").find("img").attr("data-favorite","true")
       var div=$('<div class="FavoriteIcon" id="'+identity+'favorite" style="display:inline-block ; text-align: left !important;"><span style=" position: relative; top:25px; left: 10px;">'+nome+'</span> <p style="text-align:right; margin-top: -20px"><img class="redcross"src="./FoodImages/redcross.png" onclick="removeFromFavoritesMusic('+"'"+identity+"'"+')"/></p></div>');
