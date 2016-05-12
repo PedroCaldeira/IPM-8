@@ -86,7 +86,7 @@ $(document).ready(function() {
         $('ul.Listagem>li').click(function(evt) {
             if(evt.target.className == "Favorite")
                 return;
-            
+
         	var str=$(this).find("p")[0].textContent
             var price=this.getAttribute("data-price");
             if ($(this).hasClass("calcool")){
@@ -1097,7 +1097,7 @@ function removeFromFavorites(id){
         $(imgs[i]).siblings(".Favorite")[0].src="./FoodImages/nostar.png"
        }
     }
-    
+
 }
 
 function addToHistoryMusic(){
@@ -1269,7 +1269,7 @@ function FilterRecommended(){
         }
     }
     else{
-        changeImage(recICON, "./FoodImages/recomendado-WHITE.png", "./FoodImages/recomendado-WHITE.png")
+        changeImage(recICON, "./FoodImages/Recomendado-WHITE.png", "./FoodImages/Recomendado-WHITE.png")
         recbtn.style.backgroundColor="#00A2E8";
     }
 }
